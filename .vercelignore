@@ -1,0 +1,5 @@
+el-reto/
+.claude/
+.git/
+node_modules/
+*.log
