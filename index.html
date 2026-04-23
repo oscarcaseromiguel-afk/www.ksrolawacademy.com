@@ -21,6 +21,10 @@
 
 <link rel="canonical" href="https://ksrolawacademy.com">
 
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 <style>
 :root{
   --ksro-red:#E63232;
@@ -205,6 +209,68 @@ footer{background:#050505;padding:60px 32px 30px;border-top:1px solid rgba(230,5
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .wa-float svg{width:32px;height:32px;fill:#fff}
 
+/* ========== CALENDLY FLOATING BUTTON ========== */
+.cal-float{
+  position:fixed;bottom:100px;left:28px;z-index:998;
+  background:var(--ksro-red);color:#fff;
+  padding:14px 22px;border-radius:30px;
+  font-family:var(--font-display);font-size:.78rem;
+  letter-spacing:1px;text-transform:uppercase;
+  box-shadow:var(--shadow-red);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:all .2s;cursor:pointer;
+}
+.cal-float:hover{transform:translateY(-3px);background:var(--ksro-red-dark);box-shadow:0 12px 40px rgba(230,50,50,.5)}
+.cal-float::before{content:"📅";font-size:1.1rem}
+
+/* ========== CALENDLY SECTION ========== */
+.calendly-section{
+  background:linear-gradient(180deg,var(--ksro-black) 0%,var(--ksro-dark) 100%);
+  border-top:1px solid rgba(230,50,50,.2);
+  border-bottom:1px solid rgba(230,50,50,.2);
+}
+.calendly-section .section-title span{color:var(--ksro-red)}
+.calendly-grid{
+  display:grid;grid-template-columns:1fr 1.5fr;gap:50px;align-items:start;
+}
+.calendly-info h3{
+  font-family:var(--font-display);color:#fff;
+  font-size:1.5rem;margin-bottom:18px;letter-spacing:-.3px;
+}
+.calendly-info ul{list-style:none;margin-bottom:24px}
+.calendly-info ul li{
+  color:var(--ksro-light-gray);padding:10px 0 10px 30px;
+  position:relative;font-size:.95rem;
+}
+.calendly-info ul li::before{
+  content:"✓";position:absolute;left:0;top:10px;
+  width:20px;height:20px;background:var(--ksro-red);
+  border-radius:50%;color:#fff;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;
+}
+.calendly-info .trust-badges{
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;
+  padding-top:20px;border-top:1px solid rgba(255,255,255,.08);
+}
+.calendly-info .trust-badges span{
+  background:rgba(230,50,50,.1);border:1px solid rgba(230,50,50,.3);
+  padding:6px 12px;border-radius:20px;font-size:.78rem;color:#fff;
+}
+.calendly-embed{
+  background:var(--ksro-dark-2);
+  border:1px solid rgba(230,50,50,.3);
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 15px 50px rgba(0,0,0,.5);
+}
+.calendly-inline-widget{min-width:320px;height:680px}
+
+@media (max-width:960px){
+  .calendly-grid{grid-template-columns:1fr;gap:30px}
+  .calendly-inline-widget{height:620px}
+  .cal-float{bottom:90px;left:20px;padding:12px 18px;font-size:.72rem}
+}
+
 .chat-button{position:fixed;bottom:28px;right:28px;z-index:999;width:64px;height:64px;border-radius:50%;background:var(--ksro-black);border:2px solid var(--ksro-red);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-red);transition:transform .2s}
 .chat-button:hover{transform:scale(1.08)}
 .chat-button svg{width:34px;height:34px}
@@ -351,6 +417,7 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
       <li><a href="#cursos">Cursos</a></li>
       <li><a href="#testimonios">Alumnos</a></li>
       <li><a href="#youtube">YouTube</a></li>
+      <li><a href="#agenda">Agendar</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a href="#cursos" class="nav-cta">Inscríbete Ahora</a>
@@ -590,6 +657,46 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
   </div>
 </section>
 
+<!-- ========== CALENDLY BOOKING SECTION ========== -->
+<section class="calendly-section" id="agenda">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Reserva Directa</span>
+      <h2 class="section-title">Agenda tu <span>videollamada gratuita</span></h2>
+      <p class="section-subtitle">30 minutos con Óscar para conocerte, entender tus necesidades y diseñar una propuesta a medida.</p>
+    </div>
+    <div class="calendly-grid">
+      <div class="calendly-info reveal">
+        <h3>¿Qué vamos a hacer en esta llamada?</h3>
+        <ul>
+          <li>Entender tu organización y equipo</li>
+          <li>Presentarte las modalidades formativas</li>
+          <li>Resolver tus dudas técnicas y legales sobre IA</li>
+          <li>Preparar una propuesta económica ajustada</li>
+          <li>Fijar posibles fechas en el calendario 2026-27</li>
+        </ul>
+        <h3 style="margin-top:30px">Ideal si eres…</h3>
+        <ul>
+          <li>Decano o secretario de un Colegio profesional</li>
+          <li>Director jurídico / Compliance Officer</li>
+          <li>Director de Máster, Grado o formación universitaria</li>
+          <li>Socio o Managing Partner de despacho</li>
+          <li>Responsable de RRHH o Formación</li>
+        </ul>
+        <div class="trust-badges">
+          <span>🎥 Google Meet</span>
+          <span>⏱ 30 minutos</span>
+          <span>🆓 Sin compromiso</span>
+          <span>🔒 Confidencial</span>
+        </div>
+      </div>
+      <div class="calendly-embed reveal">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="youtube-section" id="youtube">
   <div class="section-inner">
     <div class="section-head reveal">
@@ -741,6 +848,9 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
   </div>
 </footer>
 
+<!-- Calendly floating button -->
+<button class="cal-float" onclick="Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false;" aria-label="Agendar llamada">Agenda llamada</button>
+
 <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20la%20academia%20KSRO" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
@@ -767,7 +877,8 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
   <div class="chat-messages" id="chatMsgs">
     <div class="msg bot">👋 ¡Hola! Soy el asistente de <strong>KSRO LAW ACADEMY</strong>. Represento a Óscar Casero Miguel, abogado con 28 años en tribunales y referente nacional en IA Legal.</div>
     <div class="msg bot">Impartimos <strong>formación presencial a medida</strong> por toda España para empresas, universidades, colegios profesionales, asociaciones, cámaras de comercio y eventos. ¿Para qué tipo de organización buscas formación o ponencia?</div>
-    <a href="https://wa.me/34623767511?text=Hola,%20me%20interesa%20la%20formación%20KSRO" target="_blank" rel="noopener" class="chat-wa-btn">💬 Hablar directamente por WhatsApp</a>
+    <button class="chat-wa-btn" style="background:#E63232;border:none;cursor:pointer;width:100%" onclick="Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false">📅 Agendar videollamada gratis (30 min)</button>
+    <a href="https://wa.me/34623767511?text=Hola,%20me%20interesa%20la%20formación%20KSRO" target="_blank" rel="noopener" class="chat-wa-btn">💬 Hablar por WhatsApp</a>
   </div>
   <form class="chat-input" id="chatForm">
     <input type="text" id="chatInput" placeholder="Escribe tu consulta..." autocomplete="off">
@@ -895,7 +1006,7 @@ function localReply(q){
   if(/hola|buen|hi/.test(l))return '¡Hola! Soy el asistente de KSRO LAW ACADEMY. Impartimos formación <b>presencial</b> sobre IA aplicada al Derecho para empresas, universidades, colegios profesionales y conferencias por toda España. ¿Qué tipo de organización representas?';
   if(/oscar|quien|qui[eé]n/.test(l))return 'Óscar Casero Miguel es abogado y Administrador Concursal con <b>28 años en tribunales</b>. Creador de @ksrofriends (65K+ subs), profesor en la Universidad de La Rioja y autor del libro "IA y Derecho Mercantil" (2025). Ha formado a colegiados del ICAB, Álava, Gipuzkoa, Vizcaya, Almería, Melilla y Bilbao.';
   if(/dónde|donde|ciudad|lugar|espa|toda/.test(l))return 'Impartimos formaciones y ponencias en <b>toda España</b>. Óscar se desplaza a tu ciudad o sede. ¿En qué ubicación lo necesitas?';
-  if(/reserv|fecha|agenda|disponib/.test(l))return 'Para reservar fecha en la agenda 2026 de Óscar, escríbenos al WhatsApp +34 623 767 511 indicando:<br>• Tipo de formación/ponencia<br>• Fecha aproximada<br>• Ciudad<br>• Organización';
+  if(/reserv|fecha|agenda|disponib/.test(l))return '¡Perfecto! Puedes <a href="#agenda" style="color:var(--ksro-red);text-decoration:underline;font-weight:700">agendar directamente una videollamada de 30 min con Óscar</a> (gratis, sin compromiso) en esta misma página. También puedes escribirnos al WhatsApp +34 623 767 511.';
   return 'Gracias por tu consulta. Para darte una propuesta personalizada, escríbenos:<br>📱 WhatsApp: +34 623 767 511<br>✉ info@ksrolawacademy.com<br><br>¿Para qué tipo de organización buscas formación?';
 }
 
@@ -910,6 +1021,12 @@ chatForm.addEventListener('submit',(e)=>{
     addMsg(reply,'bot');history.push({role:'assistant',content:reply});
     if(history.filter(h=>h.role==='user').length>=2){
       setTimeout(()=>{
+        const cal=document.createElement('button');
+        cal.className='chat-wa-btn';
+        cal.style.background='#E63232';cal.style.cursor='pointer';cal.style.border='none';cal.style.width='100%';
+        cal.innerHTML='📅 Agendar videollamada gratis';
+        cal.onclick=()=>{Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false};
+        chatMsgs.appendChild(cal);
         const wa=document.createElement('a');
         wa.href='https://wa.me/34623767511?text=Hola,%20me%20interesa%20la%20formación%20KSRO';
         wa.target='_blank';wa.rel='noopener';wa.className='chat-wa-btn';
