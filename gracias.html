@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias! | KSRO LAW ACADEMY</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="legal.css">
+<style>
+.thanks-hero{
+  min-height:80vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:60px 20px;text-align:center;
+  background:radial-gradient(circle at 50% 30%,rgba(230,50,50,.2),transparent 60%);
+}
+.thanks-box{max-width:720px}
+.thanks-check{
+  width:90px;height:90px;border-radius:50%;
+  background:var(--ksro-red);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;margin:0 auto 30px;
+  box-shadow:0 15px 50px rgba(230,50,50,.5);
+  animation:pop .6s ease;
+}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+.thanks-box h1{
+  font-family:var(--font-display);color:#fff;
+  font-size:clamp(2rem,5vw,3.3rem);margin-bottom:18px;letter-spacing:-.5px;
+}
+.thanks-box h1 span{color:var(--ksro-red)}
+.thanks-box p{color:var(--ksro-light-gray);font-size:1.1rem;margin-bottom:30px;line-height:1.6}
+.thanks-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ksro-red);color:#fff;
+  padding:16px 30px;border-radius:4px;
+  font-family:var(--font-display);font-size:.95rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+  box-shadow:0 10px 40px rgba(230,50,50,.35);
+  transition:all .2s;margin:6px;
+}
+.thanks-cta:hover{background:var(--ksro-red-dark);transform:translateY(-2px);text-decoration:none;color:#fff}
+.thanks-cta.secondary{background:#25D366;box-shadow:0 10px 40px rgba(37,211,102,.35)}
+.thanks-cta.secondary:hover{background:#1EA855}
+.thanks-cta.outline{background:transparent;border:2px solid rgba(255,255,255,.2);color:#fff}
+.thanks-cta.outline:hover{border-color:var(--ksro-red);color:var(--ksro-red);background:transparent}
+.next-steps{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;margin-top:50px;
+  padding:30px;background:var(--ksro-dark-2);
+  border:1px solid rgba(230,50,50,.2);border-radius:10px;
+}
+.ns-item{text-align:left;color:var(--ksro-light-gray);font-size:.9rem}
+.ns-item strong{color:#fff;display:block;margin-bottom:6px;font-family:var(--font-display)}
+</style>
+</head>
+<body>
+
+<nav class="legal-nav">
+  <div class="legal-nav-inner">
+    <a href="/" class="legal-logo">
+      <span class="legal-logo-icon">K</span>
+      KSRO <span>LAW</span> ACADEMY
+    </a>
+    <a href="/" class="back-home">← Volver a inicio</a>
+  </div>
+</nav>
+
+<section class="thanks-hero">
+  <div class="thanks-box">
+    <div class="thanks-check">✓</div>
+    <h1>¡Gracias! <span>Tu guía está en camino</span></h1>
+    <p>En unos minutos recibirás en tu correo la guía <strong style="color:#fff">"IA para Abogados 2026"</strong> con las 25 herramientas esenciales, 50 prompts jurídicos y el framework KSRO de automatización.</p>
+    <p style="font-size:.95rem">📩 <strong>Revisa también tu carpeta de spam</strong> por si acaso el primer email se desvía.</p>
+
+    <div style="margin:40px 0 20px">
+      <a href="#agenda" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false;}else{window.location='/#agenda';return false;}" class="thanks-cta">📅 Agendar videollamada gratis</a>
+      <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20acabo%20de%20descargar%20la%20guía%20y%20quiero%20más%20info" class="thanks-cta secondary" target="_blank" rel="noopener">💬 WhatsApp directo</a>
+    </div>
+
+    <div class="next-steps">
+      <div class="ns-item">
+        <strong>🎥 Mira @ksrofriends</strong>
+        El mayor canal en español de IA Legal (65K+ subs). <a href="https://youtube.com/@ksrofriends" style="color:var(--ksro-red)" target="_blank">Suscríbete</a>.
+      </div>
+      <div class="ns-item">
+        <strong>📸 Sígueme en IG</strong>
+        Contenido diario sobre IA y Derecho en <a href="https://instagram.com/oscarcasero" style="color:var(--ksro-red)" target="_blank">@oscarcasero</a>.
+      </div>
+      <div class="ns-item">
+        <strong>🌐 Vuelve a la web</strong>
+        Conoce todas las modalidades de formación. <a href="/" style="color:var(--ksro-red)">Ir a inicio →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+</body>
+</html>

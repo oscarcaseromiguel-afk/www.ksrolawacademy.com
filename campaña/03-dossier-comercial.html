@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dossier KSRO LAW ACADEMY</title>
+<style>
+@page{size:A4;margin:15mm}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  background:#000;color:#fff;
+  line-height:1.4;font-size:10pt;
+  max-width:210mm;margin:0 auto;
+}
+.page{padding:20mm 18mm;min-height:297mm}
+.pdf-btn{
+  position:fixed;top:20px;right:20px;z-index:99;
+  background:#E63232;color:#fff;padding:12px 22px;
+  border:none;border-radius:4px;font-weight:700;cursor:pointer;
+  font-family:Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;
+}
+@media print{.pdf-btn{display:none}}
+
+.header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:18px;border-bottom:3px solid #E63232;margin-bottom:24px;
+}
+.logo-block{display:flex;align-items:center;gap:12px}
+.logo-k{
+  width:48px;height:48px;background:#E63232;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Arial Black",Arial,sans-serif;color:#fff;font-size:22pt;
+}
+.logo-text{font-family:"Arial Black",Arial,sans-serif;font-size:14pt;letter-spacing:1px}
+.logo-text span{color:#E63232}
+.header-info{text-align:right;font-size:8pt;color:#aaa}
+
+.hero-line{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:24pt;line-height:1.05;margin-bottom:10px;letter-spacing:-.5px;
+}
+.hero-line span{color:#E63232}
+.tagline{color:#ccc;font-size:10pt;margin-bottom:30px;font-style:italic}
+
+.credencials{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;
+}
+.cred{
+  background:#1a1a1a;border:1px solid rgba(230,50,50,.3);
+  padding:10px;text-align:center;border-radius:4px;
+}
+.cred strong{display:block;font-family:"Arial Black",Arial,sans-serif;color:#E63232;font-size:14pt}
+.cred small{font-size:7pt;color:#aaa;text-transform:uppercase;letter-spacing:.5px}
+
+.section{margin-bottom:22px}
+.section h2{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:11pt;color:#E63232;
+  text-transform:uppercase;letter-spacing:1.5px;
+  margin-bottom:10px;padding-bottom:6px;
+  border-bottom:1px solid rgba(230,50,50,.3);
+}
+
+.sobre-oscar{font-size:9.5pt;color:#ddd}
+.sobre-oscar strong{color:#fff}
+
+.modalidades{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.mod{
+  background:#1a1a1a;border-left:3px solid #E63232;
+  padding:10px 12px;border-radius:0 4px 4px 0;
+}
+.mod h3{font-family:"Arial Black",Arial,sans-serif;font-size:9.5pt;margin-bottom:4px}
+.mod p{font-size:8.5pt;color:#ccc;line-height:1.35}
+
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:8.5pt}
+.area{
+  background:rgba(230,50,50,.1);border:1px solid rgba(230,50,50,.3);
+  padding:8px;border-radius:4px;text-align:center;color:#fff;
+}
+
+.confianza{display:flex;flex-wrap:wrap;gap:8px;font-size:8pt}
+.conf-badge{
+  background:#1a1a1a;color:#fff;padding:5px 10px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.cta-block{
+  background:linear-gradient(135deg,#E63232,#B82020);
+  padding:16px 20px;border-radius:6px;
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:22px;
+}
+.cta-block .msg{font-family:"Arial Black",Arial,sans-serif;font-size:12pt;color:#fff;line-height:1.2}
+.cta-block .contact{text-align:right;font-size:9pt;color:#fff}
+.cta-block .contact div{margin:2px 0}
+.cta-block strong{font-size:10pt}
+
+.footer-dossier{
+  margin-top:24px;padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;
+  font-size:7.5pt;color:#888;
+}
+</style>
+</head>
+<body>
+
+<button class="pdf-btn" onclick="window.print()">💾 Descargar PDF</button>
+
+<div class="page">
+
+  <div class="header">
+    <div class="logo-block">
+      <div class="logo-k">K</div>
+      <div class="logo-text">KSRO <span>LAW</span> ACADEMY</div>
+    </div>
+    <div class="header-info">
+      Dossier comercial 2026<br>
+      <strong style="color:#fff">ksrolawacademy.com</strong>
+    </div>
+  </div>
+
+  <h1 class="hero-line">Domina la <span>IA Legal</span><br>antes de que la IA te domine a ti.</h1>
+  <p class="tagline">Tres décadas en tribunales. Navegando el futuro legal.</p>
+
+  <div class="credencials">
+    <div class="cred"><strong>28</strong><small>Años en tribunales</small></div>
+    <div class="cred"><strong>65K+</strong><small>Suscriptores YT</small></div>
+    <div class="cred"><strong>500K+</strong><small>Visualizaciones</small></div>
+    <div class="cred"><strong>8+</strong><small>Colegios formados</small></div>
+  </div>
+
+  <div class="section">
+    <h2>Sobre Óscar Casero Miguel</h2>
+    <p class="sobre-oscar">
+      <strong>Abogado y Administrador Concursal</strong> con 28 años de ejercicio. <strong>Profesor de Derecho Empresarial</strong> (GADE) en la Universidad de La Rioja curso 2024-25 y ponente habitual en ICAB, Álava, Gipuzkoa, Vizcaya, Almería, Melilla, Bilbao y Universidad de Deusto. Creador de <strong>@ksrofriends</strong>, el mayor canal en español sobre IA y Derecho. Autor del libro <em>"IA y Derecho Mercantil"</em> (2025). Miembro de INSOL Europe, ICAR nº 1182, ICAM, ENATIC y SRA (UK). CEO de Bodegare Ltd (Londres) y Gotham Corporation SRO (Praga). <strong>Director Académico del Tour Nacional IA Legal.</strong>
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Modalidades formativas</h2>
+    <div class="modalidades">
+      <div class="mod">
+        <h3>🏢 IN-COMPANY</h3>
+        <p>Formación cerrada para despachos y departamentos jurídicos. Protocolo seguro, prompts específicos, automatización. 1 jornada, 2 jornadas o programa continuado.</p>
+      </div>
+      <div class="mod">
+        <h3>🎓 UNIVERSIDADES / EN</h3>
+        <p>Módulos para másteres, MBA, escuelas de negocio y grados de Derecho/ADE. Contenido validado por casos reales de tribunales.</p>
+      </div>
+      <div class="mod">
+        <h3>⚖️ COLEGIOS PROFESIONALES</h3>
+        <p>Ciclos formativos acreditados para colegiados con condiciones especiales. Descuentos para el colegio contratante.</p>
+      </div>
+      <div class="mod">
+        <h3>🎤 CONFERENCIAS / KEYNOTES</h3>
+        <p>Keynotes de 45-90 min para congresos, jornadas y eventos corporativos. Cámaras de comercio, asociaciones, ferias sectoriales.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Áreas temáticas</h2>
+    <div class="areas">
+      <div class="area">IA &amp; Derecho Concursal</div>
+      <div class="area">Prompt Engineering Jurídico</div>
+      <div class="area">Automatización Despacho</div>
+      <div class="area">IA &amp; Derecho Mercantil</div>
+      <div class="area">Cumplimiento RGPD &amp; AI Act</div>
+      <div class="area">IA en M&amp;A y Due Diligence</div>
+      <div class="area">IA en Litigación</div>
+      <div class="area">Compliance &amp; Ética IA</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Instituciones que han confiado</h2>
+    <div class="confianza">
+      <span class="conf-badge">ICAB</span>
+      <span class="conf-badge">ICA Álava</span>
+      <span class="conf-badge">ICA Gipuzkoa</span>
+      <span class="conf-badge">ICA Vizcaya</span>
+      <span class="conf-badge">ICA Almería</span>
+      <span class="conf-badge">ICA Melilla</span>
+      <span class="conf-badge">ICA Bilbao</span>
+      <span class="conf-badge">Universidad de Deusto</span>
+      <span class="conf-badge">Universidad de La Rioja</span>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <div class="msg">¿Llevamos la IA Legal<br>a tu organización?</div>
+    <div class="contact">
+      <div>📅 <strong>ksrolawacademy.com</strong></div>
+      <div>📱 <strong>+34 623 767 511</strong></div>
+      <div>📧 <strong>info@ksrolawacademy.com</strong></div>
+    </div>
+  </div>
+
+  <div class="footer-dossier">
+    <div>Óscar Casero Miguel · NIF 16.577.116-G · ICAR nº 1182</div>
+    <div>Plaza de España 13, 2º Izda., 01001 Vitoria-Gasteiz</div>
+  </div>
+
+</div>
+
+</body>
+</html>

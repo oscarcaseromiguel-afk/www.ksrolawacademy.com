@@ -1,0 +1,58 @@
+Categoría,Organización,Ciudad,Web,Email Genérico,Patrón Email,Prioridad,Estado,Fecha Envío,Notas
+COLEGIOS,Ilustre Colegio de Abogados de Barcelona (ICAB),Barcelona,https://www.icab.es,info@icab.cat,decanato@icab.cat,ALTA,Pendiente,,Ya has sido ponente - contacto caliente
+COLEGIOS,Ilustre Colegio de Abogados de Álava,Vitoria,https://icaalava.com,secretaria@icaalava.com,decano@icaalava.com,ALTA,Pendiente,,Ya has sido ponente - contacto caliente
+COLEGIOS,Ilustre Colegio de Abogados de Gipuzkoa,San Sebastián,https://icagipuzkoa.net,icagipuzkoa@icagipuzkoa.net,secretaria@icagipuzkoa.net,ALTA,Pendiente,,Ya has sido ponente
+COLEGIOS,Ilustre Colegio de Abogados de Vizcaya,Bilbao,https://icasv-bilbao.com,secretaria@icasv-bilbao.com,decano@icasv-bilbao.com,ALTA,Pendiente,,Ya has sido ponente
+COLEGIOS,Ilustre Colegio de Abogados de Almería,Almería,https://www.icaalmeria.com,info@icaalmeria.com,decano@icaalmeria.com,ALTA,Pendiente,,Ya has sido ponente
+COLEGIOS,Ilustre Colegio de Abogados de Melilla,Melilla,https://www.icamelilla.es,secretaria@icamelilla.es,decanato@icamelilla.es,ALTA,Pendiente,,Ya has sido ponente
+COLEGIOS,Ilustre Colegio de Abogados de La Rioja (ICAR),Logroño,https://icar.es,secretaria@icar.es,decanato@icar.es,MUY ALTA,Pendiente,,Colegio propio - prioritario
+COLEGIOS,Ilustre Colegio de Abogados de Madrid (ICAM),Madrid,https://www.icam.es,formacion@icam.es,decano@icam.es,ALTA,Pendiente,,Mayor colegio España
+COLEGIOS,Ilustre Colegio de Abogados de Valencia (ICAV),Valencia,https://www.icav.es,formacion@icav.es,decanato@icav.es,ALTA,Pendiente,,
+COLEGIOS,Ilustre Colegio de Abogados de Sevilla,Sevilla,https://icas.es,formacion@icas.es,decano@icas.es,ALTA,Pendiente,,
+COLEGIOS,Ilustre Colegio de Abogados de Zaragoza (REICAZ),Zaragoza,https://www.reicaz.es,formacion@reicaz.es,decano@reicaz.es,MEDIA,Pendiente,,
+COLEGIOS,Ilustre Colegio de Abogados de Málaga,Málaga,https://icamalaga.es,formacion@icamalaga.es,decano@icamalaga.es,MEDIA,Pendiente,,
+COLEGIOS,Colegio de Abogados de Pamplona,Pamplona,https://micap.es,secretaria@micap.es,decano@micap.es,MEDIA,Pendiente,,
+COLEGIOS,Colegio de Abogados de Santander (ICACS),Santander,https://icacs.com,info@icacs.com,decano@icacs.com,MEDIA,Pendiente,,
+COLEGIOS,Colegio de Abogados de Oviedo,Oviedo,https://icaoviedo.com,secretaria@icaoviedo.com,decano@icaoviedo.com,MEDIA,Pendiente,,
+COLEGIOS,Consejo General Abogacía Española (CGAE),Madrid,https://www.abogacia.es,info@abogacia.es,presidencia@abogacia.es,ALTA,Pendiente,,Órgano nacional
+UNIVERSIDADES,Universidad de La Rioja - Facultad CC Empresariales,Logroño,https://www.unirioja.es,decanato.empresariales@unirioja.es,,MUY ALTA,Pendiente,,Tu propia universidad
+UNIVERSIDADES,Universidad de Deusto - Facultad Derecho,Bilbao,https://www.deusto.es,info.derecho@deusto.es,decanato.derecho@deusto.es,ALTA,Pendiente,,Ya has colaborado
+UNIVERSIDADES,IE Law School,Madrid,https://www.ie.edu/law-school,law.school@ie.edu,,ALTA,Pendiente,,Prestigio internacional
+UNIVERSIDADES,IESE Business School - Área jurídica,Barcelona/Madrid,https://www.iese.edu,info@iese.edu,,ALTA,Pendiente,,Top escuela negocios
+UNIVERSIDADES,ESADE Law School,Barcelona,https://www.esade.edu,law@esade.edu,,ALTA,Pendiente,,
+UNIVERSIDADES,Universidad Carlos III - Derecho,Madrid,https://www.uc3m.es,info.derecho@uc3m.es,,MEDIA,Pendiente,,
+UNIVERSIDADES,Universidad Autónoma de Madrid - Derecho,Madrid,https://www.uam.es,decanato.derecho@uam.es,,MEDIA,Pendiente,,
+UNIVERSIDADES,Universidad de Navarra - Derecho,Pamplona,https://www.unav.edu,decanato-der@unav.es,,MEDIA,Pendiente,,
+UNIVERSIDADES,Universidad del País Vasco (UPV/EHU) Derecho,Bilbao,https://www.ehu.eus,,,MEDIA,Pendiente,,
+UNIVERSIDADES,Universidad Internacional de La Rioja (UNIR),Logroño,https://www.unir.net,info@unir.net,,MEDIA,Pendiente,,Misma ciudad
+UNIVERSIDADES,ISDE - Instituto Superior Derecho y Economía,Madrid,https://www.isdemasters.com,info@isdemasters.com,,MEDIA,Pendiente,,Master abogacía
+UNIVERSIDADES,Centro de Estudios Garrigues,Madrid,https://www.centrogarrigues.com,informacion@centrogarrigues.com,,ALTA,Pendiente,,Prestigio
+UNIVERSIDADES,EAE Business School,Barcelona/Madrid,https://www.eae.es,info@eae.es,,MEDIA,Pendiente,,
+UNIVERSIDADES,OBS Business School,Online/Barcelona,https://www.obs-edu.com,info@obs-edu.com,,MEDIA,Pendiente,,Formación 100% online
+DESPACHOS,Garrigues,Madrid,https://www.garrigues.com,info@garrigues.com,gestion.talento@garrigues.com,ALTA,Pendiente,,Top despacho España
+DESPACHOS,Uría Menéndez,Madrid,https://www.uria.com,info@uria.com,,ALTA,Pendiente,,
+DESPACHOS,Cuatrecasas,Barcelona/Madrid,https://www.cuatrecasas.com,info@cuatrecasas.com,,ALTA,Pendiente,,
+DESPACHOS,Pérez-Llorca,Madrid,https://www.perezllorca.com,info@perezllorca.com,,ALTA,Pendiente,,
+DESPACHOS,Gómez-Acebo & Pombo,Madrid,https://www.ga-p.com,info@ga-p.com,,ALTA,Pendiente,,
+DESPACHOS,Ceca Magán Abogados,Madrid,https://www.cecamagan.com,info@cecamagan.com,,MEDIA,Pendiente,,
+DESPACHOS,Broseta Abogados,Valencia/Madrid,https://www.broseta.com,info@broseta.com,,MEDIA,Pendiente,,
+DESPACHOS,Écija Abogados,Madrid,https://ecija.com,info@ecija.com,,ALTA,Pendiente,,Especializado en tech/legaltech
+DESPACHOS,Andersen España,Madrid,https://es.andersen.com,info.es@andersen.com,,MEDIA,Pendiente,,
+DESPACHOS,Watson Farley & Williams España,Madrid,https://www.wfw.com,info@wfw.com,,MEDIA,Pendiente,,
+EMPRESAS,BBVA - Dirección Jurídica,Bilbao/Madrid,https://www.bbva.com,,,ALTA,Pendiente,,Sede en Bilbao
+EMPRESAS,Iberdrola - Dirección Legal,Bilbao,https://www.iberdrola.com,,,ALTA,Pendiente,,Sede en Bilbao
+EMPRESAS,Grupo Mondragón - Servicios Jurídicos,Arrasate,https://www.mondragon-corporation.com,,,MEDIA,Pendiente,,País Vasco
+EMPRESAS,CAF (Construcciones y Auxiliar Ferrocarriles),Beasain,https://www.caf.net,,,MEDIA,Pendiente,,
+EMPRESAS,Gestamp - Legal,Madrid,https://www.gestamp.com,,,MEDIA,Pendiente,,
+EMPRESAS,Repsol - Asesoría Jurídica,Madrid,https://www.repsol.com,,,MEDIA,Pendiente,,
+EMPRESAS,Santander - Legal & Compliance,Madrid,https://www.santander.com,,,ALTA,Pendiente,,
+EMPRESAS,Telefónica - Legal,Madrid,https://www.telefonica.com,,,MEDIA,Pendiente,,
+CÁMARAS,Cámara Comercio Álava,Vitoria,https://www.camaradealava.com,formacion@camaradealava.com,,MUY ALTA,Pendiente,,Tu zona
+CÁMARAS,Cámara Comercio La Rioja,Logroño,https://www.camararioja.com,formacion@camararioja.com,,MUY ALTA,Pendiente,,Tu zona
+CÁMARAS,Cámara Comercio Bilbao,Bilbao,https://www.camarabilbao.com,formacion@camarabilbao.com,,ALTA,Pendiente,,
+CÁMARAS,Cámara Comercio Madrid,Madrid,https://www.camaramadrid.es,formacion@camaramadrid.es,,ALTA,Pendiente,,
+CÁMARAS,Cámara Comercio Barcelona,Barcelona,https://www.cambrabcn.org,formacio@cambrabcn.org,,ALTA,Pendiente,,
+ASOCIACIONES,INSOL Europe (España),Internacional,https://www.insol-europe.org,,,ALTA,Pendiente,,Eres miembro
+ASOCIACIONES,ENATIC (Entidad Abogacía TIC),Madrid,https://enatic.org,info@enatic.org,,MUY ALTA,Pendiente,,Eres miembro - muy afín
+ASOCIACIONES,AEAFI - Asoc. Española Asesoría Fiscal,Madrid,https://aeafi.com,info@aeafi.com,,MEDIA,Pendiente,,
+ASOCIACIONES,Asociación Profesional de la Magistratura,Madrid,https://www.apmnacional.es,,,MEDIA,Pendiente,,Jueces
