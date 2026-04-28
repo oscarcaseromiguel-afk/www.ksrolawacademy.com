@@ -218,6 +218,85 @@ section{padding:100px 32px;position:relative}
 .yt-subscribe{display:inline-flex;align-items:center;gap:10px;background:#FF0000;color:#fff;padding:14px 26px;border-radius:4px;font-family:var(--font-display);font-size:.9rem;letter-spacing:1px;text-transform:uppercase;transition:all .2s}
 .yt-subscribe:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,0,0,.4)}
 
+/* ========== NEWSLETTER SECTION ========== */
+.newsletter-section{
+  padding:90px 32px;
+  background:linear-gradient(180deg,var(--ksro-black) 0%,var(--ksro-dark) 100%);
+  border-top:1px solid rgba(230,50,50,.2);
+}
+.newsletter-box{
+  max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;
+  background:var(--ksro-dark-2);
+  border:1px solid rgba(230,50,50,.3);
+  border-radius:16px;padding:50px;
+  position:relative;overflow:hidden;
+}
+.newsletter-box::before{
+  content:"";position:absolute;top:-50%;right:-20%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(230,50,50,.15),transparent 70%);
+  pointer-events:none;
+}
+.newsletter-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(230,50,50,.1);border:1px solid var(--ksro-red);
+  padding:8px 16px;border-radius:30px;
+  font-family:var(--font-display);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;
+  color:#fff;margin-bottom:20px;
+}
+.newsletter-section h2{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,4vw,2.8rem);line-height:1.05;margin-bottom:18px;letter-spacing:-.5px;
+}
+.newsletter-section p{color:var(--ksro-light-gray);font-size:1.05rem;margin-bottom:24px;line-height:1.6}
+.newsletter-features{list-style:none;margin-bottom:30px}
+.newsletter-features li{
+  padding:8px 0;font-size:.95rem;color:var(--ksro-light-gray);
+}
+.newsletter-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ksro-red);color:#fff;
+  padding:18px 32px;border-radius:6px;
+  font-family:var(--font-display);font-size:.95rem;letter-spacing:1.5px;text-transform:uppercase;
+  box-shadow:var(--shadow-red);
+  transition:all .2s;
+}
+.newsletter-btn:hover{transform:translateY(-3px);background:var(--ksro-red-dark);box-shadow:0 15px 50px rgba(230,50,50,.5)}
+.newsletter-trust{
+  margin-top:18px;font-size:.82rem;color:var(--ksro-gray);
+  display:flex;flex-wrap:wrap;gap:14px;
+}
+.newsletter-mockup{
+  background:#0a0a0a;border-radius:10px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 25px 60px rgba(0,0,0,.5);
+}
+.mockup-header{
+  background:#1a1a1a;padding:12px 16px;
+  display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.mockup-dot{width:10px;height:10px;border-radius:50%;background:#444}
+.mockup-title{margin-left:14px;font-size:.78rem;color:var(--ksro-gray)}
+.mockup-email{
+  padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.05);
+  transition:background .2s;
+}
+.mockup-email:hover{background:rgba(230,50,50,.05)}
+.mockup-email:last-child{border-bottom:none}
+.mockup-from{
+  color:var(--ksro-red);font-family:var(--font-display);font-size:.72rem;letter-spacing:1px;
+  margin-bottom:5px;text-transform:uppercase;
+}
+.mockup-subject{color:#fff;font-weight:700;font-size:.92rem;margin-bottom:5px;line-height:1.35}
+.mockup-preview{color:var(--ksro-gray);font-size:.78rem;line-height:1.45}
+
+@media(max-width:880px){
+  .newsletter-box{grid-template-columns:1fr;padding:40px 24px;gap:40px}
+  .newsletter-section{padding:60px 20px}
+}
+
 .lead-magnet{background:linear-gradient(135deg,rgba(230,50,50,.1) 0%,transparent 60%),var(--ksro-dark);border-top:1px solid rgba(230,50,50,.2);border-bottom:1px solid rgba(230,50,50,.2)}
 .lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .lm-visual{aspect-ratio:3/4;max-width:400px;margin:0 auto;background:linear-gradient(135deg,var(--ksro-red),var(--ksro-red-dark));border-radius:8px;position:relative;box-shadow:var(--shadow-red);display:flex;align-items:center;justify-content:center;transform:rotate(-4deg);transition:transform .4s}
@@ -476,6 +555,7 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
       <li><a href="#cursos">Cursos</a></li>
       <li><a href="#testimonios">Alumnos</a></li>
       <li><a href="#youtube">YouTube</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="/tour.html" style="color:var(--ksro-red)">🔥 Tour 2026</a></li>
       <li><a href="#agenda">Agendar</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -552,7 +632,7 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
         <h3>Óscar <span>Casero Miguel</span></h3>
         <div class="author-role">Abogado · Administrador Concursal · Divulgador IA Legal</div>
         <p class="author-bio"><strong>28 años de experiencia real en tribunales.</strong> Profesor de Derecho Empresarial (GADE) en la Universidad de La Rioja 2024–25 y ponente habitual en ICAB, Álava, Gipuzkoa, Vizcaya, Almería, Melilla, Bilbao y la Universidad de Deusto.</p>
-        <p class="author-bio">Creador de <strong>@ksrofriends</strong>, el mayor canal en español sobre IA y Derecho (65.000+ suscriptores, 500.000+ visualizaciones). Autor del podcast "El Teléfono Rojo" y de la newsletter <a href="https://ksrolawtech.substack.com" target="_blank" rel="noopener" style="color:var(--ksro-red);text-decoration:underline">"KSRO LAW TECH"</a>. CEO de Bodegare Ltd (Londres) y Gotham Corporation SRO (Praga).</p>
+        <p class="author-bio">Creador de <strong>@ksrofriends</strong>, el mayor canal en español sobre IA y Derecho (65.000+ suscriptores, 500.000+ visualizaciones). Autor del podcast "El Teléfono Rojo" y de la newsletter <a href="https://ksrolaw.com/es/kserolawtech-registro/" target="_blank" rel="noopener" style="color:var(--ksro-red);text-decoration:underline">"KSRO LAW TECH"</a>. CEO de Bodegare Ltd (Londres) y Gotham Corporation SRO (Praga).</p>
         <p class="author-bio">Director Académico del Tour Nacional IA Legal y autor del libro <em>"IA y Derecho Mercantil"</em> (2025).</p>
         <div class="badges">
           <span class="badge">INSOL Europe</span>
@@ -796,6 +876,57 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
   </div>
 </section>
 
+<!-- ========== NEWSLETTER KSRO LAW TECH ========== -->
+<section class="newsletter-section" id="newsletter">
+  <div class="section-inner">
+    <div class="newsletter-box reveal">
+      <div class="newsletter-content">
+        <div class="newsletter-eyebrow">
+          <span class="pulse-dot"></span> NEWSLETTER SEMANAL
+        </div>
+        <h2>📰 KSRO <span style="color:var(--ksro-red)">LAW TECH</span></h2>
+        <p>La newsletter sobre <strong>IA aplicada al Derecho</strong> que reciben miles de abogados, decanos y directores jurídicos en España. Cada semana en tu email: novedades, herramientas, casos reales y análisis sin paja.</p>
+        <ul class="newsletter-features">
+          <li>📅 1 email a la semana, sin spam</li>
+          <li>⚖️ Novedades AI Act, RGPD y jurisprudencia</li>
+          <li>🛠️ Reviews de herramientas legaltech</li>
+          <li>💬 Casos reales de despachos</li>
+          <li>🎁 Acceso anticipado a estudios y eventos KSRO</li>
+        </ul>
+        <a href="https://ksrolaw.com/es/kserolawtech-registro/" target="_blank" rel="noopener" class="newsletter-btn">
+          Suscribirme GRATIS ▸
+        </a>
+        <div class="newsletter-trust">✓ 100% Gratis · ✓ Baja con 1 clic · ✓ Sin spam</div>
+      </div>
+      <div class="newsletter-visual">
+        <div class="newsletter-mockup">
+          <div class="mockup-header">
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span class="mockup-title">📧 Bandeja de entrada</span>
+          </div>
+          <div class="mockup-email">
+            <div class="mockup-from">KSRO LAW TECH · Óscar Casero</div>
+            <div class="mockup-subject">El AI Act ya es ley en España: 5 cosas que tu despacho debe hacer YA</div>
+            <div class="mockup-preview">Esta semana: la sentencia del TS que cambia las reglas del juego en M&A con IA, las 3 herramientas legaltech que han subido de precio…</div>
+          </div>
+          <div class="mockup-email" style="opacity:.6">
+            <div class="mockup-from">KSRO LAW TECH · Óscar Casero</div>
+            <div class="mockup-subject">Despacho del IBEX sancionado por uso indebido de ChatGPT</div>
+            <div class="mockup-preview">El caso real que está sacudiendo al sector. Lo que ha pasado, por qué y qué hacer si tu despacho está en riesgo…</div>
+          </div>
+          <div class="mockup-email" style="opacity:.4">
+            <div class="mockup-from">KSRO LAW TECH · Óscar Casero</div>
+            <div class="mockup-subject">5 prompts que cambiarán cómo redactas demandas</div>
+            <div class="mockup-preview">Cinco prompts que llevo usando 6 meses con resultados…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="lead-magnet" id="lead">
   <div class="section-inner">
     <div class="lm-grid">
@@ -915,7 +1046,7 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
       <ul>
         <li><a href="#lead">Guía Gratuita</a></li>
         <li><a href="#">Podcast "El Teléfono Rojo"</a></li>
-        <li><a href="https://ksrolawtech.substack.com" target="_blank" rel="noopener">Newsletter KSRO LAW TECH</a></li>
+        <li><a href="https://ksrolaw.com/es/kserolawtech-registro/" target="_blank" rel="noopener">Newsletter KSRO LAW TECH</a></li>
         <li><a href="https://ksrolaw.com" target="_blank" rel="noopener">Estudio KSRO Law</a></li>
       </ul>
     </div>
