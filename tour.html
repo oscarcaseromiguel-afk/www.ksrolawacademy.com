@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Nacional IA Legal 2026 · KSRO LAW ACADEMY</title>
+<meta name="description" content="El primer Tour Nacional de IA Legal en España. 10 ciudades · 10 Colegios de Abogados · Septiembre - Noviembre 2026. Por Óscar Casero Miguel.">
+<meta name="keywords" content="Tour IA Legal, KSRO 2026, Óscar Casero, Inteligencia Artificial Derecho, Colegio Abogados">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tour Nacional IA Legal 2026 · KSRO">
+<meta property="og:description" content="10 ciudades · 10 Colegios · 1 misión: que ningún abogado español se quede atrás. Septiembre-Noviembre 2026.">
+<meta property="og:url" content="https://ksrolawacademy.com/tour">
+<meta property="og:image" content="https://ksrolawacademy.com/oscar-charla.jpg">
+<meta property="og:locale" content="es_ES">
+
+<link rel="canonical" href="https://ksrolawacademy.com/tour">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<style>
+:root{
+  --ksro-red:#E63232;
+  --ksro-red-dark:#B82020;
+  --ksro-black:#000;
+  --ksro-dark:#111;
+  --ksro-dark-2:#1a1a1a;
+  --ksro-white:#FFF;
+  --ksro-gray:#888;
+  --ksro-light-gray:#ccc;
+  --shadow-red:0 10px 40px rgba(230,50,50,.35);
+  --font-display:"Arial Black","Helvetica Neue",Arial,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--ksro-black);color:var(--ksro-white);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.tour-nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(0,0,0,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(230,50,50,.2);
+}
+.tour-nav-inner{max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:var(--font-display);font-size:1.1rem;display:flex;align-items:center;gap:10px}
+.logo-icon{width:32px;height:32px;background:var(--ksro-red);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.logo span{color:var(--ksro-red)}
+.nav-cta{background:var(--ksro-red);color:#fff;padding:10px 20px;font-family:var(--font-display);font-size:.78rem;letter-spacing:1px;border-radius:4px;text-transform:uppercase;transition:all .2s}
+.nav-cta:hover{background:var(--ksro-red-dark);transform:translateY(-2px);box-shadow:var(--shadow-red)}
+
+/* HERO */
+.tour-hero{
+  min-height:100vh;padding:140px 24px 60px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  position:relative;overflow:hidden;
+  background:radial-gradient(circle at 50% 50%,rgba(230,50,50,.2) 0%,transparent 50%),var(--ksro-black);
+}
+.tour-hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(230,50,50,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(230,50,50,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+}
+.tour-hero-inner{position:relative;z-index:2;max-width:900px}
+.tour-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(230,50,50,.15);border:1px solid var(--ksro-red);
+  padding:10px 20px;border-radius:30px;
+  font-family:var(--font-display);font-size:.78rem;letter-spacing:3px;text-transform:uppercase;
+  color:#fff;margin-bottom:30px;
+}
+.pulse-dot{width:8px;height:8px;background:var(--ksro-red);border-radius:50%;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.tour-hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.5rem,7vw,5.5rem);line-height:.95;
+  letter-spacing:-2px;margin-bottom:20px;
+}
+.tour-hero h1 .accent{color:var(--ksro-red)}
+.tour-hero .tagline{
+  font-size:clamp(1.05rem,2vw,1.4rem);color:var(--ksro-light-gray);
+  margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto;
+}
+.tour-hero .stats-line{
+  display:flex;justify-content:center;gap:40px;flex-wrap:wrap;
+  margin-bottom:50px;padding:24px 0;
+  border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);
+}
+.stat-item{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--ksro-red);line-height:1}
+.stat-label{font-size:.78rem;color:var(--ksro-gray);text-transform:uppercase;letter-spacing:1.5px;margin-top:6px}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--ksro-red);color:#fff;padding:18px 32px;
+  font-family:var(--font-display);font-size:.9rem;letter-spacing:1.5px;
+  border-radius:4px;text-transform:uppercase;
+  transition:all .2s;display:inline-flex;align-items:center;gap:10px;
+  box-shadow:var(--shadow-red);
+}
+.btn-primary:hover{transform:translateY(-3px);background:var(--ksro-red-dark);box-shadow:0 15px 50px rgba(230,50,50,.5)}
+.btn-secondary{background:transparent;color:#fff;padding:18px 32px;font-family:var(--font-display);font-size:.9rem;letter-spacing:1.5px;border-radius:4px;text-transform:uppercase;border:2px solid rgba(255,255,255,.3);transition:all .2s}
+.btn-secondary:hover{border-color:var(--ksro-red);color:var(--ksro-red)}
+
+/* SECTIONS */
+section{padding:90px 24px;position:relative}
+.section-inner{max-width:1180px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:60px;max-width:760px;margin-left:auto;margin-right:auto}
+.section-eyebrow{color:var(--ksro-red);font-weight:700;font-size:.85rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;display:block}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;margin-bottom:18px;letter-spacing:-.5px}
+.section-title .accent{color:var(--ksro-red)}
+.section-subtitle{font-size:1.05rem;color:var(--ksro-light-gray)}
+
+/* CIUDADES MAP/LIST */
+.cities-section{background:var(--ksro-dark)}
+.cities-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;
+}
+.city-card{
+  background:var(--ksro-dark-2);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;padding:24px;
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.city-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--ksro-red);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.city-card:hover{transform:translateY(-4px);border-color:rgba(230,50,50,.4);box-shadow:0 15px 40px rgba(0,0,0,.5)}
+.city-card:hover::before{transform:scaleX(1)}
+.city-num{
+  font-family:var(--font-display);color:rgba(230,50,50,.4);
+  font-size:2.2rem;line-height:1;letter-spacing:-2px;
+}
+.city-name{font-family:var(--font-display);font-size:1.2rem;margin:6px 0 4px;letter-spacing:-.3px}
+.city-ica{color:var(--ksro-light-gray);font-size:.85rem;margin-bottom:10px}
+.city-date{
+  display:inline-block;background:rgba(230,50,50,.15);
+  border:1px solid rgba(230,50,50,.3);
+  padding:4px 10px;border-radius:14px;
+  font-size:.72rem;color:#fff;font-weight:700;
+}
+.city-status{
+  position:absolute;top:14px;right:14px;
+  width:10px;height:10px;border-radius:50%;
+  background:#4ade80;box-shadow:0 0 12px #4ade80;
+}
+.city-status.pending{background:#888;box-shadow:none}
+
+/* WHAT INCLUDES */
+.includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.include-card{
+  background:linear-gradient(180deg,var(--ksro-dark-2),var(--ksro-dark));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:30px;
+}
+.include-icon{
+  width:56px;height:56px;border-radius:10px;
+  background:rgba(230,50,50,.15);color:var(--ksro-red);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;margin-bottom:18px;
+}
+.include-card h3{font-family:var(--font-display);font-size:1.15rem;margin-bottom:10px;letter-spacing:-.3px}
+.include-card p{color:var(--ksro-light-gray);font-size:.92rem}
+
+/* FOR WHO */
+.target-section{background:var(--ksro-dark)}
+.target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.target-item{
+  padding:24px;background:var(--ksro-black);
+  border-left:4px solid var(--ksro-red);
+  border-radius:0 8px 8px 0;
+}
+.target-item h4{font-family:var(--font-display);font-size:1rem;margin-bottom:6px}
+.target-item p{color:var(--ksro-light-gray);font-size:.88rem}
+
+/* CTA FINAL */
+.cta-final{
+  background:linear-gradient(135deg,var(--ksro-red),var(--ksro-red-dark));
+  text-align:center;padding:80px 24px;
+}
+.cta-final h2{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.1;margin-bottom:20px;letter-spacing:-.5px}
+.cta-final p{font-size:1.1rem;margin-bottom:32px;max-width:640px;margin-left:auto;margin-right:auto;opacity:.95}
+.cta-final .btn-primary{background:#000;color:#fff;font-size:1rem;padding:20px 36px}
+.cta-final .btn-primary:hover{background:#1a1a1a}
+
+/* SPONSORS */
+.sponsors-section{background:var(--ksro-black);text-align:center}
+.sponsors-label{font-size:.78rem;color:var(--ksro-gray);text-transform:uppercase;letter-spacing:3px;margin-bottom:24px}
+.sponsors-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;align-items:center}
+.sponsor-slot{
+  padding:20px 30px;border:1px dashed rgba(255,255,255,.15);border-radius:6px;
+  font-family:var(--font-display);color:var(--ksro-gray);font-size:.85rem;letter-spacing:1px;
+}
+
+/* FOOTER */
+footer{background:#050505;padding:50px 24px 30px;text-align:center;border-top:1px solid rgba(230,50,50,.2)}
+footer a{color:var(--ksro-red);font-weight:700}
+.footer-tagline{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.5px;margin-bottom:14px}
+.footer-tagline .accent{color:var(--ksro-red)}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px;font-size:.82rem;color:var(--ksro-gray)}
+
+/* WhatsApp + Calendly floats */
+.wa-float{position:fixed;bottom:28px;left:28px;z-index:998;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(37,211,102,.5);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+.cal-float{position:fixed;bottom:100px;left:28px;z-index:998;background:var(--ksro-red);color:#fff;padding:14px 22px;border-radius:30px;font-family:var(--font-display);font-size:.78rem;letter-spacing:1px;text-transform:uppercase;box-shadow:var(--shadow-red);display:inline-flex;align-items:center;gap:8px}
+.cal-float:hover{background:var(--ksro-red-dark)}
+.cal-float::before{content:"📅";font-size:1.1rem}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:all .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:640px){
+  .tour-hero{padding:120px 20px 40px}
+  .stats-line{gap:20px !important}
+  .hero-ctas{flex-direction:column;width:100%}
+  .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center}
+  section{padding:60px 20px}
+  .cal-float{bottom:90px;left:20px;padding:11px 16px;font-size:.7rem}
+  .wa-float{bottom:20px;left:20px;width:52px;height:52px}
+}
+</style>
+</head>
+<body>
+
+<nav class="tour-nav">
+  <div class="tour-nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">K</span>
+      KSRO <span>LAW</span> ACADEMY
+    </a>
+    <a href="#registro" class="nav-cta">Reservar plaza</a>
+  </div>
+</nav>
+
+<section class="tour-hero">
+  <div class="tour-hero-inner">
+    <div class="tour-eyebrow"><span class="pulse-dot"></span> Septiembre · Noviembre 2026 · #TourIALegal2026</div>
+    <h1>TOUR NACIONAL<br><span class="accent">IA LEGAL</span></h1>
+    <p class="tagline">10 ciudades. 10 Colegios de Abogados. 1 misión: <strong style="color:#fff">que ningún abogado español se quede atrás</strong> en la mayor transformación tecnológica del sector.</p>
+
+    <div class="stats-line">
+      <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Ciudades</div></div>
+      <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Colegios oficiales</div></div>
+      <div class="stat-item"><div class="stat-num">90</div><div class="stat-label">Días</div></div>
+      <div class="stat-item"><div class="stat-num">2.500+</div><div class="stat-label">Abogados</div></div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#registro" class="btn-primary">Reservar plaza ▸</a>
+      <a href="#ciudades" class="btn-secondary">Ver ciudades</a>
+    </div>
+  </div>
+</section>
+
+<section class="cities-section" id="ciudades">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Itinerario</span>
+      <h2 class="section-title">10 ciudades · 10 <span class="accent">Colegios oficiales</span></h2>
+      <p class="section-subtitle">Las plazas en cada ciudad son limitadas y se confirman por orden de inscripción.</p>
+    </div>
+    <div class="cities-grid reveal">
+      <div class="city-card">
+        <div class="city-num">01</div>
+        <div class="city-name">Vitoria-Gasteiz</div>
+        <div class="city-ica">ICA Álava</div>
+        <span class="city-date">Septiembre · Sem. 1</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">02</div>
+        <div class="city-name">San Sebastián</div>
+        <div class="city-ica">ICA Gipuzkoa</div>
+        <span class="city-date">Septiembre · Sem. 2</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">03</div>
+        <div class="city-name">Bilbao</div>
+        <div class="city-ica">ICA Vizcaya / Bilbao</div>
+        <span class="city-date">Septiembre · Sem. 3</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">04</div>
+        <div class="city-name">Logroño</div>
+        <div class="city-ica">ICAR · Univ. La Rioja</div>
+        <span class="city-date">Septiembre · Sem. 4</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">05</div>
+        <div class="city-name">Barcelona</div>
+        <div class="city-ica">ICAB</div>
+        <span class="city-date">Octubre · Sem. 1</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">06</div>
+        <div class="city-name">Valencia</div>
+        <div class="city-ica">ICAV</div>
+        <span class="city-date">Octubre · Sem. 2</span>
+        <div class="city-status pending" title="Pendiente confirmación"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">07</div>
+        <div class="city-name">Sevilla</div>
+        <div class="city-ica">ICAS</div>
+        <span class="city-date">Octubre · Sem. 3</span>
+        <div class="city-status pending" title="Pendiente confirmación"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">08</div>
+        <div class="city-name">Almería</div>
+        <div class="city-ica">ICA Almería</div>
+        <span class="city-date">Octubre · Sem. 4</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card">
+        <div class="city-num">09</div>
+        <div class="city-name">Melilla</div>
+        <div class="city-ica">ICA Melilla</div>
+        <span class="city-date">Noviembre · Sem. 1</span>
+        <div class="city-status" title="Confirmado"></div>
+      </div>
+      <div class="city-card" style="background:linear-gradient(135deg,rgba(230,50,50,.2),var(--ksro-dark-2));border-color:var(--ksro-red)">
+        <div class="city-num" style="color:var(--ksro-red)">🏆</div>
+        <div class="city-name">MADRID</div>
+        <div class="city-ica">ICAM · GALA FINAL</div>
+        <span class="city-date">Noviembre · Sem. 3</span>
+        <div class="city-status pending" title="Por confirmar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Por parada</span>
+      <h2 class="section-title">¿Qué incluye <span class="accent">cada parada?</span></h2>
+    </div>
+    <div class="includes-grid reveal">
+      <div class="include-card">
+        <div class="include-icon">🎤</div>
+        <h3>Conferencia gratuita 90 min</h3>
+        <p>"La IA Legal en 2026: lo que tu despacho necesita saber YA". Abierta a todos los colegiados del ICA local. Plazas limitadas a 200.</p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">🎓</div>
+        <h3>Workshop premium 4h</h3>
+        <p>Implementación práctica con casos reales. 30 plazas máximo. 80€/colegiado. Material exclusivo + certificado KSRO.</p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">💬</div>
+        <h3>Reuniones 1:1</h3>
+        <p>Sesiones individuales con socios y directores jurídicos locales para diseñar formación in-company.</p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">📺</div>
+        <h3>Cobertura mediática</h3>
+        <p>Cada parada incluye cobertura en prensa local, grabación profesional y producción audiovisual KSRO.</p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">📦</div>
+        <h3>Kit del asistente</h3>
+        <p>Cuaderno KSRO, prompts jurídicos premium, código exclusivo workshop, y acceso a comunidad privada.</p>
+      </div>
+      <div class="include-card">
+        <div class="include-icon">🏆</div>
+        <h3>Certificado oficial</h3>
+        <p>Asistentes al workshop reciben certificado de aprovechamiento KSRO + descuento en futuras formaciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="target-section">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Para quién</span>
+      <h2 class="section-title">¿Eres uno de los nuestros?</h2>
+    </div>
+    <div class="target-grid reveal">
+      <div class="target-item"><h4>⚖️ Decanos / Secretarios de ICA</h4><p>Que quieran traer una formación de referencia a sus colegiados.</p></div>
+      <div class="target-item"><h4>💼 Socios y Managing Partners</h4><p>De despachos que quieren liderar la transición tecnológica.</p></div>
+      <div class="target-item"><h4>🏢 Directores jurídicos in-house</h4><p>De empresas que necesitan protocolizar el uso de IA.</p></div>
+      <div class="target-item"><h4>👨‍🎓 Decanos de Facultad</h4><p>Que quieran añadir un módulo de IA Legal a sus programas.</p></div>
+      <div class="target-item"><h4>🛡️ Compliance Officers</h4><p>Que necesitan dominar AI Act y RGPD aplicado a IA.</p></div>
+      <div class="target-item"><h4>👨‍⚖️ Abogados ejercientes</h4><p>Que quieren multiplicar x10 su productividad sin riesgos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sponsors-section">
+  <div class="section-inner">
+    <div class="sponsors-label">Tour patrocinado por</div>
+    <div class="sponsors-grid">
+      <div class="sponsor-slot">SPONSOR HEADLINE · Disponible</div>
+      <div class="sponsor-slot">SPONSOR GOLD · Disponible</div>
+      <div class="sponsor-slot">SPONSOR GOLD · Disponible</div>
+    </div>
+    <p style="margin-top:24px;font-size:.85rem;color:var(--ksro-gray)">¿Tu empresa quiere posicionarse como referente legaltech del año? Escríbenos a <a href="mailto:info@ksrolawacademy.com" style="color:var(--ksro-red)">info@ksrolawacademy.com</a></p>
+  </div>
+</section>
+
+<section class="cta-final" id="registro">
+  <div class="section-inner">
+    <h2>Reserva videollamada y aseguramos tu plaza en el tour</h2>
+    <p>20 minutos contigo o con tu equipo para entender tus necesidades y reservarte la mejor fecha en tu ciudad.</p>
+    <a href="#" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false;}" class="btn-primary">📅 Agendar videollamada gratuita</a>
+    <p style="margin-top:30px;font-size:.85rem;opacity:.8">o WhatsApp directo: <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20el%20Tour%20Nacional%20IA%20Legal%202026" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;font-weight:700">+34 623 767 511</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-tagline">Tres décadas en tribunales. <span class="accent">Diez ciudades.</span> Una academia.</div>
+  <div style="color:var(--ksro-gray);font-size:.9rem">© 2026 KSRO LAW ACADEMY · Óscar Casero Miguel</div>
+  <div class="footer-links">
+    <a href="/">Volver a inicio</a>
+    <a href="/aviso-legal.html">Aviso Legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+    <a href="/cookies.html">Cookies</a>
+    <a href="https://ksrolawacademy.com" target="_blank">ksrolawacademy.com</a>
+  </div>
+</footer>
+
+<button class="cal-float" onclick="Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false;" aria-label="Agendar videollamada">Agenda llamada</button>
+<a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20el%20Tour%20Nacional%20IA%20Legal%202026" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
