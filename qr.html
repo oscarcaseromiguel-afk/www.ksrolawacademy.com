@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR KSRO LAW ACADEMY</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ksro-red:#E63232;--ksro-black:#000;--ksro-dark:#1a1a1a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:var(--ksro-black);color:#fff;min-height:100vh;
+  padding:40px 20px;line-height:1.5;
+}
+.container{max-width:1000px;margin:0 auto}
+h1{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:2rem;margin-bottom:10px;letter-spacing:-.5px;text-align:center;
+}
+h1 span{color:var(--ksro-red)}
+.subtitle{text-align:center;color:#aaa;margin-bottom:40px;font-size:1rem}
+.url{
+  text-align:center;background:var(--ksro-red);color:#fff;
+  padding:10px 20px;border-radius:30px;
+  font-family:"Arial Black",Arial,sans-serif;
+  display:inline-block;margin:0 auto 40px;letter-spacing:1px;
+}
+.url-wrap{text-align:center}
+
+.qr-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;margin-bottom:50px;
+}
+.qr-card{
+  background:var(--ksro-dark);
+  border:1px solid rgba(230,50,50,.3);
+  border-radius:12px;padding:30px;
+  text-align:center;
+}
+.qr-card h3{
+  font-family:"Arial Black",Arial,sans-serif;
+  color:var(--ksro-red);font-size:1rem;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;
+}
+.qr-card p{color:#aaa;font-size:.85rem;margin-bottom:20px}
+.qr-container{
+  background:#fff;padding:20px;border-radius:10px;
+  margin:0 auto 20px;max-width:280px;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+}
+.qr-container.dark{background:var(--ksro-black);border:2px solid var(--ksro-red)}
+.qr-container img{width:100%;height:auto}
+.qr-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:10px 18px;border-radius:4px;
+  font-weight:700;font-size:.8rem;letter-spacing:1px;
+  text-transform:uppercase;text-decoration:none;
+  transition:all .2s;cursor:pointer;border:none;font-family:inherit;
+}
+.btn-primary{background:var(--ksro-red);color:#fff}
+.btn-primary:hover{background:#B82020}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2)}
+.btn-outline:hover{border-color:var(--ksro-red);color:var(--ksro-red)}
+
+.instructions{
+  background:var(--ksro-dark);
+  border-left:4px solid var(--ksro-red);
+  border-radius:0 8px 8px 0;
+  padding:24px 28px;margin-bottom:30px;
+}
+.instructions h3{
+  font-family:"Arial Black",Arial,sans-serif;
+  color:var(--ksro-red);font-size:.95rem;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;
+}
+.instructions ol{margin-left:20px;color:#ccc;font-size:.92rem}
+.instructions ol li{margin-bottom:8px}
+.instructions strong{color:#fff}
+
+.mobile-tip{
+  background:linear-gradient(135deg,var(--ksro-red),#B82020);
+  padding:20px;border-radius:10px;text-align:center;
+  margin-bottom:30px;
+}
+.mobile-tip strong{font-family:"Arial Black",Arial,sans-serif;font-size:1.1rem;display:block;margin-bottom:6px}
+.mobile-tip small{font-size:.85rem;opacity:.95}
+
+.back{
+  display:inline-block;color:#aaa;font-size:.85rem;
+  margin-top:30px;text-decoration:none;
+}
+.back:hover{color:var(--ksro-red)}
+
+@media print{
+  body{background:#fff;color:#000}
+  .qr-card,.instructions,.mobile-tip,.back,.qr-actions{display:none}
+  .qr-card.print-this{display:block;background:#fff;border:none;page-break-inside:avoid}
+  .qr-card.print-this h3{color:#000}
+  .qr-container{background:#fff !important}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>QR de acceso · <span>KSRO LAW ACADEMY</span></h1>
+  <p class="subtitle">Escanea con cualquier móvil para abrir la web</p>
+  <div class="url-wrap"><span class="url">ksrolawacademy.com</span></div>
+
+  <div class="mobile-tip">
+    <strong>📱 ¿Desde el móvil?</strong>
+    <small>Mantén pulsada la imagen del QR y selecciona "Guardar imagen" o "Guardar en Fotos".</small>
+  </div>
+
+  <div class="qr-grid">
+
+    <div class="qr-card print-this">
+      <h3>📄 Para imprimir</h3>
+      <p>Fondo blanco · Rojo KSRO · Alta resolución</p>
+      <div class="qr-container">
+        <img src="qr-ksrolawacademy.png" alt="QR KSRO LAW ACADEMY fondo blanco">
+      </div>
+      <div class="qr-actions">
+        <a href="qr-ksrolawacademy.png" download="qr-ksrolawacademy-blanco.png" class="btn btn-primary">⬇ Descargar PNG</a>
+        <button onclick="window.print()" class="btn btn-outline">🖨 Imprimir</button>
+      </div>
+    </div>
+
+    <div class="qr-card">
+      <h3>🌑 Para móvil / pantalla</h3>
+      <p>Fondo negro · Rojo KSRO · Estilo KSRO</p>
+      <div class="qr-container dark">
+        <img src="qr-ksrolawacademy-negro.png" alt="QR KSRO LAW ACADEMY fondo negro">
+      </div>
+      <div class="qr-actions">
+        <a href="qr-ksrolawacademy-negro.png" download="qr-ksrolawacademy-negro.png" class="btn btn-primary">⬇ Descargar PNG</a>
+      </div>
+    </div>
+
+    <div class="qr-card">
+      <h3>⚡ QR dinámico</h3>
+      <p>Generado en tiempo real · Escánealo aquí mismo</p>
+      <div class="qr-container">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Fksrolawacademy.com&bgcolor=ffffff&color=E63232&margin=10&ecc=H" alt="QR KSRO dinámico">
+      </div>
+      <div class="qr-actions">
+        <a href="https://api.qrserver.com/v1/create-qr-code/?size=1200x1200&data=https%3A%2F%2Fksrolawacademy.com&bgcolor=ffffff&color=E63232&margin=20&ecc=H" download class="btn btn-primary" target="_blank">⬇ Tamaño XL (1200px)</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="instructions">
+    <h3>💡 Usos recomendados</h3>
+    <ol>
+      <li><strong>En tu móvil (fondo de pantalla de emergencia):</strong> guárdalo en Fotos para enseñarlo cuando alguien quiera ver la web</li>
+      <li><strong>Tarjeta de visita:</strong> imprime el QR blanco en el reverso</li>
+      <li><strong>Presentaciones y keynotes:</strong> añade el QR en la última slide para que la audiencia acceda</li>
+      <li><strong>Firma de email:</strong> inserta el QR como imagen pequeña</li>
+      <li><strong>Material impreso:</strong> flyers, brochures, dossier comercial</li>
+      <li><strong>Mesa de stand:</strong> imprime grande para ferias, congresos y eventos</li>
+    </ol>
+  </div>
+
+  <div class="instructions">
+    <h3>📲 Cómo guardarlo en tu móvil</h3>
+    <ol>
+      <li>Abre esta página en el navegador de tu móvil: <strong>https://ksrolawacademy.com/qr.html</strong></li>
+      <li><strong>iPhone:</strong> mantén pulsada la imagen del QR → <strong>"Añadir a Fotos"</strong></li>
+      <li><strong>Android:</strong> mantén pulsada la imagen del QR → <strong>"Descargar imagen"</strong> o <strong>"Guardar"</strong></li>
+      <li>Ya está en tu galería. Cuando alguien te pida la web, abres la foto y se la enseñas.</li>
+    </ol>
+  </div>
+
+  <a href="/" class="back">← Volver a KSRO LAW ACADEMY</a>
+</div>
+
+</body>
+</html>
