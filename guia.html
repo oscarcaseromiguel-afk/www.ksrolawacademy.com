@@ -1,0 +1,2413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA para Abogados 2026 · Guía KSRO</title>
+<meta name="description" content="La guía definitiva de Inteligencia Artificial para abogados españoles. 25 herramientas, 50 prompts jurídicos y framework KSRO de implementación.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+@page{size:A4;margin:18mm 16mm;@bottom-right{content:"KSRO LAW ACADEMY · Pág. " counter(page) " · ksrolawacademy.com";font-family:Arial,sans-serif;font-size:8pt;color:#888}}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:root{
+  --red:#E63232;
+  --red-dark:#B82020;
+  --black:#000;
+  --dark:#1a1a1a;
+  --gray:#666;
+  --light-gray:#aaa;
+  --bg:#fff;
+}
+body{
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  font-size:10.5pt;line-height:1.55;color:#222;background:#f4f4f4;
+}
+.guide{max-width:210mm;margin:0 auto;background:#fff}
+
+/* TOOLBAR (no print) */
+.toolbar{
+  position:fixed;top:20px;right:20px;z-index:99;
+  background:var(--red);color:#fff;
+  padding:14px 24px;border-radius:30px;
+  font-family:"Arial Black",Arial,sans-serif;font-size:.85rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+  box-shadow:0 10px 40px rgba(230,50,50,.5);
+  cursor:pointer;border:none;
+}
+.toolbar:hover{background:var(--red-dark);transform:translateY(-2px)}
+@media print{.toolbar{display:none}}
+
+/* PAGES */
+.page{
+  width:210mm;min-height:297mm;
+  padding:18mm 16mm;background:#fff;
+  page-break-after:always;page-break-inside:avoid;
+  position:relative;display:flex;flex-direction:column;
+}
+.page:last-child{page-break-after:auto}
+
+/* COVER */
+.cover{
+  background:var(--black);color:#fff;
+  padding:0;justify-content:center;align-items:center;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 30%,rgba(230,50,50,.3) 0%,transparent 50%);
+}
+.cover-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(230,50,50,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(230,50,50,.05) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+.cover-content{position:relative;z-index:2;padding:0 30mm}
+.cover-eyebrow{
+  font-family:"Arial Black",Arial,sans-serif;
+  color:var(--red);font-size:11pt;
+  letter-spacing:5px;text-transform:uppercase;margin-bottom:14mm;
+}
+.cover h1{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:54pt;line-height:.95;letter-spacing:-2pt;margin-bottom:12mm;
+}
+.cover h1 .accent{color:var(--red)}
+.cover-tagline{
+  font-size:14pt;color:#ccc;line-height:1.4;margin-bottom:25mm;font-style:italic;
+}
+.cover-bottom{
+  position:absolute;bottom:25mm;left:0;right:0;text-align:center;z-index:2;
+}
+.cover-author{
+  font-family:"Arial Black",Arial,sans-serif;font-size:14pt;color:#fff;letter-spacing:.5pt;
+}
+.cover-role{font-size:9pt;color:#aaa;margin-top:3mm;letter-spacing:1.5pt;text-transform:uppercase}
+.cover-edition{
+  display:inline-block;margin-top:15mm;
+  background:var(--red);color:#fff;padding:8pt 20pt;border-radius:30pt;
+  font-family:"Arial Black",Arial,sans-serif;font-size:9pt;letter-spacing:2pt;text-transform:uppercase;
+}
+.logo-k{
+  position:absolute;top:18mm;left:50%;transform:translateX(-50%);z-index:2;
+  display:flex;align-items:center;gap:3mm;
+}
+.logo-k-icon{
+  width:14mm;height:14mm;background:var(--red);border-radius:2mm;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Arial Black",Arial,sans-serif;color:#fff;font-size:18pt;
+}
+.logo-k-text{font-family:"Arial Black",Arial,sans-serif;color:#fff;font-size:11pt;letter-spacing:1pt}
+.logo-k-text span{color:var(--red)}
+
+/* TYPOGRAPHY */
+h2.chapter-title{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:28pt;line-height:1;margin-bottom:5mm;
+  color:var(--black);letter-spacing:-1pt;
+}
+h2.chapter-title .num{color:var(--red);margin-right:6mm}
+.chapter-subtitle{font-size:12pt;color:var(--gray);margin-bottom:10mm;font-style:italic;border-bottom:2px solid var(--red);padding-bottom:6mm}
+h3{
+  font-family:"Arial Black",Arial,sans-serif;
+  font-size:14pt;color:var(--black);margin:8mm 0 3mm;letter-spacing:-.3pt;
+}
+h4{font-family:"Arial Black",Arial,sans-serif;font-size:11pt;color:var(--red);margin:6mm 0 2mm;text-transform:uppercase;letter-spacing:1pt}
+h5{font-weight:700;font-size:10.5pt;color:var(--black);margin:4mm 0 2mm}
+p{margin-bottom:3mm;text-align:justify}
+ul,ol{margin:3mm 0 5mm 6mm}
+li{margin-bottom:2mm}
+strong{color:var(--black)}
+em{color:var(--gray);font-style:italic}
+
+/* BOXES */
+.callout{
+  background:rgba(230,50,50,.06);
+  border-left:4px solid var(--red);
+  padding:5mm 7mm;border-radius:0 2mm 2mm 0;
+  margin:5mm 0;
+}
+.callout-warning{background:rgba(255,193,7,.08);border-left-color:#FFC107}
+.callout-success{background:rgba(34,197,94,.08);border-left-color:#22C55E}
+.callout strong{color:var(--black);display:block;margin-bottom:2mm}
+
+/* TABLES */
+table{
+  width:100%;border-collapse:collapse;margin:5mm 0;
+  font-size:9.5pt;
+}
+th{
+  background:var(--black);color:#fff;
+  text-align:left;padding:3mm 4mm;
+  font-family:"Arial Black",Arial,sans-serif;font-size:9pt;letter-spacing:.5pt;text-transform:uppercase;
+}
+td{padding:3mm 4mm;border-bottom:1px solid #ddd;vertical-align:top}
+tr:last-child td{border-bottom:none}
+
+/* TOOL CARDS */
+.tool{
+  background:#fafafa;border-left:3px solid var(--red);
+  padding:4mm 6mm;margin:4mm 0;
+  page-break-inside:avoid;
+}
+.tool-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3mm}
+.tool-name{font-family:"Arial Black",Arial,sans-serif;font-size:12pt;color:var(--black)}
+.tool-tag{
+  background:var(--red);color:#fff;
+  padding:1.5mm 4mm;border-radius:30pt;
+  font-size:7pt;letter-spacing:.8pt;text-transform:uppercase;font-weight:700;
+}
+.tool-desc{font-size:9.5pt;color:#333;margin-bottom:2mm}
+.tool-meta{font-size:8.5pt;color:var(--gray);font-style:italic}
+
+/* PROMPT CARDS */
+.prompt{
+  background:var(--dark);color:#e8e8e8;
+  padding:5mm 6mm;border-radius:2mm;margin:4mm 0;
+  page-break-inside:avoid;
+  border-left:4px solid var(--red);
+}
+.prompt-num{
+  font-family:"Arial Black",Arial,sans-serif;color:var(--red);font-size:10pt;letter-spacing:1pt;
+  margin-bottom:2mm;
+}
+.prompt-title{
+  font-family:"Arial Black",Arial,sans-serif;color:#fff;font-size:11pt;margin-bottom:3mm;
+}
+.prompt-text{
+  background:#000;color:#fff;font-family:"Courier New",monospace;
+  font-size:8.5pt;line-height:1.5;padding:3mm;border-radius:1mm;
+  white-space:pre-wrap;border:1px dashed rgba(230,50,50,.3);
+}
+
+/* TOC */
+.toc-list{list-style:none;margin:5mm 0}
+.toc-list li{
+  display:flex;align-items:baseline;gap:4mm;
+  padding:2.5mm 0;border-bottom:1px dotted #ddd;font-size:11pt;
+}
+.toc-num{
+  font-family:"Arial Black",Arial,sans-serif;color:var(--red);
+  min-width:18mm;font-size:11pt;
+}
+.toc-title{flex:1;color:var(--black)}
+.toc-page{font-family:"Arial Black",Arial,sans-serif;color:var(--gray);font-size:10pt}
+
+/* SECTION HEADER */
+.section-header{
+  background:var(--black);color:#fff;
+  padding:8mm 10mm;margin:0 -16mm 8mm;
+  text-align:center;
+}
+.section-header .section-num{
+  font-family:"Arial Black",Arial,sans-serif;color:var(--red);font-size:10pt;letter-spacing:3pt;
+}
+.section-header h2{
+  font-family:"Arial Black",Arial,sans-serif;color:#fff;
+  font-size:24pt;line-height:1;margin-top:3mm;letter-spacing:-.5pt;
+}
+
+/* FRAMEWORK STEPS */
+.step{
+  display:grid;grid-template-columns:auto 1fr;gap:5mm;
+  margin:5mm 0;page-break-inside:avoid;
+}
+.step-num{
+  width:14mm;height:14mm;background:var(--red);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:"Arial Black",Arial,sans-serif;font-size:14pt;
+}
+.step-content h4{margin-top:2mm;color:var(--black)}
+
+/* STATS */
+.stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;
+  margin:6mm 0;
+}
+.stat-box{
+  background:var(--black);color:#fff;
+  padding:5mm;text-align:center;border-radius:2mm;
+}
+.stat-box .num{
+  font-family:"Arial Black",Arial,sans-serif;color:var(--red);font-size:24pt;line-height:1;
+}
+.stat-box .label{font-size:8pt;letter-spacing:1pt;text-transform:uppercase;margin-top:2mm;color:#ccc}
+
+/* CHECKLIST */
+.checklist{margin:4mm 0}
+.checklist li{
+  list-style:none;padding-left:8mm;position:relative;margin-bottom:2.5mm;
+}
+.checklist li::before{
+  content:"✓";position:absolute;left:0;top:0;
+  width:5mm;height:5mm;background:var(--red);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:8pt;font-weight:700;
+}
+
+/* CTA FINAL PAGE */
+.cta-page{
+  background:var(--black);color:#fff;
+  padding:0;justify-content:center;align-items:center;text-align:center;
+}
+.cta-page::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(230,50,50,.25),transparent 60%);
+}
+.cta-page > div{position:relative;z-index:2;padding:0 25mm}
+.cta-page h2{
+  font-family:"Arial Black",Arial,sans-serif;font-size:36pt;line-height:1;margin-bottom:8mm;letter-spacing:-1pt;
+}
+.cta-page h2 span{color:var(--red)}
+.cta-page p{color:#ccc;font-size:13pt;line-height:1.5;margin-bottom:6mm;text-align:center}
+.cta-buttons{display:flex;gap:5mm;justify-content:center;flex-wrap:wrap;margin-top:10mm}
+.cta-btn{
+  background:var(--red);color:#fff;
+  padding:5mm 10mm;border-radius:2mm;
+  font-family:"Arial Black",Arial,sans-serif;font-size:10pt;
+  letter-spacing:1.5pt;text-transform:uppercase;
+}
+.cta-btn.outline{background:transparent;border:2px solid #fff}
+.cta-page .contact-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:5mm;
+  margin-top:10mm;text-align:left;
+}
+.contact-item{padding:5mm;background:rgba(255,255,255,.05);border-radius:2mm;border:1px solid rgba(230,50,50,.3)}
+.contact-item strong{display:block;color:var(--red);font-family:"Arial Black",Arial,sans-serif;font-size:9pt;letter-spacing:1pt;text-transform:uppercase;margin-bottom:2mm}
+.contact-item span{color:#fff;font-size:11pt}
+
+/* PHOTO/AUTHOR */
+.author-quote{
+  background:#fafafa;
+  padding:6mm;border-left:4px solid var(--red);
+  margin:6mm 0;font-style:italic;font-size:11pt;line-height:1.5;
+}
+.author-quote::before{content:"\201C";font-size:28pt;color:var(--red);line-height:0;margin-right:2mm;font-style:normal}
+
+/* TWO COLS */
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:4mm 0}
+
+/* PAGE FOOTER MARK */
+.chapter-mark{
+  position:absolute;bottom:8mm;left:16mm;
+  font-family:"Arial Black",Arial,sans-serif;
+  color:var(--red);font-size:7pt;letter-spacing:2pt;text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+
+<button class="toolbar" onclick="window.print()">💾 Descargar PDF</button>
+
+<div class="guide">
+
+<!-- ========================================== -->
+<!-- PORTADA -->
+<!-- ========================================== -->
+<div class="page cover">
+  <div class="cover-grid"></div>
+  <div class="logo-k">
+    <div class="logo-k-icon">K</div>
+    <div class="logo-k-text">KSRO <span>LAW</span> ACADEMY</div>
+  </div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">Edición 2026</div>
+    <h1>IA<br>para<br><span class="accent">Abogados</span></h1>
+    <p class="cover-tagline">"La guía definitiva para los abogados<br>españoles que quieren liderar la transición<br>tecnológica del sector legal."</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-author">Óscar Casero Miguel</div>
+    <div class="cover-role">28 años en tribunales · Director KSRO LAW ACADEMY</div>
+    <div class="cover-edition">Guía Gratuita · 60 páginas</div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- CRÉDITOS -->
+<!-- ========================================== -->
+<div class="page">
+  <div style="margin-top:60mm;text-align:center;color:var(--gray);font-size:9.5pt;line-height:1.7">
+    <p style="font-family:'Arial Black',sans-serif;color:var(--black);font-size:14pt;margin-bottom:8mm">IA para Abogados · Edición 2026</p>
+    <p>© 2026 KSRO LAW ACADEMY · Óscar Casero Miguel</p>
+    <p>Todos los derechos reservados.</p>
+    <p style="margin-top:8mm">Esta guía es un material formativo gratuito.<br>Su contenido tiene carácter divulgativo y educativo;<br>no constituye asesoramiento jurídico concreto.</p>
+    <p style="margin-top:8mm">Edición digital · Distribución libre con atribución.</p>
+    <p style="margin-top:15mm;font-family:'Arial Black',sans-serif;color:var(--red);font-size:9pt;letter-spacing:2pt">KSROLAWACADEMY.COM</p>
+
+    <div style="margin-top:30mm;text-align:left;border-top:2px solid var(--red);padding-top:8mm">
+      <p style="font-family:'Arial Black',sans-serif;color:var(--black);font-size:11pt;margin-bottom:3mm">Sobre el autor</p>
+      <p style="text-align:justify;color:#333;font-size:10pt">Óscar Casero Miguel es abogado en ejercicio (ICAR nº 1182) y Administrador Concursal con 28 años de experiencia. Profesor de Derecho Empresarial en la Universidad de La Rioja (curso 2024-25) y ponente habitual en los Colegios de Abogados de Barcelona, Álava, Gipuzkoa, Vizcaya, Almería, Melilla y Bilbao. Creador del canal <strong>@ksrofriends</strong> en YouTube, la mayor referencia en español sobre IA y Derecho con más de 65.000 suscriptores. Autor del podcast "El Teléfono Rojo" y de la newsletter "KSRO LAW TECH". CEO de Bodegare Ltd (Londres) y Gotham Corporation SRO (Praga).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- ÍNDICE -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">·</span>Índice</h2>
+  <p class="chapter-subtitle">Una guía estructurada para que vayas al grano</p>
+
+  <ul class="toc-list">
+    <li><span class="toc-num">CARTA</span><span class="toc-title">Por qué he escrito esta guía</span><span class="toc-page">5</span></li>
+    <li><span class="toc-num">PARTE 1</span><span class="toc-title">Diagnóstico: dónde está la abogacía española</span><span class="toc-page">7</span></li>
+    <li><span class="toc-num">PARTE 2</span><span class="toc-title">Las 25 herramientas esenciales de IA Legal</span><span class="toc-page">12</span></li>
+    <li><span class="toc-num">PARTE 3</span><span class="toc-title">50 prompts jurídicos listos para copiar</span><span class="toc-page">25</span></li>
+    <li><span class="toc-num">PARTE 4</span><span class="toc-title">El framework KSRO de implementación</span><span class="toc-page">42</span></li>
+    <li><span class="toc-num">PARTE 5</span><span class="toc-title">Casos reales: lo que sí y lo que no</span><span class="toc-page">48</span></li>
+    <li><span class="toc-num">PARTE 6</span><span class="toc-title">Compliance: AI Act, RGPD y secreto profesional</span><span class="toc-page">52</span></li>
+    <li><span class="toc-num">PARTE 7</span><span class="toc-title">Plan de acción para los próximos 30 días</span><span class="toc-page">56</span></li>
+    <li><span class="toc-num">CIERRE</span><span class="toc-title">Próximos pasos · KSRO LAW ACADEMY</span><span class="toc-page">59</span></li>
+  </ul>
+
+  <div class="callout" style="margin-top:15mm">
+    <strong>📌 Cómo usar esta guía</strong>
+    Si dispones de poco tiempo, ve directamente a la <strong>Parte 3 (prompts)</strong> y empieza a usarlos. Si quieres dominar la IA Legal con criterio, léela completa por orden. Cada parte está pensada para ser autocontenida; puedes saltar a la que más te interese.
+  </div>
+
+  <div class="callout callout-warning">
+    <strong>⚠️ Aviso legal importante</strong>
+    Esta guía es un material formativo. La aplicación de las herramientas, prompts y procesos descritos requiere criterio profesional. Cada despacho debe adaptarlos a su realidad y a la normativa aplicable. KSRO LAW ACADEMY no se responsabiliza del uso que hagas de la información.
+  </div>
+
+  <div class="chapter-mark">KSRO · Edición 2026</div>
+</div>
+
+<!-- ========================================== -->
+<!-- CARTA DE ÓSCAR -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">·</span>Carta de Óscar</h2>
+  <p class="chapter-subtitle">Por qué he escrito esta guía</p>
+
+  <p style="font-size:11pt">Querido compañero, querida compañera,</p>
+
+  <p>Llevo 28 años en tribunales. He visto evoluciones tecnológicas: la llegada de los ordenadores al despacho, el correo electrónico, los expedientes digitales, LexNet, las videovistas, la firma electrónica. Cada una de ellas tuvo su periodo de incomodidad, su grupo de escépticos, su grupo de evangelistas, y finalmente su normalización.</p>
+
+  <p>Pero <strong>lo que está pasando con la Inteligencia Artificial es de un orden completamente distinto</strong>. No es una herramienta más. Es una transformación del propio acto profesional de pensar, redactar, investigar y aconsejar.</p>
+
+  <p>Tras tres años estudiando este fenómeno —probando todas las herramientas que pasan por mis manos, formando a abogados en colegios profesionales, viendo casos reales en mi propio despacho— he llegado a una conclusión incómoda: <strong>el 70% de los despachos españoles aún no usa IA. El 20% la usa mal. Y solo el 10% la usa con criterio</strong>. Esa es nuestra fotografía nacional ahora mismo.</p>
+
+  <div class="author-quote">
+    El abogado que dentro de 24 meses no domine la IA no será competitivo. Y el que la use sin formación específica pondrá en riesgo el secreto profesional, el RGPD y, en el peor de los casos, la propia colegiación.
+  </div>
+
+  <p>Esta guía es mi intento honesto de poner en tus manos lo que necesitas saber para empezar HOY. No es teoría. No es marketing. Son las 25 herramientas que de verdad uso, los 50 prompts que ya he probado en casos reales, y el framework que enseño en formaciones de hasta 200 abogados.</p>
+
+  <p>No te pido nada a cambio. Solo dos cosas:</p>
+
+  <ol style="margin:5mm 0 6mm 8mm">
+    <li><strong>Que la apliques</strong>. Una guía leída no cambia nada. Una guía aplicada cambia la facturación de un despacho.</li>
+    <li><strong>Que me cuentes qué te ha funcionado</strong> y qué no, escribiendo a info@ksrolawacademy.com. Las próximas ediciones serán mejores con tu feedback.</li>
+  </ol>
+
+  <p>Si en algún momento quieres ir más allá de esta guía —formación in-company para tu despacho, ponencia en tu colegio, curso para tu universidad o conferencia para tu organización— estoy a un email de distancia.</p>
+
+  <p>Mientras tanto, te dejo con 60 páginas de lo más útil que tengo.</p>
+
+  <p style="margin-top:10mm">Un fuerte abrazo,</p>
+  <p style="font-family:'Arial Black',sans-serif;color:var(--black);font-size:14pt;margin-top:5mm">Óscar Casero Miguel</p>
+  <p style="color:var(--gray);font-size:9pt">Abogado · ICAR nº 1182 · Director KSRO LAW ACADEMY</p>
+
+  <div class="chapter-mark">CARTA · KSRO 2026</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 1 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 1</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">Diagnóstico</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"Antes de actuar, mírate al espejo. La IA no perdona a quien finge que no existe."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 1 - DIAGNÓSTICO -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">1.</span>Estado actual</h2>
+  <p class="chapter-subtitle">Dónde está la abogacía española en 2026</p>
+
+  <h3>Los datos que nadie te cuenta</h3>
+  <p>Tras encuestas informales y conversaciones con cientos de colegiados durante mis ponencias en ICAB, ICA Álava, Gipuzkoa, Vizcaya, Almería, Melilla y Bilbao a lo largo de 2025, la fotografía es clara y preocupante.</p>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">70%</div><div class="label">No usa IA</div></div>
+    <div class="stat-box"><div class="num">20%</div><div class="label">La usa mal</div></div>
+    <div class="stat-box"><div class="num">10%</div><div class="label">La usa bien</div></div>
+  </div>
+
+  <h3>Los 3 perfiles del abogado español ante la IA</h3>
+
+  <h4>Perfil 1 · El escéptico</h4>
+  <p>Representa al 70% de los abogados. Característica principal: <strong>no ha probado herramientas de IA generativa</strong> de forma sistemática. Frase típica: <em>"yo siempre he trabajado así, no necesito esos inventos"</em>.</p>
+  <p>Suele tener entre 50 y 70 años, despacho consolidado, cartera de clientes estable. Riesgo principal: en 24-36 meses pasará de líder a desfasado. Sus juniors saldrán a otros despachos.</p>
+
+  <h4>Perfil 2 · El usuario salvaje</h4>
+  <p>Representa al 20%. <strong>Usa ChatGPT (versión gratuita) sin protocolo, sin formación, sin compliance</strong>. Frase típica: <em>"Lo uso para todo, redacta mejor que yo"</em>.</p>
+  <p>Suele tener entre 25 y 45 años. Riesgos críticos:</p>
+  <ul>
+    <li>Mete información confidencial de clientes en herramientas públicas</li>
+    <li>Usa textos con alucinaciones (jurisprudencia inventada, artículos inexistentes)</li>
+    <li>Vulnera secreto profesional sin saberlo</li>
+    <li>Genera escritos procesales con riesgo reputacional</li>
+  </ul>
+  <div class="callout callout-warning">
+    <strong>⚠️ Caso real (anonimizado)</strong>
+    Despacho mediano de Madrid, mayo 2025: un asociado pega 30 páginas de contrato con nombre del cliente, importes y cláusulas confidenciales en ChatGPT gratuito para "resumirlo". Esa información se incorpora al entrenamiento del modelo. Riesgo de fuga: real. Demanda potencial del cliente: 6 cifras.
+  </div>
+
+  <div class="chapter-mark">PARTE 1 · DIAGNÓSTICO</div>
+</div>
+
+<div class="page">
+  <h4>Perfil 3 · El usuario profesional</h4>
+  <p>Representa al 10%. <strong>Usa IA con protocolo, herramientas adecuadas, formación específica</strong>. Frase típica: <em>"He multiplicado mi productividad por 4 sin sacrificar calidad"</em>.</p>
+  <p>Características:</p>
+  <ul>
+    <li>Versiones de pago con cláusulas de privacidad (ChatGPT Team/Enterprise, Claude Pro, Gemini Workspace)</li>
+    <li>Herramientas jurídicas específicas (Vincent vLex, Lefebvre IA, Aranzadi)</li>
+    <li>Protocolos internos de uso</li>
+    <li>Formación continua personal y de equipo</li>
+    <li>Auditoría periódica de outputs</li>
+  </ul>
+
+  <h3>Test rápido de autodiagnóstico</h3>
+  <p>Responde sí o no a las siguientes preguntas. Cuenta tus respuestas afirmativas:</p>
+
+  <ol style="margin:5mm 0 5mm 8mm;font-size:10pt">
+    <li>¿Usas IA al menos una vez por semana en tu trabajo?</li>
+    <li>¿Tienes una cuenta de pago en al menos una herramienta IA?</li>
+    <li>¿Conoces el modo "no entrenamiento" o "proyectos privados"?</li>
+    <li>¿Tu despacho tiene un protocolo escrito de uso de IA?</li>
+    <li>¿Has hecho formación específica de IA Legal en los últimos 12 meses?</li>
+    <li>¿Usas IA para investigación jurídica con verificación posterior?</li>
+    <li>¿Sabes qué es una "alucinación" y cómo detectarla?</li>
+    <li>¿Conoces el AI Act y cómo te afecta?</li>
+    <li>¿Tienes un asistente IA configurado para tu área de práctica?</li>
+    <li>¿Has automatizado al menos un flujo de trabajo recurrente?</li>
+  </ol>
+
+  <table>
+    <thead><tr><th>Resultado</th><th>Diagnóstico</th><th>Recomendación</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0-3 sí</strong></td><td>Escéptico</td><td>Empieza por la Parte 2 e instala 2 herramientas hoy mismo</td></tr>
+      <tr><td><strong>4-6 sí</strong></td><td>Usuario salvaje</td><td>Atiende con urgencia la Parte 6 (compliance) y la Parte 4 (framework)</td></tr>
+      <tr><td><strong>7-8 sí</strong></td><td>Avanzado</td><td>Pasa a la Parte 5 y replica el modelo en tu equipo</td></tr>
+      <tr><td><strong>9-10 sí</strong></td><td>Profesional</td><td>Estás en el 10%. Te interesa la formación in-company para escalar</td></tr>
+    </tbody>
+  </table>
+
+  <h3>El coste de no actuar</h3>
+  <p>El abogado que en 2026 no integre IA en su práctica diaria sufrirá tres consecuencias inevitables:</p>
+
+  <ol>
+    <li><strong>Productividad</strong>. Los competidores entregarán dictámenes, demandas y contratos en una fracción del tiempo. Y con la misma calidad o mayor.</li>
+    <li><strong>Honorarios</strong>. Los clientes empresariales (sobre todo los corporativos) compararán costes hora-resultado. Quien tarde 8 horas en lo que otro hace en 2 perderá clientes.</li>
+    <li><strong>Talento</strong>. Los juniors mejor formados elegirán despachos modernos. La fuga de talento jurídico a entornos legaltech se está acelerando.</li>
+  </ol>
+
+  <div class="callout callout-success">
+    <strong>✅ La buena noticia</strong>
+    Estás aquí. Tienes esta guía. Empezar hoy te coloca en una posición de ventaja sobre el 80% del sector. La curva de aprendizaje es dura las primeras 4 semanas y exponencial a partir del mes 2.
+  </div>
+
+  <div class="chapter-mark">PARTE 1 · DIAGNÓSTICO</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 2 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 2</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">25 Herramientas</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"No necesitas todas. Necesitas las correctas para tu práctica.<br>Estas son las que yo uso."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 2 - HERRAMIENTAS GENERALES -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">2.</span>Herramientas</h2>
+  <p class="chapter-subtitle">Las 25 imprescindibles, agrupadas por categoría</p>
+
+  <h3>A · Chatbots generales (modelos fundacionales)</h3>
+  <p>La base de tu stack. Recomiendo combinar al menos dos por sus diferencias.</p>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">1. ChatGPT (OpenAI)</div><span class="tool-tag">Imprescindible</span></div>
+    <p class="tool-desc">El modelo más conocido. La versión Plus/Team incluye GPT-5, "Proyectos" privados (no se entrena con tus datos) y herramientas web. Excelente generalista, redactor y para análisis de documentos largos.</p>
+    <p class="tool-meta">⚠️ NUNCA pegues datos confidenciales en la versión gratuita · Precio Pro: 20-25€/mes · chat.openai.com</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">2. Claude (Anthropic)</div><span class="tool-tag">Recomendado</span></div>
+    <p class="tool-desc">Mi favorito para tareas legales. Mejor razonamiento jurídico, ventana de contexto enorme (puedes pegar 200 páginas de un contrato), y por defecto NO entrena con tus conversaciones (versión Pro/Team). Excelente para dictámenes, redacción procesal y análisis.</p>
+    <p class="tool-meta">Precio: 18-25€/mes · claude.ai</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">3. Gemini (Google)</div><span class="tool-tag">Útil</span></div>
+    <p class="tool-desc">Integrado en Google Workspace (Gmail, Docs, Drive). Si trabajas con G Suite es casi imprescindible. Bueno para resumen de emails y documentos.</p>
+    <p class="tool-meta">Precio: 22€/mes en Workspace Business · gemini.google.com</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">4. Microsoft Copilot</div><span class="tool-tag">Útil</span></div>
+    <p class="tool-desc">Versión integrada en Microsoft 365 (Word, Outlook, Excel). Imprescindible si tu despacho usa Office. Especialmente potente en Word para redacción y revisión.</p>
+    <p class="tool-meta">Precio: 30€/usuario/mes · microsoft.com/copilot</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">5. Perplexity</div><span class="tool-tag">Investigación</span></div>
+    <p class="tool-desc">Buscador con IA que SÍ cita fuentes. Imprescindible para investigación jurídica preliminar. Verifica siempre las fuentes que cita: pueden estar desactualizadas o ser inadecuadas.</p>
+    <p class="tool-meta">Precio: gratis (versión limitada) · 20€/mes Pro · perplexity.ai</p>
+  </div>
+
+  <div class="chapter-mark">PARTE 2 · HERRAMIENTAS</div>
+</div>
+
+<div class="page">
+  <h3>B · Plataformas jurídicas con IA (España)</h3>
+  <p>Lo que diferencia un buen despacho de uno excepcional: el uso combinado de IA generalista + IA jurídica nacional.</p>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">6. vLex Vincent</div><span class="tool-tag">Top jurídica</span></div>
+    <p class="tool-desc">El asistente de IA jurídica con mayor base documental en español. Trabaja sobre legislación, jurisprudencia y doctrina vLex. No alucina cuando se queda en su corpus. Imprescindible para investigación seria.</p>
+    <p class="tool-meta">Precio: incluido en suscripción vLex (varía por usuario) · vlex.es</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">7. Lefebvre IA Asesor</div><span class="tool-tag">Top jurídica</span></div>
+    <p class="tool-desc">El movimiento más fuerte de Lefebvre en 2024-2026. Asistente IA sobre el corpus Lefebvre (Memento Práctico, Doctrina, Jurisprudencia). Excelente para mercantil, fiscal y laboral.</p>
+    <p class="tool-meta">Precio: ampliación de suscripción Lefebvre · lefebvre.es</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">8. Aranzadi La Ley + Iberley IA</div><span class="tool-tag">Establecida</span></div>
+    <p class="tool-desc">Wolters Kluwer ha integrado IA generativa en su plataforma de toda la vida. Su fuerza es el corpus de jurisprudencia. Útil para procesalistas y administrativistas.</p>
+    <p class="tool-meta">Precio: módulo adicional sobre suscripción · wolterskluwer.es</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">9. Tirant Inteligente</div><span class="tool-tag">Editorial</span></div>
+    <p class="tool-desc">La apuesta IA de Tirant lo Blanch. Acceso a su biblioteca con asistente. Especialmente útil si tu base bibliográfica son sus tratados.</p>
+    <p class="tool-meta">Precio: integrado en suscripción Tirant · tirantonline.com</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">10. Sepín IA</div><span class="tool-tag">Especializada</span></div>
+    <p class="tool-desc">Especializada en derecho procesal y modelos de escritos. Tiene un asistente IA enfocado a redacción de demandas y contestaciones.</p>
+    <p class="tool-meta">Precio: módulo sobre suscripción Sepín · sepin.es</p>
+  </div>
+
+  <h3>C · IA jurídica internacional (top tier)</h3>
+  <p>Las que están redefiniendo el sector global. Aún no totalmente adaptadas a España pero útiles para grandes despachos con perfil internacional.</p>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">11. Harvey</div><span class="tool-tag">Big Law</span></div>
+    <p class="tool-desc">Construido sobre OpenAI con personalización jurídica. Lo usan los Magic Circle (Allen & Overy, Linklaters, Clifford Chance). En España: Cuatrecasas, Garrigues, Uría. Coste premium.</p>
+    <p class="tool-meta">Precio: enterprise (4-6 cifras anuales) · harvey.ai</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">12. Spellbook</div><span class="tool-tag">Contratos</span></div>
+    <p class="tool-desc">Contract drafting + revisión integrado en Word. Detecta cláusulas problemáticas, sugiere redactados, compara con benchmarks de la industria.</p>
+    <p class="tool-meta">Precio: 99-249$/usuario/mes · spellbook.legal</p>
+  </div>
+
+  <div class="chapter-mark">PARTE 2 · HERRAMIENTAS</div>
+</div>
+
+<div class="page">
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">13. CoCounsel (Casetext - Thomson Reuters)</div><span class="tool-tag">Investigación</span></div>
+    <p class="tool-desc">Asistente IA jurídico de Thomson Reuters. Investigación, redacción, revisión documental. Adquirido por TR en 2023 por 650M$.</p>
+    <p class="tool-meta">Precio: enterprise · casetext.com</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">14. Leya</div><span class="tool-tag">Europea</span></div>
+    <p class="tool-desc">Startup europea (sueca) en crecimiento. Plataforma all-in-one para despachos. Fuerte presencia en Europa, llegando a España.</p>
+    <p class="tool-meta">Precio: a consultar · leya.law</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">15. Eunomía</div><span class="tool-tag">Legaltech ES</span></div>
+    <p class="tool-desc">Legaltech española en crecimiento. Plataforma de gestión + IA para despachos medianos. Buen encaje cultural y de soporte.</p>
+    <p class="tool-meta">Precio: SaaS mensual a consultar · eunomia.es</p>
+  </div>
+
+  <h3>D · Productividad y reuniones</h3>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">16. Notion AI</div><span class="tool-tag">Gestión</span></div>
+    <p class="tool-desc">Si usas Notion para organizar el despacho, su IA es extraordinaria para resumir, redactar plantillas, organizar conocimiento interno.</p>
+    <p class="tool-meta">Precio: 8-15$/usuario/mes adicional · notion.so</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">17. Otter.ai</div><span class="tool-tag">Transcripción</span></div>
+    <p class="tool-desc">Transcripción automática de reuniones, juicios (donde esté permitido), entrevistas con clientes. Aprende a identificar voces.</p>
+    <p class="tool-meta">Precio: 8-30$/mes · otter.ai</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">18. Fireflies.ai</div><span class="tool-tag">Reuniones</span></div>
+    <p class="tool-desc">Asistente que se une a tus reuniones de Zoom/Teams/Meet. Graba, transcribe, resume y genera tareas. Ahorra horas/semana.</p>
+    <p class="tool-meta">Precio: 0-29$/mes · fireflies.ai</p>
+  </div>
+
+  <h3>E · Documentos y PDFs</h3>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">19. Adobe Acrobat AI Assistant</div><span class="tool-tag">PDFs</span></div>
+    <p class="tool-desc">Resumen, búsqueda inteligente y Q&A sobre PDFs. Excelente para sentencias largas, expedientes administrativos.</p>
+    <p class="tool-meta">Precio: 4-23€/mes · adobe.com</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">20. ChatPDF / PDF.ai</div><span class="tool-tag">Asequible</span></div>
+    <p class="tool-desc">Alternativas low-cost para chatear con PDFs. Útiles para uso ocasional sin compromiso.</p>
+    <p class="tool-meta">Precio: 0-20$/mes · chatpdf.com / pdf.ai</p>
+  </div>
+
+  <div class="chapter-mark">PARTE 2 · HERRAMIENTAS</div>
+</div>
+
+<div class="page">
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">21. NotebookLM (Google)</div><span class="tool-tag">Investigación</span></div>
+    <p class="tool-desc">Subes documentos (sentencias, contratos, doctrina) y Google los procesa para responderte SOLO con esas fuentes. Cero alucinaciones por diseño. Genera podcasts del material.</p>
+    <p class="tool-meta">Precio: gratis · notebooklm.google</p>
+  </div>
+
+  <h3>F · Investigación y análisis</h3>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">22. Elicit / Consensus</div><span class="tool-tag">Académica</span></div>
+    <p class="tool-desc">Buscadores de papers académicos con IA. Útiles para argumentación de fondo en escritos donde la doctrina aporta.</p>
+    <p class="tool-meta">Precio: 0-12$/mes · elicit.com / consensus.app</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">23. Lex Machina</div><span class="tool-tag">Litigation Analytics</span></div>
+    <p class="tool-desc">Predicción de resultados litigación basada en histórico. Más usado en EE.UU. pero llegando a Europa.</p>
+    <p class="tool-meta">Precio: enterprise · lexmachina.com</p>
+  </div>
+
+  <h3>G · Automatización</h3>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">24. n8n</div><span class="tool-tag">Workflows</span></div>
+    <p class="tool-desc">Automatización tipo Zapier pero con IA integrada. Conecta tu IA favorita con email, calendario, CRM, expedientes. Permite crear flujos avanzados.</p>
+    <p class="tool-meta">Precio: gratis self-hosted · 24-50€/mes cloud · n8n.io</p>
+  </div>
+
+  <div class="tool">
+    <div class="tool-header"><div class="tool-name">25. Make / Zapier</div><span class="tool-tag">Workflows</span></div>
+    <p class="tool-desc">Alternativas más visuales y accesibles. Make es más potente; Zapier más fácil. Ambas con IA integrada para crear automatizaciones sin código.</p>
+    <p class="tool-meta">Precio: 0-20€/mes según volumen · make.com / zapier.com</p>
+  </div>
+
+  <h3 style="margin-top:8mm">Stack KSRO recomendado por perfil</h3>
+
+  <table>
+    <thead><tr><th>Perfil</th><th>Stack mínimo</th><th>Coste/mes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Abogado individual</strong></td><td>Claude Pro + ChatGPT Plus + NotebookLM + Perplexity Pro</td><td>~70€</td></tr>
+      <tr><td><strong>Despacho 5-10 abogados</strong></td><td>Claude Team + Copilot 365 + vLex Vincent + Otter</td><td>~250€/usuario</td></tr>
+      <tr><td><strong>Despacho mediano</strong></td><td>Lo anterior + Lefebvre IA + Spellbook + Notion AI</td><td>~400€/usuario</td></tr>
+      <tr><td><strong>Big Law</strong></td><td>Harvey o CoCounsel + stack completo</td><td>Enterprise</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-success">
+    <strong>✅ Mi recomendación honesta para empezar</strong>
+    No te compres todas. Empieza por <strong>Claude Pro (18€) + ChatGPT Plus (20€) + NotebookLM (gratis)</strong>. Con 38€/mes cubres el 80% de los casos de uso jurídicos. Cuando domines estas tres, añade vLex Vincent o Lefebvre IA.
+  </div>
+
+  <div class="chapter-mark">PARTE 2 · HERRAMIENTAS</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 3 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 3</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">50 Prompts</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"Un buen prompt vale más que diez horas de trabajo manual.<br>Estos son los míos."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 3 - PROMPTS · MERCANTIL -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">3.</span>Prompts</h2>
+  <p class="chapter-subtitle">10 por área del Derecho · Listos para copiar y pegar</p>
+
+  <div class="callout">
+    <strong>📋 Cómo usar estos prompts</strong>
+    <ol style="margin-top:2mm;margin-left:5mm">
+      <li>Copia el texto del recuadro negro</li>
+      <li>Pégalo en Claude/ChatGPT (versión PRO o TEAM, NUNCA gratis para datos sensibles)</li>
+      <li>Sustituye los corchetes <code>[CONTENIDO]</code> con tu información</li>
+      <li>Revisa siempre el output antes de usar nada</li>
+    </ol>
+  </div>
+
+  <h3>A · Derecho Mercantil</h3>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 01 · MERCANTIL</div>
+    <div class="prompt-title">Análisis de pacto de socios</div>
+    <div class="prompt-text">Actúa como abogado mercantilista español con 20 años de experiencia. Analiza el siguiente pacto de socios e identifica:
+1. Cláusulas potencialmente abusivas o desproporcionadas
+2. Vacíos sobre derecho de salida (drag-along, tag-along, ROFR)
+3. Mecanismos de resolución de conflictos
+4. Consistencia con la LSC y jurisprudencia del TS
+5. Recomendaciones de mejora con redactado alternativo
+
+Devuélvelo en formato tabla: Cláusula | Riesgo | Recomendación.
+
+Pacto a analizar:
+[PEGAR TEXTO]</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 02 · MERCANTIL</div>
+    <div class="prompt-title">Due diligence preliminar</div>
+    <div class="prompt-text">Eres responsable de due diligence en una operación de M&A. He subido la documentación corporativa de la sociedad target (estatutos, libro de socios, actas, contratos relevantes).
+
+Identifica los 10 riesgos más significativos para el comprador, ordenados por gravedad. Para cada uno:
+- Descripción del riesgo
+- Impacto económico estimado
+- Probabilidad (Alta/Media/Baja)
+- Mitigación propuesta (manifestaciones, garantías, retención de precio)
+
+Termina con una recomendación de seguir/no seguir/condicionar la operación.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 03 · MERCANTIL</div>
+    <div class="prompt-title">Junta general · convocatoria y orden del día</div>
+    <div class="prompt-text">Redacta la convocatoria y orden del día de una junta general extraordinaria con los siguientes acuerdos:
+- [INDICAR ACUERDOS]
+
+Cumple con:
+- Art. 173 LSC (forma de convocatoria)
+- Art. 174 LSC (contenido del anuncio)
+- Estatutos sociales: [PEGAR ART. RELEVANTE]
+
+Incluye además: documentación que se pondrá a disposición de los socios (con base legal), derecho de información (art. 197 LSC) y sus límites.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 04 · MERCANTIL</div>
+    <div class="prompt-title">Análisis de responsabilidad de administradores</div>
+    <div class="prompt-text">Analiza si en la siguiente situación se daría responsabilidad ex art. 367 LSC (deudas posteriores a causa de disolución) y/o acción individual ex art. 241 LSC.
+
+Hechos:
+[DESCRIBIR HECHOS]
+
+Estructura tu análisis en:
+1. Identificación de la causa de disolución (art. 363 LSC)
+2. Momento en que el administrador conoció o debió conocerla
+3. Plazo de los 2 meses (art. 365 LSC)
+4. Deudas posteriores: cuantía y acreedores
+5. Existencia de daño y nexo causal (para acción individual)
+6. Aportaciones de la jurisprudencia reciente del TS
+
+Cita sentencias relevantes con su número de recurso. NO inventes citas.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 05 · MERCANTIL</div>
+    <div class="prompt-title">Compraventa de participaciones · cláusulas críticas</div>
+    <div class="prompt-text">Voy a redactar un SPA (Sale and Purchase Agreement) de participaciones de SL.
+
+Datos de la operación:
+- Tipo: 100% participaciones
+- Precio: [IMPORTE]
+- Pago: [%al cierre / %retenido / %earnout]
+- Sector: [SECTOR]
+- Riesgos identificados en DD: [LISTAR]
+
+Genera:
+1. Estructura recomendada del contrato (índice)
+2. Top 10 cláusulas críticas para el vendedor
+3. Top 10 cláusulas críticas para el comprador
+4. Manifestaciones y garantías clave para este sector
+5. Mecanismos de retención e indemnización
+6. Sugerencias de redactado para 3 cláusulas más complejas</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 06 · MERCANTIL</div>
+    <div class="prompt-title">Contrato de joint venture</div>
+    <div class="prompt-text">Redacta una propuesta de contrato de joint venture societario entre dos partes con los siguientes parámetros:
+- Forma: SL participada al 50/50
+- Capital: [IMPORTE]
+- Aportaciones: A aporta [X], B aporta [Y]
+- Gobierno: consejo de 4 miembros (2/2)
+- Mayorías reforzadas para asuntos críticos
+- Período mínimo de 3 años
+
+Incluye: deadlock provisions, opciones de venta forzosa, exclusividad, non-compete y mecanismo de salida ordenada. Estructura en 12-15 cláusulas. Aplica derecho español.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 07 · MERCANTIL</div>
+    <div class="prompt-title">Operación intragrupo · análisis fiscal+mercantil</div>
+    <div class="prompt-text">Una sociedad matriz quiere realizar la siguiente operación intragrupo con su filial 100%:
+[DESCRIBIR OPERACIÓN]
+
+Analiza:
+1. Implicaciones mercantiles (operaciones vinculadas, conflicto de interés del administrador, art. 229-231 LSC)
+2. Implicaciones fiscales básicas (precio mercado, art. 18 LIS, documentación)
+3. Aspectos formales: información en memoria, aprobación junta, dispensa
+4. Riesgos en caso de inspección fiscal o concurso futuro
+5. Recomendación de estructuración óptima
+
+Termina con un checklist de pasos formales por orden.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 08 · MERCANTIL</div>
+    <div class="prompt-title">Demanda de impugnación de acuerdos sociales</div>
+    <div class="prompt-text">Redacta el esqueleto de demanda de impugnación de acuerdo social bajo art. 204 LSC.
+
+Datos:
+- Sociedad: [SL/SA]
+- Acuerdo impugnado: [DESCRIBIR]
+- Causa: contrario a la ley/estatutos/interés social/abuso de la mayoría
+- Demandante: socio con [X%] del capital
+- Plazo: [días desde el acuerdo]
+
+Estructura: hechos, fundamentos jurídicos (orden lógico de menor a mayor especificidad), petitum claro y costas. Anexa jurisprudencia clave (cita con nº recurso, sin inventar). Tono formal procesal español.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 09 · MERCANTIL</div>
+    <div class="prompt-title">Reorganización societaria · pros y contras</div>
+    <div class="prompt-text">Quiero comparar 3 alternativas para reorganizar mi grupo:
+A) Fusión por absorción
+B) Escisión parcial con creación de holding
+C) Aportación no dineraria a sociedad nueva
+
+Para cada una:
+1. Procedimiento (plazos y formalidades)
+2. Requisitos de información a socios
+3. Tributación directa (IS, IRPF, ITP-AJD)
+4. Tratamiento de minoritarios (oposición, derecho de información)
+5. Coste estimado profesional+notarial+registral
+6. Pros y contras estratégicos
+
+Genera tabla comparativa final con scoring 1-5 por criterio.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 10 · MERCANTIL</div>
+    <div class="prompt-title">Plantilla de informe trimestral mercantil al cliente</div>
+    <div class="prompt-text">Genera la plantilla de un informe trimestral que enviaré a cliente corporativo con:
+- Resumen ejecutivo (1 página, lenguaje no técnico)
+- Estado de los asuntos en curso (tabla)
+- Novedades normativas relevantes para su sector [INDICAR SECTOR]
+- Riesgos identificados y mitigaciones propuestas
+- Próximos hitos (próximos 90 días)
+- Anexo: facturación y horas dedicadas
+
+Tono: claro, profesional, resolutivo. Visual. Apto para enviar a un CEO no jurista.</div>
+  </div>
+
+  <h3>B · Derecho Concursal</h3>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 11 · CONCURSAL</div>
+    <div class="prompt-title">Análisis previo de viabilidad concursal</div>
+    <div class="prompt-text">Eres administrador concursal con 20 años de experiencia. Analiza la siguiente situación de una mercantil:
+
+[DATOS BÁSICOS DE LA EMPRESA]
+
+Determina:
+1. Tipo de insolvencia probable (actual / inminente / probable)
+2. Vías recomendables (plan de reestructuración, concurso, preconcurso)
+3. Plazo legal para solicitarlo (art. 5 TRLC) y consecuencias del retraso
+4. Información mínima para la solicitud (art. 7 TRLC)
+5. Riesgos específicos para administradores
+6. Calendario realista de actuaciones próximas 3 meses
+
+Marco normativo: TRLC actualizado tras reforma 2022 y posteriores.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 12 · CONCURSAL</div>
+    <div class="prompt-title">Plan de reestructuración (Libro II TRLC)</div>
+    <div class="prompt-text">Diseña un esquema de plan de reestructuración para una empresa con:
+- Pasivo total: [X]
+- Tipos de acreedores: financiero ([%]), comercial ([%]), público ([%])
+- EBITDA actual: [X]
+- EBITDA proyectado a 3 años: [X]
+
+Plantéame:
+1. Clases de créditos a formar (criterios objetivos)
+2. Estrategia de votación (mayorías necesarias)
+3. Tratamiento del crédito público
+4. Tratamiento del socio único/mayoritario
+5. Posibles "arrastres" (cross-class cramdown)
+6. Calendario tentativo (homologación, ejecución, control posterior)
+7. Riesgos de impugnación
+
+Cita los artículos del Libro II TRLC aplicables.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 13 · CONCURSAL</div>
+    <div class="prompt-title">Informe del administrador concursal · estructura</div>
+    <div class="prompt-text">Redacta la estructura del informe del administrador concursal del art. 290 TRLC, adaptado a:
+
+Concurso de: [PERSONA FÍSICA / JURÍDICA]
+Tipo de procedimiento: [GENERAL / ABREVIADO]
+Especialidades: [INDICAR SI EXISTEN]
+
+Incluye:
+1. Identificación del concursado y antecedentes
+2. Inventario provisional con criterios de valoración
+3. Lista provisional de acreedores con clasificación
+4. Calificación previa (sin perjuicio de art. 442 TRLC)
+5. Análisis de viabilidad
+6. Propuesta de solución (convenio o liquidación)
+
+Después genera 5 plantillas de notificaciones tipo a acreedores.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 14 · CONCURSAL</div>
+    <div class="prompt-title">Acción rescisoria concursal · análisis de viabilidad</div>
+    <div class="prompt-text">Analiza si una determinada operación es rescindible bajo arts. 226-238 TRLC.
+
+Operación a analizar:
+[DESCRIBIR: tipo de acto, partes, importe, fecha, contexto]
+
+Estructura tu análisis:
+1. ¿Está dentro del periodo sospechoso (2 años antes de declaración concursal)?
+2. ¿Es onerosa o gratuita?
+3. ¿Se realizó con persona especialmente relacionada (art. 283)?
+4. Análisis del perjuicio patrimonial
+5. Presunciones aplicables (iuris tantum / iuris et de iure)
+6. Probabilidad de éxito de la acción
+7. Defensa probable de la contraparte
+8. Recomendación: ejercitar / no ejercitar / negociar
+
+Cita jurisprudencia reciente del TS y AAPP relevantes (sin inventar).</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 15 · CONCURSAL</div>
+    <div class="prompt-title">Comunicación a acreedores · plantilla</div>
+    <div class="prompt-text">Genera plantilla de comunicación inicial a acreedores en concurso voluntario, conforme al art. 254 TRLC y siguientes.
+
+Incluye:
+- Datos del concurso (juzgado, autos, fecha auto)
+- Datos del administrador concursal
+- Plazo para comunicar créditos
+- Forma y medios de comunicación
+- Documentación que debe acompañarse
+- Consecuencias de no comunicar
+- Aviso sobre clasificación provisional
+
+Tono: claro, formal, sin jerga innecesaria. Que sea entendible para un acreedor no profesional. Añade un FAQ con 5 preguntas frecuentes.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 16 · CONCURSAL</div>
+    <div class="prompt-title">Calificación culpable · indicios</div>
+    <div class="prompt-text">Analiza los siguientes hechos para determinar si concurren causas de calificación culpable del concurso (arts. 442-446 TRLC):
+
+Hechos:
+[DESCRIBIR]
+
+Para cada presunción aplicable (art. 443 ó 444):
+1. Subsunción de los hechos
+2. Posible defensa del afectado
+3. Carga de la prueba
+4. Posibles cómplices ex art. 445
+5. Alcance de la condena previsible (inhabilitación + pago de déficit)
+
+Cita la jurisprudencia más reciente del TS sobre el alcance de "haber causado" la insolvencia (no inventes citas).</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 17 · CONCURSAL</div>
+    <div class="prompt-title">Convenio de acreedores · borrador</div>
+    <div class="prompt-text">Diseña un convenio de acreedores con las siguientes características:
+- Quita: [%]
+- Espera: [años]
+- Pagos diferenciados por clase de acreedor: [DESCRIBIR]
+- Compromiso de viabilidad: [PLAN BÁSICO]
+
+Marco: arts. 315 ss. TRLC. Estructura formal:
+1. Antecedentes y datos del concurso
+2. Propuesta económica desglosada por clase
+3. Tratamiento de privilegios (arrastre o no)
+4. Plan de viabilidad esquemático
+5. Garantías de cumplimiento
+6. Causas de incumplimiento
+7. Mecanismos de información a acreedores
+
+Genera además una hoja resumen para acreedores con los puntos clave en lenguaje sencillo.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 18 · CONCURSAL</div>
+    <div class="prompt-title">Segunda oportunidad · solicitud</div>
+    <div class="prompt-text">Persona física no empresaria con la siguiente situación:
+[DATOS BÁSICOS: deudas, ingresos, patrimonio, dependientes]
+
+Analiza:
+1. Cumple los requisitos del art. 487 TRLC (buena fe)?
+2. Vías: exoneración con liquidación / con plan de pagos
+3. Deudas exonerables y no exonerables (art. 489)
+4. Plazo y procedimiento
+5. Documentación necesaria
+6. Estrategia recomendada
+
+Genera además: borrador de demanda + listado de documentos a recabar.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 19 · CONCURSAL</div>
+    <div class="prompt-title">Liquidación · plan</div>
+    <div class="prompt-text">Diseña un plan de liquidación para concurso de empresa con:
+- Activo principal: unidad productiva valorada en [X]
+- Otros activos: [DESCRIBIR]
+- Deudas con privilegio especial: [X]
+- Empleados: [N]
+- Localización: [PROVINCIA]
+
+Incluye:
+1. Reglas de enajenación de la unidad productiva (art. 215 ss.)
+2. Tratamiento de privilegio especial sobre activos
+3. Sucesión de empresa: arts. 222 TRLC y 44 ET
+4. Calendario realista (12-18 meses)
+5. Estimación de coste del proceso
+6. Cálculo aproximado del dividendo final por clase
+
+Cita normativa actualizada. Tono técnico apto para juzgado.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 20 · CONCURSAL</div>
+    <div class="prompt-title">Negociación con acreedor financiero · estrategia</div>
+    <div class="prompt-text">Estoy negociando con [BANCO/FONDO] como acreedor financiero principal en pre-concurso (comunicación art. 583 TRLC).
+
+Mi cliente es: [DESCRIBIR EMPRESA]
+La deuda con este acreedor es: [X] de un total de [Y]
+
+Genera:
+1. Estrategia negociadora (3 escenarios: optimista/realista/pesimista)
+2. Argumentos a mi favor
+3. Argumentos del banco que debo prever
+4. Concesiones que puedo ofrecer (sin perjudicar al resto)
+5. Estructura recomendada del acuerdo
+6. Cláusulas críticas que debo proteger
+7. Plan B si no se llega a acuerdo (plan de reestructuración con cross-cramdown del banco)
+
+Tono: estratégico, realista, con foco en cierre.</div>
+  </div>
+
+  <h3>C · Derecho Procesal</h3>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 21 · PROCESAL</div>
+    <div class="prompt-title">Análisis de viabilidad de un litigio</div>
+    <div class="prompt-text">Cliente potencial me plantea el siguiente litigio:
+[DESCRIBIR HECHOS, DOCUMENTACIÓN DISPONIBLE, IMPORTE, ANTECEDENTES]
+
+Hazme un análisis pre-procesal:
+1. Acción procesal recomendada
+2. Procedimiento y cuantía
+3. Plazo de prescripción/caducidad y estado actual
+4. Probabilidad de éxito (alta/media/baja) con razonamiento
+5. Tiempo estimado de duración (1ª inst. y eventual recurso)
+6. Coste-beneficio (honorarios estimados vs cuantía)
+7. Alternativas extrajudiciales (mediación, arbitraje, transacción)
+8. Recomendación final: tomar el asunto / declinar / condicionar
+
+Incluye preguntas clave para el cliente que necesito hacer antes de aceptar.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 22 · PROCESAL</div>
+    <div class="prompt-title">Esquema de demanda</div>
+    <div class="prompt-text">Genera el esquema completo de una demanda de [TIPO: ordinaria/verbal/monitorio/etc.] con los siguientes elementos:
+
+- Demandante: [DATOS]
+- Demandado: [DATOS]
+- Pretensión: [DESCRIBIR]
+- Cuantía: [IMPORTE]
+- Hechos básicos: [LISTAR]
+
+Estructura:
+1. Encabezado y juzgado competente (con razonamiento)
+2. Hechos (numerados, breves, con remisión a documentos)
+3. Fundamentos jurídicos (procesales y materiales separados)
+4. Diligencias preliminares si proceden
+5. Petitum (claro, congruente)
+6. Cuantía y procedimiento
+7. Otrosíes (probática, costas, ejecutividad)
+8. Listado de documentos numerados
+
+Tono procesal estándar. NO inventes jurisprudencia: si la citas debe ser real.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 23 · PROCESAL</div>
+    <div class="prompt-title">Análisis de sentencia para recurso</div>
+    <div class="prompt-text">Te paso una sentencia [DE 1ª INSTANCIA / AP / TS]. Analiza:
+
+[PEGAR SENTENCIA]
+
+Identifica:
+1. Hechos probados clave
+2. Fundamentos jurídicos
+3. Fallo
+4. Posibles errores in iudicando (de derecho)
+5. Posibles errores in procedendo (procesales)
+6. Motivos de recurso viables (apelación / casación / extraordinario por infracción procesal)
+7. Probabilidad de éxito de cada motivo
+8. Plazo y formalidades
+9. Estrategia procesal recomendada (recurrir / aceptar / negociar)
+
+Si propones recurso, redacta el primer motivo con argumentación sólida y, si aplica, contradicción con jurisprudencia del TS reciente (sin inventar).</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 24 · PROCESAL</div>
+    <div class="prompt-title">Contestación a demanda · estructura</div>
+    <div class="prompt-text">Me han notificado demanda [TIPO]. Adjunto.
+[PEGAR DEMANDA]
+
+Genera:
+1. Identificación de la pretensión exacta del actor
+2. Excepciones procesales potenciales (con base legal)
+3. Hechos a admitir / negar / aclarar (uno por uno)
+4. Fundamentos jurídicos de oposición
+5. Reconvención posible (si procede)
+6. Estrategia probatoria (qué probar y cómo)
+7. Petitum de contestación claro
+8. Estimación de probabilidad de absolución total / parcial
+
+Cita normativa. NO inventes jurisprudencia. Tono procesal formal.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 25 · PROCESAL</div>
+    <div class="prompt-title">Audiencia previa · preparación</div>
+    <div class="prompt-text">Tengo audiencia previa el [FECHA] en juicio ordinario sobre [TEMA].
+
+Documentos del expediente:
+[PEGAR LO ESENCIAL]
+
+Prepárame:
+1. Argumentos para defender mi posición sobre cuestiones procesales (excepciones, control de prueba)
+2. Listado de hechos no controvertidos / controvertidos a fijar
+3. Proposición de prueba óptima (con argumentación sobre pertinencia y utilidad)
+4. Posibles preguntas del juez y respuestas tipo
+5. Argumentos del contrario que debo prever
+6. Posibles vías de transacción si el juez insta
+7. Hoja de ruta minuto a minuto (90 min de audiencia)
+
+Tono claro, ejecutable.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 26 · PROCESAL</div>
+    <div class="prompt-title">Interrogatorio de testigos · preparación</div>
+    <div class="prompt-text">Voy a interrogar a un testigo [PARTE DE / NEUTRAL] en juicio sobre:
+[TEMA + HECHOS A PROBAR / DESPROBAR]
+
+Información del testigo:
+[PERFIL, RELACIÓN CON LAS PARTES, ANTECEDENTES]
+
+Prepara:
+1. Estrategia general (corroborar / desacreditar / acotar)
+2. 15 preguntas en orden estratégico (apertura, núcleo, cierre)
+3. Posibles respuestas problemáticas y cómo redirigir
+4. Preguntas trampa que el contrario podría hacerle
+5. Documentos para cuestionar (si tengo)
+6. Línea roja: lo que no debe salir
+7. Plan B si el testigo se desvía
+
+Reglas: preguntas cerradas en repreguntas, abiertas si me favorece. Sin sugestivas (si soy quien lo propone).</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 27 · PROCESAL</div>
+    <div class="prompt-title">Conclusiones orales · guion</div>
+    <div class="prompt-text">El juicio termina con conclusiones orales. Mi parte: [ACTOR / DEMANDADO].
+Resumen del juicio celebrado:
+[PRUEBA PRACTICADA, INCIDENCIAS, ARGUMENTOS DEL CONTRARIO]
+
+Prepara guion de conclusiones (8-10 min):
+1. Apertura impactante (1 min)
+2. Recordatorio del thema decidendi (30 seg)
+3. Argumentos centrales por orden de fuerza (5-6 min, con remisión a prueba practicada)
+4. Refutación de la tesis contraria (2 min)
+5. Cita jurisprudencial breve y precisa (sin inventar)
+6. Petitum de cierre
+
+Tono: persuasivo, claro, sin tecnicismos innecesarios. Estructura mental que el juez recuerde al deliberar.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 28 · PROCESAL</div>
+    <div class="prompt-title">Medidas cautelares · solicitud</div>
+    <div class="prompt-text">Mi cliente necesita [TIPO DE MEDIDA CAUTELAR] sobre [BIEN/SITUACIÓN].
+
+Hechos:
+[DESCRIBIR]
+
+Genera la solicitud cumpliendo art. 728 LEC:
+1. Periculum in mora: argumentación específica
+2. Fumus boni iuris: prueba documental que lo acredita
+3. Caución: importe propuesto y razonamiento
+4. Proporcionalidad de la medida solicitada
+5. Audiencia previa o sin oír (art. 733)
+
+Estructura formal: hechos, fundamentos, petitum, otrosíes. Cita LEC y jurisprudencia (sin inventar). Tono procesal.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 29 · PROCESAL</div>
+    <div class="prompt-title">Ejecución forzosa · estrategia</div>
+    <div class="prompt-text">Tengo sentencia firme a mi favor por [IMPORTE]. La parte ejecutada es [PERFIL: persona física / mercantil] con domicilio en [LOCALIDAD].
+
+Información disponible sobre patrimonio del ejecutado:
+[LISTAR]
+
+Diseña estrategia de ejecución:
+1. Orden óptimo de actuaciones (manifestación de bienes, embargos, etc.)
+2. Posibles bienes a embargar y orden (cuentas, salarios, inmuebles, vehículos)
+3. Investigación patrimonial (Punto Neutro Judicial, registros)
+4. Tercerías previsibles y cómo neutralizarlas
+5. Calendario realista (3-12 meses)
+6. Costes y honorarios estimados
+7. Probabilidad de cobro real
+
+Si veo que es insolvente, ¿debería pivotar a otras vías (responsabilidad de administradores, acción pauliana, querella por insolvencia punible)?</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 30 · PROCESAL</div>
+    <div class="prompt-title">Resumen de expediente extenso</div>
+    <div class="prompt-text">Eres un asistente que va a resumir un expediente judicial extenso para mí.
+
+[PEGAR DOCUMENTOS / SUBIR PDF]
+
+Genera:
+1. Cronología de hechos (tabla: fecha | hecho | documento de referencia)
+2. Partes involucradas (tabla con rol)
+3. Pretensiones de cada parte
+4. Documentación clave clasificada por relevancia
+5. Cuestiones procesales pendientes
+6. Resumen ejecutivo (1 página) para enseñar al cliente
+
+Tono: claro, neutro, sin opinión. Cita siempre el documento del que extraes cada dato.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <h3>D · Contratos</h3>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 31 · CONTRATOS</div>
+    <div class="prompt-title">Revisión de contrato (red lining)</div>
+    <div class="prompt-text">Revisa el siguiente contrato como si fueras abogado de [LA PARTE QUE REPRESENTAS].
+
+[PEGAR CONTRATO]
+
+Devuelve:
+1. Top 10 cláusulas problemáticas en orden de gravedad
+2. Para cada una: cláusula original + propuesta de redactado alternativo + justificación
+3. Cláusulas faltantes que deberían incluirse
+4. Cláusulas redundantes o ambiguas
+5. Riesgos no cubiertos en el contrato actual
+6. Resumen ejecutivo de 3 puntos para enviar al cliente
+
+Formato: tabla por cada cláusula. Tono profesional con foco en negociación.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 32 · CONTRATOS</div>
+    <div class="prompt-title">Generador de contrato a medida</div>
+    <div class="prompt-text">Genera un contrato de [TIPO: prestación de servicios, distribución, agencia, suministro, etc.] entre:
+
+Parte A: [DATOS]
+Parte B: [DATOS]
+Objeto: [DESCRIPCIÓN]
+Duración: [PLAZO]
+Precio: [IMPORTE Y FORMA DE PAGO]
+Particularidades: [INDICAR]
+
+Aplicable derecho español. Estructura clásica:
+1. Manifestaciones
+2. Cláusulas (15-20)
+3. Disposiciones finales (jurisdicción, ley aplicable, integridad, etc.)
+4. Anexos sugeridos
+
+Incluye: cláusulas de confidencialidad, propiedad intelectual si procede, RGPD, fuerza mayor, terminación, no competencia, no captación, indemnizaciones. Tono: equilibrio entre las partes.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 33 · CONTRATOS</div>
+    <div class="prompt-title">NDA · acuerdo de confidencialidad</div>
+    <div class="prompt-text">Redacta un NDA bilateral entre [A] y [B] para discutir [PROPÓSITO].
+
+Características:
+- Duración del NDA: [X años]
+- Información cubierta: [TIPO]
+- Excepciones a la confidencialidad
+- Penalización por incumplimiento: [IMPORTE / DAÑOS]
+- Foro: [JUZGADOS DE X / ARBITRAJE]
+
+Cláusulas obligatorias:
+1. Definición de información confidencial
+2. Obligaciones de cada parte
+3. Excepciones (información pública, conocida previamente, requerida judicialmente)
+4. Devolución/destrucción al finalizar
+5. Plazo de la obligación
+6. Consecuencias de incumplimiento
+7. Cláusula RGPD si hay datos personales
+8. Ley y jurisdicción
+
+Tono claro. Apto para firma rápida.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 34 · CONTRATOS</div>
+    <div class="prompt-title">Comparativa de contratos (versión X vs versión Y)</div>
+    <div class="prompt-text">Compara estas dos versiones del mismo contrato:
+
+VERSIÓN A:
+[PEGAR]
+
+VERSIÓN B:
+[PEGAR]
+
+Genera:
+1. Tabla con todos los cambios cláusula por cláusula
+2. Análisis de impacto: qué parte se beneficia de cada cambio (A, B o neutral)
+3. Cambios críticos que requieren atención inmediata
+4. Cambios menores (forma, redacción)
+5. Cláusulas eliminadas y añadidas
+6. Recomendación: aceptar / contraproponer / rechazar (con argumento)
+
+Tono: ejecutivo. Ideal para decision-makers.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 35 · CONTRATOS</div>
+    <div class="prompt-title">Cláusula de incumplimiento · análisis</div>
+    <div class="prompt-text">Mi cliente cree que [LA OTRA PARTE] ha incumplido el siguiente contrato:
+
+[PEGAR CONTRATO]
+
+Hechos del incumplimiento:
+[DESCRIBIR]
+
+Analiza:
+1. ¿Hay incumplimiento contractual? Argumentación
+2. ¿Es esencial o accesorio? (relevante para resolución ex art. 1124 CC)
+3. Cláusulas contractuales aplicables (penal, gracia, requerimiento previo)
+4. ¿Es necesario requerimiento previo? Forma y contenido
+5. Posibles defensas del incumplidor
+6. Daños indemnizables (art. 1106 CC, lucro cesante, daño emergente)
+7. Estrategia: requerimiento → resolución → demanda
+8. Importe potencial de la indemnización con razonamiento
+
+Cita CC y jurisprudencia (sin inventar).</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 36 · CONTRATOS</div>
+    <div class="prompt-title">Contrato de prestación de servicios profesionales</div>
+    <div class="prompt-text">Redacta contrato entre profesional autónomo y empresa para prestación de servicios de [DESCRIBIR].
+
+Datos:
+- Profesional: [PERFIL]
+- Cliente: [EMPRESA]
+- Importe: [HONORARIOS Y FORMA]
+- Duración: [PLAZO]
+- Régimen: [AUTÓNOMO PURO / FACTURACIÓN MENSUAL]
+
+Incluye obligatoriamente:
+1. Descripción de servicios concreta
+2. Forma de pago + facturación + retenciones
+3. Confidencialidad
+4. Propiedad intelectual de los entregables
+5. No exclusividad / exclusividad
+6. RGPD si aplica
+7. Causas de terminación
+8. Aviso especial de no laboralidad (art. 1.3 ET): no relación laboral
+
+Cláusula clave: límite de responsabilidad y subcontratación.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 37 · CONTRATOS</div>
+    <div class="prompt-title">Contrato distribución exclusiva</div>
+    <div class="prompt-text">Genera contrato de distribución en exclusiva con:
+- Proveedor: [DATOS]
+- Distribuidor: [DATOS]
+- Territorio: [GEOGRAFÍA]
+- Productos: [DESCRIBIR]
+- Plazo: [AÑOS]
+- Mínimos de compra anual: [Y]
+
+Cumple con:
+1. Reglamento UE 2022/720 (acuerdos verticales)
+2. Cláusulas de exclusividad y no-competencia compatibles
+3. Tratamiento de fin de relación
+4. Indemnización por clientela (jurisprudencia TS sobre aplicación analógica del art. 28 LCA a distribuidores)
+5. Restricciones territoriales y a clientes (qué se permite y qué no)
+
+Genera 18-22 cláusulas. Tono profesional con foco en blindaje.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 38 · CONTRATOS</div>
+    <div class="prompt-title">Términos y condiciones de servicio digital</div>
+    <div class="prompt-text">Genera Términos y Condiciones para una plataforma digital con las siguientes características:
+[DESCRIBIR PLATAFORMA, TIPO DE USUARIOS, MONETIZACIÓN]
+
+Cumplimiento normativo:
+- LSSI-CE
+- Ley General de Defensa de Consumidores (RDL 1/2007)
+- RGPD + LOPDGDD
+- Directiva 2019/770 (contenidos digitales)
+- AI Act si la plataforma usa IA
+
+Estructura:
+1. Identificación del prestador
+2. Objeto y aceptación
+3. Registro y cuenta de usuario
+4. Obligaciones del usuario
+5. Propiedad intelectual
+6. Política de uso aceptable
+7. Limitación de responsabilidad
+8. Política de privacidad (link)
+9. Modificaciones
+10. Resolución de conflictos (incluyendo plataforma ODR europea)
+
+Tono accesible al usuario medio. Sin trampas.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 39 · CONTRATOS</div>
+    <div class="prompt-title">Contrato laboral con cláusulas críticas</div>
+    <div class="prompt-text">Redacta contrato laboral [INDEFINIDO / TEMPORAL] con las siguientes características:
+- Empresa: [DATOS]
+- Trabajador: [PERFIL Y CATEGORÍA]
+- Salario: [IMPORTE Y ESTRUCTURA: fijo + variable]
+- Centro de trabajo: [UBICACIÓN / TELETRABAJO]
+- Convenio aplicable: [INDICAR]
+- Particularidades: [DIRECTIVO / ALTA DIRECCIÓN / PERSONAL DE I+D / ETC.]
+
+Incluye:
+1. Estipulaciones legales obligatorias (ET y convenio)
+2. Pacto de exclusividad/dedicación plena
+3. Pacto de no competencia post-contractual (art. 21.2 ET)
+4. Pacto de permanencia si procede (art. 21.4 ET)
+5. Confidencialidad
+6. Propiedad intelectual / industrial sobre obras del trabajador
+7. RGPD: información sobre tratamiento
+8. Política de uso de medios informáticos
+
+Tono profesional. Identifica posibles riesgos de nulidad de cláusulas.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 40 · CONTRATOS</div>
+    <div class="prompt-title">Carta de despido objetivo</div>
+    <div class="prompt-text">Redacta carta de despido por causas objetivas (art. 52 ET).
+
+Datos:
+- Causa: [económica / técnica / organizativa / productiva / faltas asistencia / ineptitud]
+- Empresa: [DATOS]
+- Trabajador: [DATOS]
+- Antigüedad: [AÑOS]
+- Salario: [IMPORTE]
+- Datos económicos de la causa: [SI APLICA]
+
+Cumple requisitos formales art. 53.1 ET:
+1. Comunicación escrita expresando la causa
+2. Puesta a disposición simultánea de indemnización (20 días/año, máx 12 meses)
+3. Preaviso 15 días o pago sustitutorio
+4. Entrega copia a representantes de trabajadores
+
+Tono formal. Lenguaje preciso (la fundamentación de la causa es clave para evitar nulidad/improcedencia).</div>
+  </div>
+
+  <h3>E · Compliance, RGPD y AI Act</h3>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 41 · COMPLIANCE</div>
+    <div class="prompt-title">Análisis de riesgos AI Act</div>
+    <div class="prompt-text">Mi empresa quiere desarrollar / usar el siguiente sistema de IA:
+[DESCRIBIR FUNCIONAMIENTO, FINALIDAD, USUARIOS]
+
+Analiza bajo el Reglamento UE 2024/1689 (AI Act):
+1. Categorización del riesgo (inaceptable / alto / limitado / mínimo)
+2. Si es de alto riesgo: obligaciones de los Anexos I-IV
+3. Si es de riesgo limitado: obligaciones de transparencia
+4. Rol de mi empresa: proveedor / responsable del despliegue / importador / distribuidor
+5. Documentación obligatoria (evaluación de conformidad, CE, registro)
+6. Calendario de aplicación (entrada en vigor escalonada 2025-2027)
+7. Sanciones aplicables
+8. Recomendaciones de implementación
+
+Si interactúa con datos personales, conexión con RGPD.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 42 · COMPLIANCE</div>
+    <div class="prompt-title">Cláusula RGPD para contratos comerciales</div>
+    <div class="prompt-text">Genera cláusula RGPD completa para incluir en un contrato entre [empresa A] y [empresa B] donde:
+- Hay tratamiento de datos personales
+- A es responsable / encargado: [INDICAR]
+- Tipo de datos: [DESCRIBIR]
+- Base legal: [INDICAR]
+- Transferencias internacionales: [SI/NO + DESTINO]
+
+Estructura (cumpliendo art. 28 RGPD si encargado):
+1. Identificación de las partes y roles
+2. Objeto del tratamiento
+3. Tipos de datos y categorías de interesados
+4. Duración
+5. Obligaciones del encargado (lista completa art. 28.3)
+6. Subencargados y autorización
+7. Medidas de seguridad
+8. Devolución/destrucción al finalizar
+9. Auditoría
+10. Transferencias internacionales si aplica (CCT)
+11. Notificación de brechas
+
+Tono jurídico riguroso.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 43 · COMPLIANCE</div>
+    <div class="prompt-title">Política de uso interno de IA</div>
+    <div class="prompt-text">Diseña una política interna de uso de IA generativa para un despacho de abogados de [TAMAÑO] abogados.
+
+Cubre:
+1. Herramientas autorizadas (lista blanca)
+2. Herramientas prohibidas
+3. Tipos de información que NUNCA puede entrar en una IA pública
+4. Verificación obligatoria de outputs
+5. Marcado de documentos generados con asistencia IA
+6. Información al cliente: cuándo y cómo
+7. Formación obligatoria y certificación interna
+8. Sanciones por incumplimiento
+9. Revisión periódica y mejora continua
+10. Ámbito territorial y de aplicación
+
+Tono claro pero exigente. Apto para enviar a equipo y firma de adhesión.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 44 · COMPLIANCE</div>
+    <div class="prompt-title">Análisis de riesgo penal (compliance)</div>
+    <div class="prompt-text">Empresa: [DATOS]
+Sector: [INDICAR]
+Tamaño: [N empleados, facturación]
+Operaciones: [DESCRIBIR]
+
+Genera mapa de riesgos penales relevantes ex art. 31 bis CP:
+1. Top 10 delitos más probables en este perfil de empresa
+2. Para cada uno: probabilidad (alta/media/baja) y motivos
+3. Controles existentes vs controles recomendados
+4. Indicios o "red flags" a vigilar
+5. Roles internos responsables de prevención
+6. Recomendación de estructura del modelo (canal denuncias, comité ético, formaciones)
+
+Marco: arts. 31 bis, 31 ter, 31 quater CP + Circular FGE 1/2016. Cita normativa actualizada.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 45 · COMPLIANCE</div>
+    <div class="prompt-title">Manual de denuncias internas (Ley 2/2023)</div>
+    <div class="prompt-text">Diseña el manual interno de canal de denuncias conforme a la Ley 2/2023 de protección del informante.
+
+Empresa: [DATOS, EMPLEADOS, TIPO]
+
+Incluye:
+1. Designación del responsable del Sistema Interno
+2. Canales habilitados (presencial, escrito, telemático)
+3. Garantías de confidencialidad y anonimato
+4. Procedimiento de tramitación (acuse, plazo de 7 días, instrucción, resolución 3 meses prorrogable)
+5. Protección del informante (indemnidad, traslado de la carga de la prueba)
+6. Tratamiento de datos personales (RGPD + LOPDGDD)
+7. Comunicación al canal externo (Autoridad Independiente)
+8. Formación a empleados
+9. Auditoría y registro de incidencias
+
+Tono: institucional, claro, ejecutable.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 46 · COMPLIANCE</div>
+    <div class="prompt-title">Política de privacidad para web</div>
+    <div class="prompt-text">Redacta política de privacidad para [TIPO DE WEB / EMPRESA].
+
+Características:
+- Tratamientos: [LISTAR FINALIDADES]
+- Bases legales: [PARA CADA TRATAMIENTO]
+- Cesiones a terceros: [INDICAR]
+- Transferencias internacionales: [INDICAR]
+- Plazos de conservación: [INDICAR]
+- Cookies: [SI/NO + TIPO]
+
+Cumple:
+- RGPD (todos los apartados art. 13)
+- LOPDGDD (información adicional)
+- Reclamación AEPD
+- Derechos ARCOPOL
+- DPD si procede
+
+Tono: claro, accesible al usuario medio. Apto para integrar en pie de web.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 47 · COMPLIANCE</div>
+    <div class="prompt-title">EIPD (Evaluación de Impacto)</div>
+    <div class="prompt-text">Redacta una EIPD (art. 35 RGPD) para el siguiente tratamiento:
+[DESCRIBIR: finalidad, datos, sujetos, herramientas, transferencias]
+
+Estructura conforme a la Guía AEPD:
+1. Descripción sistemática del tratamiento
+2. Necesidad y proporcionalidad
+3. Identificación y evaluación de riesgos para los derechos
+4. Medidas previstas (técnicas y organizativas)
+5. Riesgo residual
+6. Consulta a interesados (si procede)
+7. Consulta previa a la AEPD (art. 36 RGPD si riesgo residual alto)
+8. Revisión periódica
+
+Si es un tratamiento con IA, integra el AI Act donde corresponda.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 48 · COMPLIANCE</div>
+    <div class="prompt-title">Brecha de seguridad · plan de respuesta</div>
+    <div class="prompt-text">Mi cliente ha sufrido una brecha de seguridad de datos personales:
+
+Hechos:
+- Tipo de incidente: [DESCRIBIR]
+- Datos afectados: [TIPO Y CANTIDAD]
+- Origen probable: [INTERNO / CIBERATAQUE / FUGA]
+- Fecha de detección: [FECHA]
+- Sujetos afectados: [N de personas, perfil]
+
+Plan de respuesta:
+1. Acciones inmediatas (primeras 24h)
+2. Análisis del riesgo para los derechos (alto/medio/bajo)
+3. Notificación a AEPD: ¿obligatoria? ¿plazo? ¿contenido (art. 33 RGPD)?
+4. Notificación a interesados (art. 34): ¿necesaria? ¿forma?
+5. Comunicación pública / a medios: ¿procede?
+6. Mitigación técnica
+7. Documentación interna del incidente
+8. Lecciones aprendidas y mejoras
+
+Riesgo de sanción AEPD si procede. Estrategia para minimizarla.</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 49 · COMPLIANCE</div>
+    <div class="prompt-title">Contrato encargado de tratamiento (DPA)</div>
+    <div class="prompt-text">Genera contrato de encargado de tratamiento (Data Processing Agreement) entre:
+- Responsable: [DATOS]
+- Encargado: [DATOS]
+- Servicio: [DESCRIBIR]
+- Datos tratados: [TIPOS]
+- Subencargados previstos: [LISTAR]
+
+Cumple art. 28 RGPD + Cláusulas Contractuales Tipo (Decisión UE 2021/915 si transferencias internacionales).
+
+Estructura:
+1. Identificación y roles
+2. Objeto y duración
+3. Naturaleza, finalidad y categorías de datos
+4. Obligaciones del encargado (todos los apartados art. 28.3)
+5. Subcontratación (autorización general/específica)
+6. Medidas de seguridad (Anexo II)
+7. Asistencia al responsable (DPO, AEPD, brechas, derechos)
+8. Devolución/destrucción
+9. Auditoría
+10. Transferencias internacionales con CCT
+11. Anexos: descripción del tratamiento, medidas, subencargados
+
+Tono jurídico riguroso. Apto para grandes encargos.</div>
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<div class="page">
+  <div class="prompt">
+    <div class="prompt-num">PROMPT 50 · COMPLIANCE</div>
+    <div class="prompt-title">Auditoría compliance · cuestionario interno</div>
+    <div class="prompt-text">Diseña cuestionario de auto-auditoría compliance para una empresa de [SECTOR] con [N] empleados.
+
+50-60 preguntas organizadas por bloques:
+1. Gobernanza y cultura ética (5)
+2. Modelo de prevención penal (10)
+3. RGPD y privacidad (10)
+4. AI Act y uso de IA (5)
+5. Anti-corrupción y soborno (5)
+6. Competencia y mercado (5)
+7. Laboral, igualdad y prevención de acoso (5)
+8. Fiscal y blanqueo de capitales (5)
+9. Medioambiente (si aplica) (5)
+10. Continuidad de negocio y ciberseguridad (5)
+
+Para cada pregunta: opciones (sí / no / parcialmente / no aplica) + escala 1-5 de madurez.
+
+Genera además: hoja final con scoring agregado y mapa de calor con áreas críticas.</div>
+  </div>
+
+  <div class="callout callout-success" style="margin-top:8mm">
+    <strong>✅ Has llegado al final de los 50 prompts</strong>
+    Estos prompts son el destilado de cientos de horas de uso real en tribunales y despachos. Cópialos, adáptalos, mejóralos para tu práctica. <strong>El prompt perfecto no existe — el prompt útil sí.</strong> El que iteras y usas a diario.
+  </div>
+
+  <div class="chapter-mark">PARTE 3 · PROMPTS</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 4 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 4</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">Framework KSRO</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"Sin método, la IA es un caos.<br>Con método, es tu pasante perfecto."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 4 - FRAMEWORK -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">4.</span>Framework</h2>
+  <p class="chapter-subtitle">Metodología KSRO en 5 pasos para implementar IA con criterio</p>
+
+  <p>Tras 3 años aplicando IA en mi propio despacho y observando a decenas de equipos jurídicos, he destilado el proceso en un framework que llamo <strong>KSRO 5</strong>. Cinco pasos que cualquier abogado o despacho puede ejecutar con disciplina.</p>
+
+  <h3>Visión global del framework</h3>
+
+  <table>
+    <thead><tr><th>Paso</th><th>Nombre</th><th>Pregunta clave</th><th>Tiempo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td>Diagnóstico</td><td>¿En qué punto estoy?</td><td>1 día</td></tr>
+      <tr><td><strong>2</strong></td><td>Stack</td><td>¿Qué herramientas necesito?</td><td>3-7 días</td></tr>
+      <tr><td><strong>3</strong></td><td>Protocolo</td><td>¿Cómo las uso con seguridad?</td><td>5-10 días</td></tr>
+      <tr><td><strong>4</strong></td><td>Rutina</td><td>¿Qué automatizo y cómo?</td><td>continuo</td></tr>
+      <tr><td><strong>5</strong></td><td>Auditoría</td><td>¿Funciona y mejora?</td><td>mensual</td></tr>
+    </tbody>
+  </table>
+
+  <h3>El detalle de los 5 pasos</h3>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>Diagnóstico personal o de despacho</h4>
+      <p>Antes de comprar herramientas o ver tutoriales, dedica 1 día a entender tu punto de partida. Usa el test de la Parte 1 de esta guía. Identifica:</p>
+      <ul>
+        <li>Tu perfil actual (escéptico / salvaje / profesional)</li>
+        <li>Tareas más repetitivas (que son las que más se beneficiarán de la IA)</li>
+        <li>Resistencias del equipo si tienes despacho</li>
+        <li>Recursos disponibles (tiempo, presupuesto)</li>
+      </ul>
+      <p>Sin diagnóstico honesto, te gastas el dinero en herramientas que no necesitas.</p>
+    </div>
+  </div>
+
+  <div class="chapter-mark">PARTE 4 · FRAMEWORK</div>
+</div>
+
+<div class="page">
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>Construcción del stack mínimo viable</h4>
+      <p>Mi recomendación universal de stack inicial:</p>
+      <ul>
+        <li><strong>Claude Pro</strong> (18€/mes) → tu IA principal para análisis y redacción</li>
+        <li><strong>ChatGPT Plus</strong> (20€/mes) → segundo cerebro, comparas outputs y verificas</li>
+        <li><strong>NotebookLM</strong> (gratis) → para investigación con tus PDFs sin riesgo de alucinación</li>
+        <li><strong>Perplexity</strong> (gratis o 20€/mes Pro) → buscador con citas verificables</li>
+      </ul>
+      <p>Total mínimo: 38€/mes. En ese stack vas a operar el 80% de tus casos. Cuando lo domines tras 30-60 días, añades vLex Vincent o Lefebvre IA.</p>
+
+      <p><strong>Error común:</strong> empezar comprando Harvey o Spellbook sin haber dominado las bases. Es como comprar un Bugatti sin saber conducir.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>Protocolo interno de uso (la clave del compliance)</h4>
+      <p>Sin protocolo, todo se rompe. El protocolo KSRO mínimo viable cubre:</p>
+      <ol>
+        <li><strong>Lista blanca de herramientas</strong>: solo se pueden usar las aprobadas</li>
+        <li><strong>Datos prohibidos</strong>: nunca metas DNI, datos clientes, contratos confidenciales en versión gratuita</li>
+        <li><strong>Verificación obligatoria</strong>: todo output IA se verifica antes de usar</li>
+        <li><strong>Marcado de documentos</strong>: indica internamente qué documentos se generaron con asistencia IA</li>
+        <li><strong>Información al cliente</strong>: avisa si usas IA en su asunto (transparencia)</li>
+        <li><strong>Formación continua</strong>: 2h/mes mínimo del equipo</li>
+        <li><strong>Auditoría mensual</strong>: revisa logs y ejemplos aleatorios</li>
+      </ol>
+      <p>El Prompt 43 de esta guía te genera un protocolo completo en 30 segundos. Cópialo, ajústalo, aprueba y firma adhesión del equipo.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>Rutina de uso · automatización progresiva</h4>
+      <p>Identifica las 5-10 tareas más repetitivas que haces semanalmente y diseña una rutina con IA para cada una.</p>
+
+      <p>Ejemplos típicos:</p>
+      <ul>
+        <li>Lunes 9:00 → resumen semanal de boletines (BOE, BOC, jurisprudencia) con NotebookLM</li>
+        <li>Cada email cliente → primer borrador de respuesta con Claude</li>
+        <li>Cada nuevo expediente → ficha resumen con Claude (5 min vs 45 min manual)</li>
+        <li>Cada PDF largo → resumen estructurado con Claude o NotebookLM</li>
+        <li>Antes de juicio → preparación del interrogatorio con Prompt 26</li>
+      </ul>
+
+      <p>Cada rutina automatizada te ahorra 30-90 min/semana. Con 8-10 rutinas, ahorras <strong>una jornada laboral completa por semana</strong>.</p>
+    </div>
+  </div>
+
+  <div class="chapter-mark">PARTE 4 · FRAMEWORK</div>
+</div>
+
+<div class="page">
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h4>Auditoría mensual y mejora continua</h4>
+      <p>El último paso es el que separa al usuario casual del profesional. Una vez al mes, dedica 60 minutos a:</p>
+      <ol>
+        <li>Revisar 5-10 outputs IA aleatorios y evaluar calidad</li>
+        <li>Detectar errores recurrentes o alucinaciones</li>
+        <li>Refinar tus prompts más usados</li>
+        <li>Probar 1-2 herramientas nuevas del mercado</li>
+        <li>Revisar normativa: ¿cambios en AI Act, AEPD, jurisprudencia?</li>
+        <li>Actualizar tu protocolo si hace falta</li>
+        <li>Compartir aprendizajes con tu equipo</li>
+      </ol>
+
+      <p>El sector evoluciona cada 3-6 meses de forma significativa. Sin esta auditoría, te quedas obsoleto sin darte cuenta.</p>
+    </div>
+  </div>
+
+  <h3>El prompt perfecto · plantilla CONTEXTO + TAREA + FORMATO</h3>
+
+  <p>Cualquier prompt potente sigue esta estructura:</p>
+
+  <div class="callout">
+    <strong>1. CONTEXTO</strong> — Quién soy, qué situación es, qué normativa aplica<br>
+    <strong>2. TAREA</strong> — Qué quiero exactamente que haga (un solo objetivo claro)<br>
+    <strong>3. FORMATO</strong> — Cómo quiero la respuesta (tabla, lista, redactado, esquema, etc.)
+  </div>
+
+  <p>Ejemplo aplicado:</p>
+
+  <div class="prompt">
+    <div class="prompt-title">Plantilla universal KSRO</div>
+    <div class="prompt-text">CONTEXTO: Soy abogado mercantilista español con 15 años de experiencia. Trabajo con un cliente que es una sociedad limitada del sector tecnológico. Aplica derecho español, LSC vigente y jurisprudencia reciente del TS.
+
+TAREA: Analiza el siguiente pacto de socios e identifica las 5 cláusulas más problemáticas para mi cliente, que es socio minoritario al 25%.
+
+[PEGAR PACTO]
+
+FORMATO: Tabla con tres columnas: Cláusula problemática | Riesgo concreto para minoritario | Redactado alternativo propuesto. Después, párrafo de 5 líneas con recomendación general de cómo abordar la negociación.</div>
+  </div>
+
+  <h3>Checklist anti-alucinaciones</h3>
+
+  <p>Antes de usar cualquier output de IA, pasa este checklist:</p>
+
+  <ul class="checklist">
+    <li>¿La cita jurisprudencial existe? Búscala en CENDOJ con su nº de recurso</li>
+    <li>¿El artículo legal citado está actualizado? Verifica en BOE</li>
+    <li>¿Los plazos mencionados son los vigentes?</li>
+    <li>¿El razonamiento jurídico tiene sentido para un profesional?</li>
+    <li>¿Hay información que contradice mis conocimientos previos?</li>
+    <li>¿La conclusión está alineada con la normativa actual?</li>
+    <li>¿Si lo enseñara a un colega senior, lo aprobaría?</li>
+  </ul>
+
+  <p>Si fallas en cualquier punto: vuelve a generar el output con un prompt mejorado o rechaza la respuesta.</p>
+
+  <div class="chapter-mark">PARTE 4 · FRAMEWORK</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 5 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 5</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">Casos reales</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"Tres décadas en tribunales son tres décadas viendo<br>cómo se hace bien y cómo se hace mal."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 5 - CASOS -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">5.</span>Casos</h2>
+  <p class="chapter-subtitle">5 casos anonimizados de despachos que conozco · Lo que sí y lo que no</p>
+
+  <div class="callout-warning callout">
+    <strong>📌 Casos anonimizados</strong>
+    Todos los casos están basados en hechos reales que he conocido en formaciones, asesoramientos o conversaciones profesionales. Datos identificativos modificados.
+  </div>
+
+  <h3>Caso 1 · El despacho que filtró un contrato confidencial</h3>
+
+  <p><strong>Contexto:</strong> Despacho mediano de Madrid, 35 abogados. Un asociado senior de M&A pega 80 páginas del SPA de una operación en curso (cliente fortune 500) en ChatGPT gratuito para "obtener un resumen rápido".</p>
+
+  <p><strong>Qué pasó:</strong> El cliente descubre meses después que el contenido del contrato había sido referenciado en una conversación pública de OpenAI. Investigación interna: el asociado lo había metido en su versión gratuita personal sin saber que las conversaciones podían entrenar el modelo. Daño reputacional: severo. Cliente perdido. Demanda de daños: en curso.</p>
+
+  <p><strong>Aprendizaje:</strong> Sin protocolo y sin formación, el riesgo es real. <strong>Una sola persona descuidada puede tumbar la confianza del cliente</strong>. La inversión en versiones de pago (Team/Enterprise) y formación es seguro de responsabilidad.</p>
+
+  <h3>Caso 2 · El concursalista que ganó 3 años</h3>
+
+  <p><strong>Contexto:</strong> Administrador concursal solo, especializado en pymes andaluzas. Vio limitada su capacidad porque no podía abarcar más de 4 concursos simultáneos.</p>
+
+  <p><strong>Qué hizo:</strong> Implementó una rutina con Claude Pro + NotebookLM:</p>
+  <ul>
+    <li>Toda la documentación del concurso en NotebookLM (no se sale del corpus)</li>
+    <li>Plantillas KSRO para informes (Prompts 13 y 16)</li>
+    <li>Generación de comunicaciones a acreedores semi-automatizada</li>
+    <li>Análisis previo de viabilidad con Prompt 11 antes de aceptar nombramientos</li>
+  </ul>
+
+  <p><strong>Resultado:</strong> En 8 meses pasó de 4 a 12 concursos simultáneos sin contratar a nadie. Facturación x2,5. Calidad mantenida (los outputs IA siempre revisados por él). Hoy contrata 2 paralegales para escalar más.</p>
+
+  <p><strong>Aprendizaje:</strong> La IA no sustituye al criterio profesional, lo <strong>multiplica</strong>. El factor que más impactó fue el <strong>protocolo</strong>: lo aplicaba con disciplina diaria.</p>
+
+  <div class="chapter-mark">PARTE 5 · CASOS</div>
+</div>
+
+<div class="page">
+  <h3>Caso 3 · La socia que perdió un juicio por una cita inventada</h3>
+
+  <p><strong>Contexto:</strong> Despacho boutique de litigación civil, 8 abogados. Una socia presenta recurso de apelación citando 3 sentencias del TS que respaldan su tesis.</p>
+
+  <p><strong>Qué pasó:</strong> Las 3 sentencias eran <strong>alucinaciones de ChatGPT</strong>. Citaba números de recurso que no existían y argumentos que el TS jamás había sostenido. La AP de la jurisdicción competente lo detectó (los letrados de la sala leen las sentencias citadas). Resultado:</p>
+  <ul>
+    <li>Recurso desestimado</li>
+    <li>Imposición de costas</li>
+    <li>Nota informal del juez al colegio</li>
+    <li>Cliente furioso</li>
+    <li>Daño reputacional interno</li>
+  </ul>
+
+  <p><strong>Aprendizaje:</strong> <strong>NUNCA cites jurisprudencia generada por IA sin verificarla</strong> en CENDOJ o el repertorio oficial. Tarda 2 minutos verificar. Tarda años recuperar la reputación. El Prompt incluye en sus instrucciones siempre: "NO inventes citas".</p>
+
+  <h3>Caso 4 · El despacho mercantil que multiplicó por 3 los dictámenes</h3>
+
+  <p><strong>Contexto:</strong> Despacho mercantil mediano, 18 abogados, sede en Bilbao. El cuello de botella era los dictámenes complejos (M&A, reestructuraciones): tardaban 15-25 horas cada uno.</p>
+
+  <p><strong>Qué hizo:</strong> Diseñó un proceso en 4 pasos:</p>
+  <ol>
+    <li>Subida del expediente a NotebookLM (privado del despacho)</li>
+    <li>Generación del esqueleto con Prompt KSRO 02 adaptado</li>
+    <li>Investigación complementaria con vLex Vincent</li>
+    <li>Revisión humana por socio (60-80% del tiempo restante)</li>
+  </ol>
+
+  <p><strong>Resultado:</strong> Dictámenes que tardaban 20h ahora tardan 6h. Pueden producir 3 veces más con la misma plantilla. Calidad: <strong>mejor</strong> según valoración de clientes (más estructurados, mejor citados).</p>
+
+  <p><strong>Aprendizaje:</strong> El reparto óptimo es <strong>IA = 30-40% del trabajo + Profesional = 60-70%</strong>. El abogado se concentra en lo que aporta valor único: criterio, estrategia, relación cliente.</p>
+
+  <h3>Caso 5 · El abogado solo que se posicionó en LinkedIn con IA</h3>
+
+  <p><strong>Contexto:</strong> Abogado individual de Sevilla, 38 años, especializado en propiedad horizontal. Sin marca personal, captación 100% por boca a boca.</p>
+
+  <p><strong>Qué hizo:</strong> Diseñó una rutina de 3 horas semanales:</p>
+  <ul>
+    <li>Lunes: revisión de novedades en su área con Perplexity + NotebookLM</li>
+    <li>Martes: redacción de 1 post LinkedIn con Claude (estructurado en problema-solución)</li>
+    <li>Miércoles: 1 vídeo corto (script con Claude, grabación con móvil)</li>
+    <li>Jueves: respuesta a 5 comentarios cualificados</li>
+    <li>Viernes: análisis de leads entrantes</li>
+  </ul>
+
+  <p><strong>Resultado:</strong> En 9 meses: 8.000 seguidores cualificados. 35 nuevos clientes via LinkedIn. Facturación x2 con misma carga horaria.</p>
+
+  <p><strong>Aprendizaje:</strong> La IA convierte el <strong>marketing personal</strong> de imposible (no hay tiempo) a sostenible. No se trata de ser un creator, se trata de aparecer con valor de forma constante.</p>
+
+  <div class="chapter-mark">PARTE 5 · CASOS</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 6 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 6</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">Compliance</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"AI Act, RGPD, secreto profesional.<br>Tres regulaciones que no puedes ignorar."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 6 - COMPLIANCE -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">6.</span>Compliance</h2>
+  <p class="chapter-subtitle">El marco regulatorio que afecta directamente a tu uso de IA</p>
+
+  <h3>El AI Act (Reglamento UE 2024/1689) en 5 puntos</h3>
+
+  <p>El AI Act es la regulación de IA más exigente del mundo. Entró en vigor en agosto de 2024 con aplicación escalonada. Como abogado debes conocer:</p>
+
+  <h4>1 · Categorización del riesgo</h4>
+  <p>El AI Act clasifica los sistemas de IA en 4 niveles:</p>
+  <table>
+    <thead><tr><th>Nivel</th><th>Ejemplo</th><th>Tratamiento</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Inaceptable</strong></td><td>Scoring social, manipulación subliminal</td><td>Prohibidos</td></tr>
+      <tr><td><strong>Alto</strong></td><td>IA en RRHH, justicia, sanidad</td><td>Obligaciones estrictas</td></tr>
+      <tr><td><strong>Limitado</strong></td><td>Chatbots, deepfakes</td><td>Transparencia</td></tr>
+      <tr><td><strong>Mínimo</strong></td><td>Filtros de spam, videojuegos</td><td>Sin obligaciones específicas</td></tr>
+    </tbody>
+  </table>
+
+  <h4>2 · Aplicación a despachos</h4>
+  <p>Tu despacho probablemente está usando IA de "riesgo limitado" o "mínimo". Pero si vas a desarrollar tu propio sistema (por ejemplo un chatbot que da consejos legales), entrarás en categorías más exigentes.</p>
+
+  <h4>3 · Calendario de aplicación</h4>
+  <ul>
+    <li><strong>Feb 2025:</strong> Prácticas prohibidas + obligaciones de alfabetización</li>
+    <li><strong>Ago 2025:</strong> Sanciones + modelos GPAI (general purpose)</li>
+    <li><strong>Ago 2026:</strong> Sistemas de alto riesgo (Anexo III) + transparencia</li>
+    <li><strong>Ago 2027:</strong> Sistemas de alto riesgo (Anexo II)</li>
+  </ul>
+
+  <h4>4 · Sanciones</h4>
+  <p>Multas de hasta <strong>35 millones de euros o el 7% de la facturación mundial</strong> (lo que sea mayor) por usar prácticas prohibidas. Hasta 15M€ o 3% por incumplir obligaciones de alto riesgo.</p>
+
+  <h4>5 · Obligación de alfabetización (art. 4)</h4>
+  <p>Todos los empleados que usen IA deben recibir <strong>formación adecuada</strong>. Es una obligación legal directa para empresas y despachos. Sí, también para tu despacho. La formación KSRO ayuda a cumplir esto.</p>
+
+  <div class="chapter-mark">PARTE 6 · COMPLIANCE</div>
+</div>
+
+<div class="page">
+  <h3>RGPD aplicado a IA</h3>
+
+  <p>Cada vez que metes datos personales en un sistema IA, hay tratamiento. Eso significa:</p>
+
+  <ol>
+    <li><strong>Base legal</strong>: ¿bajo qué base tratas esos datos? (consentimiento, ejecución contractual, interés legítimo)</li>
+    <li><strong>Información al interesado</strong>: tu cliente debe saber que usas IA si afecta a sus datos</li>
+    <li><strong>Encargados del tratamiento</strong>: la herramienta IA es un encargado y debes tener DPA</li>
+    <li><strong>Transferencias internacionales</strong>: la mayoría de IA es de EEUU, debes cubrirlo con CCT o EU-US DPF</li>
+    <li><strong>Decisiones automatizadas</strong>: art. 22 RGPD prohíbe decisiones únicamente automatizadas con efectos jurídicos</li>
+    <li><strong>EIPD obligatoria</strong> en algunos casos (art. 35)</li>
+  </ol>
+
+  <div class="callout-warning callout">
+    <strong>⚠️ Punto crítico</strong>
+    Si pegas datos personales de un cliente en ChatGPT gratuito, técnicamente has hecho una transferencia internacional sin garantías. Sanción AEPD potencial: <strong>4% de facturación</strong>. La versión Pro/Team con DPA firmado es lo mínimo aceptable.
+  </div>
+
+  <h3>Secreto profesional · Art. 542.3 LOPJ y Estatuto General Abogacía</h3>
+
+  <p>El abogado tiene obligación de secreto profesional <strong>absoluto</strong>. Filtrar información del cliente —incluso por error o sin intención— puede:</p>
+  <ul>
+    <li>Constituir infracción deontológica grave (sanción colegial)</li>
+    <li>Generar responsabilidad civil profesional (art. 1902 CC)</li>
+    <li>En casos extremos, responsabilidad penal (art. 199.2 CP, descubrimiento y revelación de secretos)</li>
+  </ul>
+
+  <p>Aplicado a IA:</p>
+  <ul>
+    <li>Si una herramienta gratuita reutiliza tus inputs para entrenamiento → estás divulgando secreto profesional</li>
+    <li>Si un empleado tuyo lo hace sin que tú lo sepas → tú respondes (art. 1903 CC)</li>
+    <li>Si un cliente te demanda por una filtración → tienes responsabilidad presunta</li>
+  </ul>
+
+  <h3>El protocolo mínimo · 7 reglas KSRO</h3>
+
+  <p>Si solo recuerdas 7 cosas de toda esta guía, que sean estas:</p>
+
+  <ol>
+    <li><strong>Versiones de pago siempre</strong>. Nunca gratis para datos sensibles.</li>
+    <li><strong>Activa modo "no entrenamiento"</strong> en todas las herramientas (Settings → Data Controls)</li>
+    <li><strong>Anonimiza antes de subir</strong> cuando sea posible (cambia nombres, importes redondeados)</li>
+    <li><strong>Documenta el uso</strong>. Lleva un registro mínimo de qué herramientas y para qué</li>
+    <li><strong>Verifica todo output</strong> antes de usarlo. Especialmente citas legales.</li>
+    <li><strong>Forma a tu equipo</strong>. La cadena se rompe por el eslabón más débil.</li>
+    <li><strong>Audita mensualmente</strong>. Revisa logs y mejora protocolo.</li>
+  </ol>
+
+  <div class="callout callout-success">
+    <strong>✅ Si cumples estas 7 reglas</strong>
+    Estás en el percentil superior del compliance IA en España. Habrás reducido el 95% del riesgo. Y podrás dormir tranquilo.
+  </div>
+
+  <div class="chapter-mark">PARTE 6 · COMPLIANCE</div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 7 - SEPARADOR -->
+<!-- ========================================== -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0">
+  <div style="text-align:center;padding:0 30mm">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:11pt;letter-spacing:5pt;margin-bottom:8mm">PARTE 7</div>
+    <h2 style="font-family:'Arial Black',sans-serif;color:#fff;font-size:42pt;line-height:1;margin-bottom:10mm;letter-spacing:-1.5pt">Plan 30 días</h2>
+    <p style="font-size:13pt;color:#ccc;font-style:italic;line-height:1.5">"Una guía leída no cambia nada.<br>Una guía aplicada lo cambia todo."</p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- PARTE 7 - PLAN 30 DÍAS -->
+<!-- ========================================== -->
+<div class="page">
+  <h2 class="chapter-title"><span class="num">7.</span>Plan 30 días</h2>
+  <p class="chapter-subtitle">Tu hoja de ruta concreta para implementar IA en tu práctica</p>
+
+  <h3>Semana 1 · Setup y diagnóstico (días 1-7)</h3>
+
+  <ul class="checklist">
+    <li>Día 1: Haz el test de autodiagnóstico (Parte 1). Anota tu perfil.</li>
+    <li>Día 2: Contrata Claude Pro + ChatGPT Plus. Crea cuenta NotebookLM.</li>
+    <li>Día 3: Activa "modo no entrenamiento" en todas las herramientas.</li>
+    <li>Día 4: Lee la Parte 6 (Compliance). Tómate notas.</li>
+    <li>Día 5: Lista las 5 tareas más repetitivas que haces semanalmente.</li>
+    <li>Día 6: Para cada tarea, elige el prompt KSRO más adecuado de la Parte 3.</li>
+    <li>Día 7: Descansa. Reflexiona sobre el plan.</li>
+  </ul>
+
+  <h3>Semana 2 · Práctica intensiva (días 8-14)</h3>
+
+  <ul class="checklist">
+    <li>Día 8: Aplica el primer prompt en un caso real. Mide tiempo ahorrado.</li>
+    <li>Día 9: Aplica el segundo prompt. Mide.</li>
+    <li>Día 10: Aplica el tercer prompt. Mide.</li>
+    <li>Día 11: Aplica el cuarto. Mide.</li>
+    <li>Día 12: Aplica el quinto. Mide.</li>
+    <li>Día 13: Calcula el total de horas ahorradas en la semana.</li>
+    <li>Día 14: Refina los 5 prompts según tu uso real. Adáptalos a tu estilo.</li>
+  </ul>
+
+  <h3>Semana 3 · Protocolo y equipo (días 15-21)</h3>
+
+  <ul class="checklist">
+    <li>Día 15: Genera tu protocolo interno con Prompt 43.</li>
+    <li>Día 16: Adapta el protocolo a tu despacho real.</li>
+    <li>Día 17: Comparte protocolo con tu equipo (si tienes).</li>
+    <li>Día 18: Sesión de 1h con tu equipo enseñando 3 prompts útiles.</li>
+    <li>Día 19: Cada miembro elige 1 prompt para empezar a usar.</li>
+    <li>Día 20: Crea un canal Slack/Teams para compartir aprendizajes IA.</li>
+    <li>Día 21: Primera mini-auditoría: ¿qué funciona? ¿qué no?</li>
+  </ul>
+
+  <h3>Semana 4 · Escala y consolidación (días 22-30)</h3>
+
+  <ul class="checklist">
+    <li>Día 22: Añade vLex Vincent o Lefebvre IA al stack.</li>
+    <li>Día 23: Diseña 3 rutinas semanales automatizadas.</li>
+    <li>Día 24: Implementa rutina 1.</li>
+    <li>Día 25: Implementa rutina 2.</li>
+    <li>Día 26: Implementa rutina 3.</li>
+    <li>Día 27: Mide impacto del mes: ¿cuántas horas ahorradas en total?</li>
+    <li>Día 28: Identifica qué te funcionó y qué no.</li>
+    <li>Día 29: Diseña plan para el mes 2 con foco en lo que funciona.</li>
+    <li>Día 30: Celebra. Has hecho más en 30 días que el 80% del sector en años.</li>
+  </ul>
+
+  <div class="chapter-mark">PARTE 7 · PLAN 30 DÍAS</div>
+</div>
+
+<div class="page">
+  <h3>Métricas de éxito al día 30</h3>
+
+  <p>Si has aplicado el plan con disciplina razonable, deberías observar:</p>
+
+  <table>
+    <thead><tr><th>Métrica</th><th>Antes</th><th>Después (día 30)</th></tr></thead>
+    <tbody>
+      <tr><td>Horas/semana en tareas repetitivas</td><td>20-25h</td><td>10-12h</td></tr>
+      <tr><td>Tiempo redacción de un dictamen medio</td><td>4-8h</td><td>1,5-3h</td></tr>
+      <tr><td>Tiempo análisis de sentencia</td><td>45-90 min</td><td>10-20 min</td></tr>
+      <tr><td>Tiempo investigación jurídica</td><td>3-5h</td><td>45-90 min</td></tr>
+      <tr><td>Sensación general</td><td>Agobio constante</td><td>Control + curiosidad</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Errores más típicos en los primeros 30 días</h3>
+
+  <div class="callout-warning callout">
+    <strong>❌ Error 1 · Sobreuso del prompt</strong>
+    Hacer 30 prompts a la IA para una tarea sencilla. Si en 2-3 iteraciones no sale, cambia el enfoque del prompt completo.
+  </div>
+
+  <div class="callout-warning callout">
+    <strong>❌ Error 2 · Confiar ciegamente</strong>
+    Usar outputs sin verificar. Especialmente en jurisprudencia. Esto se traduce en alucinaciones que llegan al juez.
+  </div>
+
+  <div class="callout-warning callout">
+    <strong>❌ Error 3 · No formar al equipo</strong>
+    Tú dominas la IA pero tu pasante mete datos en ChatGPT gratuito. Cadena rota.
+  </div>
+
+  <div class="callout-warning callout">
+    <strong>❌ Error 4 · Querer dominar todas las herramientas</strong>
+    No necesitas 15 herramientas. Domina 3-5 con disciplina antes de añadir más.
+  </div>
+
+  <div class="callout-warning callout">
+    <strong>❌ Error 5 · Falta de protocolo</strong>
+    Sin protocolo escrito, todo se diluye. Aunque seas autónomo: redáctalo y firma adhesión personal.
+  </div>
+
+  <h3>Plan post-30 días</h3>
+
+  <p>Una vez completado el plan inicial:</p>
+
+  <ul>
+    <li><strong>Mes 2-3:</strong> Profundiza en herramientas jurídicas específicas (vLex Vincent, Lefebvre IA)</li>
+    <li><strong>Mes 4-6:</strong> Diseña automatizaciones avanzadas (n8n, Make)</li>
+    <li><strong>Mes 7-12:</strong> Implementa IA en marketing personal (LinkedIn, newsletter, podcast)</li>
+    <li><strong>Año 2:</strong> Tu despacho es referencia regional/nacional en IA Legal</li>
+  </ul>
+
+  <p>Si llegas hasta aquí, has dejado de ser un usuario casual. Has pasado a ser <strong>profesional</strong>. Y eso, en este momento histórico, vale oro.</p>
+
+  <div class="chapter-mark">PARTE 7 · PLAN 30 DÍAS</div>
+</div>
+
+<!-- ========================================== -->
+<!-- CIERRE / CTA -->
+<!-- ========================================== -->
+<div class="page cta-page">
+  <div>
+    <h2>Esto es solo el principio.<br><span>El siguiente paso, lo eliges tú.</span></h2>
+    <p>Has llegado al final de la Guía. Si has leído hasta aquí —y especialmente si has aplicado el plan— estás ya en una posición que te diferencia del 90% de tu profesión.</p>
+    <p>Ahora la pregunta es: <strong>¿hasta dónde quieres llegar?</strong></p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <strong>📅 Reserva videollamada gratis</strong>
+        <span>30 minutos para diseñar formación a medida para tu organización</span>
+      </div>
+      <div class="contact-item">
+        <strong>🎤 Tour Nacional IA Legal</strong>
+        <span>Septiembre-Noviembre 2026 · 10 ciudades · Reserva la tuya</span>
+      </div>
+      <div class="contact-item">
+        <strong>📺 @ksrofriends</strong>
+        <span>YouTube · 65.000+ suscriptores · Contenido semanal</span>
+      </div>
+      <div class="contact-item">
+        <strong>📰 Newsletter KSRO LAW TECH</strong>
+        <span>Lo más importante del sector cada semana</span>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="https://ksrolawacademy.com" class="cta-btn">Visitar KSRO LAW ACADEMY</a>
+      <a href="https://ksrolawacademy.com/tour" class="cta-btn outline">Tour 2026</a>
+    </div>
+
+    <p style="margin-top:12mm;font-size:10pt;color:#888">
+      Óscar Casero Miguel · ICAR nº 1182<br>
+      Plaza de España 13, 2º Izda. · 01001 Vitoria-Gasteiz<br>
+      📧 info@ksrolawacademy.com · 📱 +34 623 767 511<br>
+      🌐 ksrolawacademy.com
+    </p>
+  </div>
+</div>
+
+<!-- CONTRAPORTADA -->
+<div class="page" style="background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0;text-align:center">
+  <div style="position:relative;z-index:2">
+    <div style="font-family:'Arial Black',sans-serif;color:var(--red);font-size:24pt;letter-spacing:4pt;margin-bottom:6mm">KSRO</div>
+    <div style="font-family:'Arial Black',sans-serif;color:#fff;font-size:11pt;letter-spacing:3pt;margin-bottom:30mm">LAW ACADEMY</div>
+    <p style="color:#ccc;font-style:italic;font-size:12pt;line-height:1.4;max-width:140mm;margin:0 auto">"Tres décadas en tribunales.<br>Navegando el futuro legal."</p>
+    <p style="color:#666;font-size:8pt;margin-top:30mm;letter-spacing:2pt">EDICIÓN GRATUITA 2026 · KSROLAWACADEMY.COM</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+window.addEventListener('keydown',(e)=>{if((e.ctrlKey||e.metaKey)&&e.key==='p'){return}});
+</script>
+</body>
+</html>
