@@ -75,26 +75,36 @@ Convertir a Óscar Casero Miguel en **EL referente nacional indiscutible** sobre
 
 ---
 
-## 🗺️ ITINERARIO PROPUESTO (10 CIUDADES)
+## 🗺️ ITINERARIO PROPUESTO (10 CIUDADES) · MODELO "AGENDA ABIERTA"
 
-| # | Ciudad | ICA | Estado relación | Mes |
-|---|--------|-----|-----------------|-----|
-| 1 | **Vitoria-Gasteiz** | ICA Álava | ✅ Caliente (ponente) | Sep wk1 |
-| 2 | **San Sebastián** | ICA Gipuzkoa | ✅ Caliente | Sep wk2 |
-| 3 | **Bilbao** | ICA Vizcaya / ICA Bilbao | ✅ Caliente | Sep wk3 |
-| 4 | **Logroño** | ICAR (1182) | ⭐ TUYO + Univ. La Rioja | Sep wk4 |
-| 5 | **Barcelona** | ICAB | ✅ Caliente · Mayor ICA España | Oct wk1 |
-| 6 | **Valencia** | ICAV | ❄️ Frío | Oct wk2 |
-| 7 | **Sevilla** | ICAS | ❄️ Frío | Oct wk3 |
-| 8 | **Almería** | ICA Almería | ✅ Caliente | Oct wk4 |
-| 9 | **Melilla** | ICA Melilla | ✅ Caliente | Nov wk1 |
-| 10 | **MADRID** 🏆 | ICAM (Gala final) | ❄️ Por cerrar | Nov wk3 |
+**Estrategia actual:** Las 10 ciudades están publicadas en /tour.html con estado "Fecha por confirmar". Cada visitante puede apuntarse a la lista de espera de SU ciudad. Las fechas se cierran progresivamente según se confirme con cada ICA y se valide volumen de demanda.
 
-**Lógica del itinerario:**
-- Empezar por el norte (zona de confort + relaciones calientes)
-- Avanzar hacia este (Barcelona como pivote mediático)
-- Bajar hacia sur (cerrar Almería + Melilla en bloque)
-- Cerrar en MADRID con gran evento de cierre
+| # | Ciudad | ICA | Estado relación | Estado público |
+|---|--------|-----|-----------------|----------------|
+| 1 | **Vitoria-Gasteiz** | ICA Álava | ✅ Caliente (ponente) | Lista de espera abierta |
+| 2 | **San Sebastián** | ICA Gipuzkoa | ✅ Caliente | Lista de espera abierta |
+| 3 | **Bilbao** | ICA Vizcaya / ICA Bilbao | ✅ Caliente | Lista de espera abierta |
+| 4 | **Logroño** | ICAR (1182) | ⭐ TUYO + Univ. La Rioja | Lista de espera abierta |
+| 5 | **Barcelona** | ICAB | ✅ Caliente · Mayor ICA España | Lista de espera abierta |
+| 6 | **Valencia** | ICAV | ❄️ Frío | Lista de espera abierta |
+| 7 | **Sevilla** | ICAS | ❄️ Frío | Lista de espera abierta |
+| 8 | **Almería** | ICA Almería | ✅ Caliente | Lista de espera abierta |
+| 9 | **Melilla** | ICA Melilla | ✅ Caliente | Lista de espera abierta |
+| 10 | **MADRID** 🏆 | ICAM (Gala final) | ❄️ Por cerrar | Lista de espera abierta |
+
+**Lógica del modelo "agenda abierta":**
+- 🎯 Captamos interés ANTES de cerrar fechas (volumen de demanda guía la ejecución)
+- 🤝 Negociamos con cada ICA con DATOS reales ("ya tenemos 87 colegiados de Barcelona inscritos")
+- 📅 Cerramos fechas según prioridad: ciudades con relación caliente + alta demanda
+- 🔄 Ciudades sin demanda suficiente se aplazan a 2027 sin perjuicio reputacional
+- ⏰ Comunicamos fechas confirmadas a través de email a los inscritos en lista de espera
+
+**Ventajas vs modelo "calendario cerrado":**
+- ✅ Cero riesgo de anunciar fechas que luego no se cumplen
+- ✅ Negociación con ICABs con argumento de demanda real
+- ✅ Captación masiva de leads desde día 1
+- ✅ Flexibilidad para ajustar logística según respuesta
+- ✅ Generamos urgencia ("tu ciudad puede cerrar antes que otras")
 
 ---
 
