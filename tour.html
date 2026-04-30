@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tour Nacional IA Legal 2026 · KSRO LAW ACADEMY</title>
-<meta name="description" content="El primer Tour Nacional de IA Legal en España. 10 ciudades · 10 Colegios de Abogados · Septiembre - Noviembre 2026. Por Óscar Casero Miguel.">
-<meta name="keywords" content="Tour IA Legal, KSRO 2026, Óscar Casero, Inteligencia Artificial Derecho, Colegio Abogados">
+<title>Tour Nacional IA Legal 2026-2027 · KSRO LAW ACADEMY</title>
+<meta name="description" content="Tour Nacional IA Legal 2026-2027: formación presencial en 20+ ciudades de España. Junio 2026 – Junio 2027. 3 horas + certificado oficial + coffee break. Aforo limitado a 60 plazas. Inscripción 50€.">
+<meta name="keywords" content="Tour IA Legal, Tour 2027, KSRO 2026, Óscar Casero, Inteligencia Artificial Derecho, Colegio Abogados, Burgos IA Legal, Andalucía IA Legal, Canarias IA Legal">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tour Nacional IA Legal 2026 · KSRO">
-<meta property="og:description" content="10 ciudades · 10 Colegios · 1 misión: que ningún abogado español se quede atrás. Septiembre-Noviembre 2026.">
+<meta property="og:title" content="Tour Nacional IA Legal 2026-2027 · KSRO">
+<meta property="og:description" content="Llevamos la IA Legal a 20 ciudades de España. Junio 2026 – Junio 2027. 3h de formación presencial, certificado oficial y coffee break. Aforo limitado a 60 plazas · 50€.">
 <meta property="og:url" content="https://ksrolawacademy.com/tour">
 <meta property="og:image" content="https://ksrolawacademy.com/oscar-charla.jpg">
 <meta property="og:locale" content="es_ES">
@@ -28,6 +28,7 @@
   --ksro-white:#FFF;
   --ksro-gray:#888;
   --ksro-light-gray:#ccc;
+  --ksro-green:#2ecc71;
   --shadow-red:0 10px 40px rgba(230,50,50,.35);
   --font-display:"Arial Black","Helvetica Neue",Arial,sans-serif;
   --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
@@ -81,7 +82,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .tour-hero h1 .accent{color:var(--ksro-red)}
 .tour-hero .tagline{
   font-size:clamp(1.05rem,2vw,1.4rem);color:var(--ksro-light-gray);
-  margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto;
+  margin-bottom:18px;max-width:680px;margin-left:auto;margin-right:auto;
+}
+.tour-hero .tagline-sub{
+  font-family:var(--font-display);font-size:.92rem;letter-spacing:1.5px;
+  color:#fff;opacity:.7;text-transform:uppercase;
+  margin-bottom:30px;
 }
 .tour-hero .stats-line{
   display:flex;justify-content:center;gap:40px;flex-wrap:wrap;
@@ -112,8 +118,35 @@ section{padding:90px 24px;position:relative}
 .section-title .accent{color:var(--ksro-red)}
 .section-subtitle{font-size:1.05rem;color:var(--ksro-light-gray)}
 
-/* CIUDADES MAP/LIST */
+/* CIUDADES TRAMOS */
 .cities-section{background:var(--ksro-dark)}
+.tour-tramo{margin-bottom:50px}
+.tour-tramo:last-child{margin-bottom:0}
+.tramo-head{
+  margin-bottom:24px;padding:18px 22px;
+  background:var(--ksro-dark-2);border-radius:8px;
+  border-left:4px solid var(--ksro-red);
+}
+.tour-tramo.tramo-confirmado .tramo-head{border-left-color:var(--ksro-green)}
+.tramo-title{
+  font-family:var(--font-display);font-size:1rem;
+  letter-spacing:1.2px;text-transform:uppercase;
+  color:#fff;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-bottom:6px;line-height:1.3;
+}
+.tramo-meta{color:var(--ksro-light-gray);font-size:.92rem;margin-top:8px}
+.badge-confirmado{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(46,204,113,.15);border:1px solid var(--ksro-green);
+  color:var(--ksro-green);padding:5px 12px;border-radius:14px;
+  font-family:var(--font-display);font-size:.7rem;letter-spacing:1px;
+}
+.badge-pendiente{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.5);
+  color:#FFC107;padding:5px 12px;border-radius:14px;
+  font-family:var(--font-display);font-size:.7rem;letter-spacing:1px;
+}
 .cities-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;
 }
@@ -132,10 +165,14 @@ section{padding:90px 24px;position:relative}
 }
 .city-card:hover{transform:translateY(-4px);border-color:var(--ksro-red);box-shadow:0 15px 40px rgba(230,50,50,.25)}
 .city-card:hover::before{transform:scaleX(1)}
+.city-card.confirmado{border-color:rgba(46,204,113,.4)}
+.city-card.confirmado::before{background:var(--ksro-green)}
+.city-card.confirmado:hover{border-color:var(--ksro-green);box-shadow:0 15px 40px rgba(46,204,113,.25)}
 .city-num{
   font-family:var(--font-display);color:rgba(230,50,50,.4);
   font-size:2.2rem;line-height:1;letter-spacing:-2px;
 }
+.city-card.confirmado .city-num{color:rgba(46,204,113,.5)}
 .city-name{font-family:var(--font-display);font-size:1.2rem;margin:6px 0 4px;letter-spacing:-.3px;color:#fff}
 .city-ica{color:var(--ksro-light-gray);font-size:.85rem;margin-bottom:10px}
 .city-date{
@@ -145,6 +182,11 @@ section{padding:90px 24px;position:relative}
   font-size:.7rem;color:#FFC107;font-weight:700;
   letter-spacing:.5px;text-transform:uppercase;
 }
+.city-date.confirmado{
+  background:rgba(46,204,113,.15);
+  border-color:var(--ksro-green);
+  color:var(--ksro-green);
+}
 .city-cta{
   margin-top:12px;padding-top:10px;
   border-top:1px solid rgba(255,255,255,.08);
@@ -152,31 +194,33 @@ section{padding:90px 24px;position:relative}
   font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;
   transition:all .2s;
 }
+.city-card.confirmado .city-cta{color:var(--ksro-green)}
 .city-card:hover .city-cta{color:#fff;letter-spacing:2px}
-.city-card-final{position:relative}
-.city-card-final::after{
-  content:"GALA";
-  position:absolute;top:14px;right:14px;
-  background:var(--ksro-red);color:#fff;
-  font-family:var(--font-display);font-size:.65rem;
-  letter-spacing:1.5pt;padding:3pt 8pt;border-radius:12pt;
-}
 
-/* WHAT INCLUDES */
-.includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.include-card{
+/* INCLUDES BLOCK (single highlighted card) */
+.includes-block{
   background:linear-gradient(180deg,var(--ksro-dark-2),var(--ksro-dark));
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:10px;padding:30px;
+  border:2px solid var(--ksro-green);border-radius:14px;
+  padding:40px 36px;max-width:780px;margin:0 auto;
+  box-shadow:0 15px 50px rgba(46,204,113,.12);
 }
-.include-icon{
-  width:56px;height:56px;border-radius:10px;
-  background:rgba(230,50,50,.15);color:var(--ksro-red);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;margin-bottom:18px;
+.includes-block-head{text-align:center;margin-bottom:30px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08)}
+.includes-block-head h3{
+  font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,2rem);
+  letter-spacing:-.5px;margin-bottom:12px;color:#fff;line-height:1.15;
 }
-.include-card h3{font-family:var(--font-display);font-size:1.15rem;margin-bottom:10px;letter-spacing:-.3px}
-.include-card p{color:var(--ksro-light-gray);font-size:.92rem}
+.includes-block-head .subtitle{
+  color:var(--ksro-green);font-family:var(--font-display);
+  font-size:.88rem;letter-spacing:2px;text-transform:uppercase;
+}
+.includes-list{list-style:none;display:grid;gap:6px}
+.includes-list li{
+  display:flex;align-items:flex-start;gap:14px;
+  font-size:1.02rem;color:#fff;line-height:1.5;
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.includes-list li:last-child{border-bottom:none}
+.includes-list .ic{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center;line-height:1.4}
 
 /* FOR WHO */
 .target-section{background:var(--ksro-dark)}
@@ -235,6 +279,9 @@ footer a{color:var(--ksro-red);font-weight:700}
   section{padding:60px 20px}
   .cal-float{bottom:90px;left:20px;padding:11px 16px;font-size:.7rem}
   .wa-float{bottom:20px;left:20px;width:52px;height:52px}
+  .includes-block{padding:28px 22px}
+  .tramo-title{font-size:.9rem;letter-spacing:1px}
+  .tramo-head{padding:16px 18px}
 }
 </style>
 </head>
@@ -252,18 +299,19 @@ footer a{color:var(--ksro-red);font-weight:700}
 
 <section class="tour-hero">
   <div class="tour-hero-inner">
-    <div class="tour-eyebrow"><span class="pulse-dot"></span> Reservando fechas · Otoño 2026 · #TourIALegal2026</div>
+    <div class="tour-eyebrow"><span class="pulse-dot"></span> Junio 2026 → Junio 2027 · #TourIALegal</div>
     <h1>TOUR NACIONAL<br><span class="accent">IA LEGAL</span></h1>
-    <p class="tagline">10 ciudades. 10 Colegios de Abogados. 1 misión: <strong style="color:#fff">que ningún abogado español se quede atrás</strong> en la mayor transformación tecnológica del sector.</p>
+    <p class="tagline">Llevamos la IA Legal a <strong style="color:#fff">20 ciudades de España</strong>. Junio 2026 – Junio 2027. 3 horas de formación presencial, certificado oficial y coffee break. Aforo máximo 60 plazas por parada.</p>
+    <p class="tagline-sub">Tres décadas en tribunales. Navegando el futuro legal.</p>
     <div style="background:rgba(230,50,50,.1);border:1px solid var(--ksro-red);padding:14px 22px;border-radius:30px;display:inline-block;margin-bottom:30px;font-size:.92rem">
-      <strong style="color:var(--ksro-red)">📅 Estamos reservando fechas con cada ICA.</strong> <span style="color:var(--ksro-light-gray)">Apunta tu ciudad a la lista de espera y serás de los primeros en confirmar plaza.</span>
+      <strong style="color:var(--ksro-red)">📅 Burgos y Madrid (Junio 2026) ya confirmados.</strong> <span style="color:var(--ksro-light-gray)">Apúntate a la lista de espera de tu ciudad y serás de los primeros en confirmar plaza.</span>
     </div>
 
     <div class="stats-line">
-      <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Ciudades</div></div>
-      <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Colegios oficiales</div></div>
-      <div class="stat-item"><div class="stat-num">90</div><div class="stat-label">Días</div></div>
-      <div class="stat-item"><div class="stat-num">2.500+</div><div class="stat-label">Abogados</div></div>
+      <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Ciudades</div></div>
+      <div class="stat-item"><div class="stat-num">60</div><div class="stat-label">Plazas/parada</div></div>
+      <div class="stat-item"><div class="stat-num">3h</div><div class="stat-label">Formación</div></div>
+      <div class="stat-item"><div class="stat-num">50€</div><div class="stat-label">Inscripción</div></div>
     </div>
 
     <div class="hero-ctas">
@@ -277,80 +325,187 @@ footer a{color:var(--ksro-red);font-weight:700}
   <div class="section-inner">
     <div class="section-head reveal">
       <span class="section-eyebrow">Itinerario</span>
-      <h2 class="section-title">10 ciudades · 10 <span class="accent">Colegios oficiales</span></h2>
-      <p class="section-subtitle">Las plazas en cada ciudad son limitadas y se confirman por orden de inscripción.</p>
+      <h2 class="section-title">20 ciudades · <span class="accent">tres tramos</span></h2>
+      <p class="section-subtitle">Junio 2026 – Junio 2027. Aforo limitado a 60 plazas por parada.</p>
     </div>
-    <div class="cities-grid reveal">
-      <a href="#registro" onclick="window.selectedCity='Vitoria-Gasteiz';" class="city-card">
-        <div class="city-num">01</div>
-        <div class="city-name">Vitoria-Gasteiz</div>
-        <div class="city-ica">ICA Álava</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='San Sebastián';" class="city-card">
-        <div class="city-num">02</div>
-        <div class="city-name">San Sebastián</div>
-        <div class="city-ica">ICA Gipuzkoa</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Bilbao';" class="city-card">
-        <div class="city-num">03</div>
-        <div class="city-name">Bilbao</div>
-        <div class="city-ica">ICA Vizcaya / Bilbao</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Logroño';" class="city-card">
-        <div class="city-num">04</div>
-        <div class="city-name">Logroño</div>
-        <div class="city-ica">ICAR · Univ. La Rioja</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Barcelona';" class="city-card">
-        <div class="city-num">05</div>
-        <div class="city-name">Barcelona</div>
-        <div class="city-ica">ICAB</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Valencia';" class="city-card">
-        <div class="city-num">06</div>
-        <div class="city-name">Valencia</div>
-        <div class="city-ica">ICAV</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Sevilla';" class="city-card">
-        <div class="city-num">07</div>
-        <div class="city-name">Sevilla</div>
-        <div class="city-ica">ICAS</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Almería';" class="city-card">
-        <div class="city-num">08</div>
-        <div class="city-name">Almería</div>
-        <div class="city-ica">ICA Almería</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Melilla';" class="city-card">
-        <div class="city-num">09</div>
-        <div class="city-name">Melilla</div>
-        <div class="city-ica">ICA Melilla</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
-      <a href="#registro" onclick="window.selectedCity='Madrid';" class="city-card city-card-final" style="background:linear-gradient(135deg,rgba(230,50,50,.25),var(--ksro-dark-2));border-color:var(--ksro-red)">
-        <div class="city-num" style="color:var(--ksro-red)">🏆</div>
-        <div class="city-name">MADRID</div>
-        <div class="city-ica">ICAM · GALA FINAL</div>
-        <span class="city-date">Fecha por confirmar</span>
-        <div class="city-cta">→ Lista de espera</div>
-      </a>
+
+    <!-- TRAMO 1 · CONFIRMADAS -->
+    <div class="tour-tramo tramo-confirmado reveal">
+      <div class="tramo-head">
+        <div class="tramo-title">
+          <span>Tramo 1 · Junio 2026</span>
+          <span class="badge-confirmado">✅ Fechas confirmadas</span>
+        </div>
+        <div class="tramo-meta">Burgos y Madrid abren el Tour. Inscripción ya disponible.</div>
+      </div>
+      <div class="cities-grid">
+        <a href="#registro" onclick="window.selectedCity='Burgos';" class="city-card confirmado">
+          <div class="city-num">01</div>
+          <div class="city-name">Burgos</div>
+          <div class="city-ica">Junio 2026</div>
+          <span class="city-date confirmado">✅ Confirmado</span>
+          <div class="city-cta">→ Reservar plaza</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Madrid';" class="city-card confirmado">
+          <div class="city-num">02</div>
+          <div class="city-name">Madrid</div>
+          <div class="city-ica">Junio 2026</div>
+          <span class="city-date confirmado">✅ Confirmado</span>
+          <div class="city-cta">→ Reservar plaza</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- TRAMO 2 · OTOÑO 2026 -->
+    <div class="tour-tramo reveal">
+      <div class="tramo-head">
+        <div class="tramo-title">
+          <span>Tramo 2 · Otoño 2026</span>
+          <span class="badge-pendiente">📅 Fechas por confirmar</span>
+        </div>
+        <div class="tramo-meta">Apúntate a la lista de espera y serás de los primeros en confirmar plaza.</div>
+      </div>
+      <div class="cities-grid">
+        <a href="#registro" onclick="window.selectedCity='Zaragoza';" class="city-card">
+          <div class="city-num">03</div>
+          <div class="city-name">Zaragoza</div>
+          <div class="city-ica">Octubre 2026</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Barcelona';" class="city-card">
+          <div class="city-num">04</div>
+          <div class="city-name">Barcelona</div>
+          <div class="city-ica">Noviembre 2026</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Valencia';" class="city-card">
+          <div class="city-num">05</div>
+          <div class="city-name">Valencia</div>
+          <div class="city-ica">Noviembre 2026</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Valladolid';" class="city-card">
+          <div class="city-num">06</div>
+          <div class="city-name">Valladolid</div>
+          <div class="city-ica">Diciembre 2026</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- TRAMO 3 · ENERO–JUNIO 2027 · 14 PARADAS -->
+    <div class="tour-tramo reveal">
+      <div class="tramo-head">
+        <div class="tramo-title">
+          <span>Tramo 3 · Enero–Junio 2027 · 14 paradas</span>
+          <span class="badge-pendiente">📅 Fechas por confirmar</span>
+        </div>
+        <div class="tramo-meta">Andalucía completa, Extremadura, Melilla, Canarias y Baleares.</div>
+      </div>
+      <div class="cities-grid">
+        <a href="#registro" onclick="window.selectedCity='Almería';" class="city-card">
+          <div class="city-num">07</div>
+          <div class="city-name">Almería</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Cádiz';" class="city-card">
+          <div class="city-num">08</div>
+          <div class="city-name">Cádiz</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Córdoba';" class="city-card">
+          <div class="city-num">09</div>
+          <div class="city-name">Córdoba</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Granada';" class="city-card">
+          <div class="city-num">10</div>
+          <div class="city-name">Granada</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Huelva';" class="city-card">
+          <div class="city-num">11</div>
+          <div class="city-name">Huelva</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Jaén';" class="city-card">
+          <div class="city-num">12</div>
+          <div class="city-name">Jaén</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Málaga';" class="city-card">
+          <div class="city-num">13</div>
+          <div class="city-name">Málaga</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Sevilla';" class="city-card">
+          <div class="city-num">14</div>
+          <div class="city-name">Sevilla</div>
+          <div class="city-ica">Andalucía · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Badajoz';" class="city-card">
+          <div class="city-num">15</div>
+          <div class="city-name">Badajoz</div>
+          <div class="city-ica">Extremadura · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Cáceres';" class="city-card">
+          <div class="city-num">16</div>
+          <div class="city-name">Cáceres</div>
+          <div class="city-ica">Extremadura · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Melilla';" class="city-card">
+          <div class="city-num">17</div>
+          <div class="city-name">Melilla</div>
+          <div class="city-ica">Melilla · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Las Palmas de Gran Canaria';" class="city-card">
+          <div class="city-num">18</div>
+          <div class="city-name">Las Palmas de Gran Canaria</div>
+          <div class="city-ica">Canarias · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Santa Cruz de Tenerife';" class="city-card">
+          <div class="city-num">19</div>
+          <div class="city-name">Santa Cruz de Tenerife</div>
+          <div class="city-ica">Canarias · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+        <a href="#registro" onclick="window.selectedCity='Palma de Mallorca';" class="city-card">
+          <div class="city-num">20</div>
+          <div class="city-name">Palma de Mallorca</div>
+          <div class="city-ica">Baleares · 2027</div>
+          <span class="city-date">Fecha por confirmar</span>
+          <div class="city-cta">→ Lista de espera</div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -361,37 +516,20 @@ footer a{color:var(--ksro-red);font-weight:700}
       <span class="section-eyebrow">Por parada</span>
       <h2 class="section-title">¿Qué incluye <span class="accent">cada parada?</span></h2>
     </div>
-    <div class="includes-grid reveal">
-      <div class="include-card">
-        <div class="include-icon">🎤</div>
-        <h3>Conferencia gratuita 90 min</h3>
-        <p>"La IA Legal en 2026: lo que tu despacho necesita saber YA". Abierta a todos los colegiados del ICA local. Plazas limitadas a 200.</p>
+    <div class="includes-block reveal">
+      <div class="includes-block-head">
+        <h3>Una sola tarifa. Todo incluido.</h3>
+        <div class="subtitle">50 € · Inscripción previa · Plazas limitadas a 60</div>
       </div>
-      <div class="include-card">
-        <div class="include-icon">🎓</div>
-        <h3>Workshop premium 4h</h3>
-        <p>Implementación práctica con casos reales. 30 plazas máximo. 80€/colegiado. Material exclusivo + certificado KSRO.</p>
-      </div>
-      <div class="include-card">
-        <div class="include-icon">💬</div>
-        <h3>Reuniones 1:1</h3>
-        <p>Sesiones individuales con socios y directores jurídicos locales para diseñar formación in-company.</p>
-      </div>
-      <div class="include-card">
-        <div class="include-icon">📺</div>
-        <h3>Cobertura mediática</h3>
-        <p>Cada parada incluye cobertura en prensa local, grabación profesional y producción audiovisual KSRO.</p>
-      </div>
-      <div class="include-card">
-        <div class="include-icon">📦</div>
-        <h3>Kit del asistente</h3>
-        <p>Cuaderno KSRO, prompts jurídicos premium, código exclusivo workshop, y acceso a comunidad privada.</p>
-      </div>
-      <div class="include-card">
-        <div class="include-icon">🏆</div>
-        <h3>Certificado oficial</h3>
-        <p>Asistentes al workshop reciben certificado de aprovechamiento KSRO + descuento en futuras formaciones.</p>
-      </div>
+      <ul class="includes-list">
+        <li><span class="ic">🎓</span><span><strong>3 horas de formación presencial</strong> impartidas por Óscar Casero Miguel.</span></li>
+        <li><span class="ic">📜</span><span><strong>Certificado oficial</strong> de horas de formación.</span></li>
+        <li><span class="ic">☕</span><span><strong>Coffee break</strong> incluido durante la jornada.</span></li>
+        <li><span class="ic">📦</span><span><strong>Material y contenido del evento</strong> entregados a cada asistente.</span></li>
+        <li><span class="ic">👥</span><span><strong>Aforo máximo: 60 personas</strong> por evento.</span></li>
+        <li><span class="ic">💶</span><span><strong>Coste: 50 € por asistente.</strong></span></li>
+        <li><span class="ic">✍️</span><span><strong>Inscripción previa obligatoria</strong> — plazas limitadas.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -430,10 +568,10 @@ footer a{color:var(--ksro-red);font-weight:700}
     <div style="max-width:680px;margin:0 auto">
       <div style="display:inline-block;background:rgba(0,0,0,.3);padding:6px 16px;border-radius:30px;font-size:.78rem;letter-spacing:2px;font-family:'Arial Black',sans-serif;text-transform:uppercase;margin-bottom:20px">📅 Lista de espera abierta</div>
       <h2>Reserva tu plaza<br>antes de que cierre tu ciudad</h2>
-      <p>Estamos confirmando fechas con cada Colegio de Abogados. Apuntándote a la lista de espera serás de los primeros en saber la fecha exacta de tu ciudad y tendrás acceso prioritario antes de la apertura pública.</p>
+      <p>Inscripción previa con plaza garantizada. Coste 50 € — incluye 3h de formación, certificado oficial, coffee break y materiales. Aforo limitado a 60 personas por parada. Apúntate a la lista de espera de tu ciudad y serás de los primeros en confirmar plaza cuando se cierre la fecha.</p>
 
       <form id="waitlistForm" action="https://formsubmit.co/info@ksrolawacademy.com" method="POST" style="background:rgba(0,0,0,.3);padding:30px;border-radius:12px;margin-top:30px;text-align:left;backdrop-filter:blur(10px)">
-        <input type="hidden" name="_subject" value="[KSRO Tour 2026] Lista de espera">
+        <input type="hidden" name="_subject" value="[KSRO Tour 2026-2027] Lista de espera">
         <input type="hidden" name="_next" value="https://ksrolawacademy.com/gracias.html">
         <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_template" value="table">
@@ -447,16 +585,32 @@ footer a{color:var(--ksro-red);font-weight:700}
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
           <select name="ciudad_interes" required style="padding:14px 18px;background:rgba(255,255,255,.95);border:none;border-radius:6px;font-size:.95rem;color:#000;font-family:inherit">
             <option value="">¿Tu ciudad? *</option>
-            <option>Vitoria-Gasteiz</option>
-            <option>San Sebastián</option>
-            <option>Bilbao</option>
-            <option>Logroño</option>
-            <option>Barcelona</option>
-            <option>Valencia</option>
-            <option>Sevilla</option>
-            <option>Almería</option>
-            <option>Melilla</option>
-            <option>Madrid</option>
+            <optgroup label="Junio 2026 — Confirmadas">
+              <option>Burgos</option>
+              <option>Madrid</option>
+            </optgroup>
+            <optgroup label="Otoño 2026">
+              <option>Zaragoza</option>
+              <option>Barcelona</option>
+              <option>Valencia</option>
+              <option>Valladolid</option>
+            </optgroup>
+            <optgroup label="Enero–Junio 2027">
+              <option>Almería</option>
+              <option>Cádiz</option>
+              <option>Córdoba</option>
+              <option>Granada</option>
+              <option>Huelva</option>
+              <option>Jaén</option>
+              <option>Málaga</option>
+              <option>Sevilla</option>
+              <option>Badajoz</option>
+              <option>Cáceres</option>
+              <option>Melilla</option>
+              <option>Las Palmas de Gran Canaria</option>
+              <option>Santa Cruz de Tenerife</option>
+              <option>Palma de Mallorca</option>
+            </optgroup>
             <option>Otra (indicar abajo)</option>
           </select>
           <select name="perfil" required style="padding:14px 18px;background:rgba(255,255,255,.95);border:none;border-radius:6px;font-size:.95rem;color:#000;font-family:inherit">
@@ -480,7 +634,7 @@ footer a{color:var(--ksro-red);font-weight:700}
 
         <label style="display:flex;align-items:flex-start;gap:10px;font-size:.85rem;margin-bottom:18px;color:#fff">
           <input type="checkbox" name="rgpd" required style="margin-top:3px;width:18px;height:18px;flex-shrink:0">
-          <span>Acepto la <a href="/privacidad.html" target="_blank" style="color:#fff;text-decoration:underline">Política de Privacidad</a> y recibir comunicaciones del Tour KSRO 2026.</span>
+          <span>Acepto la <a href="/privacidad.html" target="_blank" style="color:#fff;text-decoration:underline">Política de Privacidad</a> y recibir comunicaciones del Tour KSRO 2026-2027.</span>
         </label>
 
         <button type="submit" class="btn-primary" style="width:100%;padding:18px">📅 Apuntarme a la lista de espera</button>
@@ -490,14 +644,14 @@ footer a{color:var(--ksro-red);font-weight:700}
         <span style="color:#fff;opacity:.85">¿Eres decano o sponsor?</span>
         <a href="#" onclick="if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false;}" style="color:#fff;font-weight:700;text-decoration:underline">📅 Agenda videollamada directa</a>
         <span style="color:#fff;opacity:.5">·</span>
-        <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20el%20Tour%20Nacional%20IA%20Legal%202026" target="_blank" rel="noopener" style="color:#fff;font-weight:700;text-decoration:underline">💬 WhatsApp</a>
+        <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20el%20Tour%20Nacional%20IA%20Legal%202026-2027" target="_blank" rel="noopener" style="color:#fff;font-weight:700;text-decoration:underline">💬 WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-tagline">Tres décadas en tribunales. <span class="accent">Diez ciudades.</span> Una academia.</div>
+  <div class="footer-tagline">Tres décadas en tribunales. <span class="accent">Veinte ciudades.</span> Una academia.</div>
   <div style="color:var(--ksro-gray);font-size:.9rem">© 2026 KSRO LAW ACADEMY · Óscar Casero Miguel</div>
   <div class="footer-links">
     <a href="/">Volver a inicio</a>
@@ -509,7 +663,7 @@ footer a{color:var(--ksro-red);font-weight:700}
 </footer>
 
 <button class="cal-float" onclick="Calendly.initPopupWidget({url:'https://calendly.com/oscarcaseromiguel/30min?hide_gdpr_banner=1&background_color=1a1a1a&text_color=ffffff&primary_color=e63232'});return false;" aria-label="Agendar videollamada">Agenda llamada</button>
-<a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20el%20Tour%20Nacional%20IA%20Legal%202026" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+<a href="https://wa.me/34623767511?text=Hola%20Óscar,%20me%20interesa%20el%20Tour%20Nacional%20IA%20Legal%202026-2027" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
