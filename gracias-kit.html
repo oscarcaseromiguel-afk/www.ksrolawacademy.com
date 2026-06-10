@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias! Descarga tu Kit IA — KSRO LAW ACADEMY</title>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+:root{
+  --ksro-red:#E63232;
+  --ksro-red-dark:#B82020;
+  --ksro-black:#000;
+  --ksro-dark:#111;
+  --ksro-dark-2:#1a1a1a;
+  --ksro-white:#FFF;
+  --ksro-gray:#888;
+  --ksro-light-gray:#ccc;
+  --ksro-gold:#f5c518;
+  --shadow-red:0 10px 40px rgba(230,50,50,.35);
+  --font-display:"Arial Black","Helvetica Neue",Arial,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--ksro-black);color:var(--ksro-white);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+
+/* NAVBAR */
+.navbar{background:rgba(0,0,0,.95);border-bottom:1px solid rgba(230,50,50,.2);padding:18px 32px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-size:1.2rem;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+.logo-icon{width:30px;height:30px;background:var(--ksro-red);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#fff}
+.logo-text span{color:var(--ksro-red)}
+
+/* MAIN */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+.thanks-box{max-width:680px;width:100%;text-align:center}
+
+/* CHECKMARK */
+.check-circle{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,rgba(245,197,24,.2),rgba(245,197,24,.05));border:2px solid var(--ksro-gold);display:flex;align-items:center;justify-content:center;margin:0 auto 32px;animation:popIn .5s cubic-bezier(.175,.885,.32,1.275) both}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.check-icon{font-size:3rem;animation:fadeIn .4s .3s both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* HEADING */
+.thanks-eyebrow{color:var(--ksro-gold);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.thanks-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);line-height:1.05;margin-bottom:16px}
+.thanks-title .accent{color:var(--ksro-gold)}
+.thanks-sub{color:var(--ksro-light-gray);font-size:1.05rem;margin-bottom:40px;line-height:1.7}
+
+/* DOWNLOAD CARD */
+.download-card{background:var(--ksro-dark-2);border:1px solid rgba(245,197,24,.3);border-radius:16px;padding:40px;margin-bottom:32px;position:relative;overflow:hidden}
+.download-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ksro-gold),var(--ksro-red))}
+.download-card-label{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--ksro-gold);font-weight:700;margin-bottom:16px}
+.download-card-title{font-family:var(--font-display);font-size:1.4rem;margin-bottom:8px}
+.download-card-desc{color:var(--ksro-light-gray);font-size:.9rem;margin-bottom:28px}
+.download-items{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;text-align:left}
+.download-item{display:flex;align-items:center;gap:12px;font-size:.95rem;color:var(--ksro-light-gray)}
+.download-item-icon{font-size:1.2rem;flex-shrink:0}
+.btn-download{display:inline-flex;align-items:center;gap:12px;background:var(--ksro-gold);color:#000;padding:18px 40px;font-family:var(--font-display);font-size:1rem;letter-spacing:1.5px;text-transform:uppercase;border-radius:6px;font-weight:900;transition:all .2s;box-shadow:0 10px 40px rgba(245,197,24,.35);width:100%;justify-content:center}
+.btn-download:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(245,197,24,.5)}
+.download-note{margin-top:14px;font-size:.8rem;color:var(--ksro-gray)}
+
+/* NEXT STEPS */
+.next-steps{background:var(--ksro-dark);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:32px;margin-bottom:32px;text-align:left}
+.next-steps h3{font-family:var(--font-display);font-size:1.1rem;margin-bottom:20px;color:#fff}
+.next-step{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
+.next-step:last-child{margin-bottom:0}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--ksro-red);color:#fff;font-family:var(--font-display);font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-text{font-size:.9rem;color:var(--ksro-light-gray);line-height:1.6}
+.step-text strong{color:#fff}
+
+/* SOCIAL PROOF */
+.social-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.social-btn{display:flex;align-items:center;gap:8px;background:var(--ksro-dark-2);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:12px 20px;font-size:.85rem;color:var(--ksro-light-gray);transition:all .2s}
+.social-btn:hover{border-color:var(--ksro-red);color:#fff}
+
+/* FOOTER */
+footer{background:#050505;padding:24px 32px;border-top:1px solid rgba(230,50,50,.15);text-align:center}
+.footer-copy{color:var(--ksro-gray);font-size:.8rem}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">K</span>
+      <span class="logo-text">KSRO <span>LAW</span> ACADEMY</span>
+    </a>
+    <div style="font-size:.85rem;color:var(--ksro-gray)">✓ Pago confirmado</div>
+  </div>
+</nav>
+
+<main>
+  <div class="thanks-box">
+    <div class="check-circle">
+      <span class="check-icon">✓</span>
+    </div>
+    <div class="thanks-eyebrow">Pago confirmado</div>
+    <h1 class="thanks-title">¡Tu Kit IA está<br><span class="accent">listo para descargar!</span></h1>
+    <p class="thanks-sub">Gracias por confiar en KSRO LAW ACADEMY. Haz clic en el botón de abajo para descargar tu Kit al instante. También te hemos enviado un email con el enlace de descarga.</p>
+
+    <!-- DOWNLOAD CARD -->
+    <div class="download-card">
+      <div class="download-card-label">Kit IA para Abogados · KSRO 2026</div>
+      <div class="download-card-title">Kit IA para Abogados — PDF Premium</div>
+      <div class="download-card-desc">Tu descarga incluye las 3 piezas del Kit en un único PDF de alta calidad.</div>
+      <div class="download-items">
+        <div class="download-item"><span class="download-item-icon">✍️</span><span><strong>108 Prompts Jurídicos</strong> — 10 áreas de práctica, listos para copiar y usar</span></div>
+        <div class="download-item"><span class="download-item-icon">📋</span><span><strong>Checklist AI Act + RGPD</strong> — Cumplimiento legal completo con plantilla de política</span></div>
+        <div class="download-item"><span class="download-item-icon">⚙️</span><span><strong>5 Automatizaciones con n8n + IA</strong> — Paso a paso, sin código</span></div>
+      </div>
+      <!-- ⚠️ IMPORTANTE: Cambia la URL de abajo por la URL real de tu PDF subido al hosting -->
+      <!-- Ejemplo: https://ksrolawacademy.com/kit.pdf  o  enlace de Google Drive -->
+      <a href="/kit-ia-abogados-ksro.pdf" class="btn-download" download>
+        ⬇ Descargar Kit IA para Abogados
+      </a>
+      <div class="download-note">PDF · Alta resolución · Acceso de por vida</div>
+    </div>
+
+    <!-- PRÓXIMOS PASOS -->
+    <div class="next-steps">
+      <h3>¿Qué hacer ahora?</h3>
+      <div class="next-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Descarga el PDF</strong> y guárdalo en un lugar accesible (Google Drive, Dropbox o tu escritorio).</div>
+      </div>
+      <div class="next-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Empieza por los prompts de tu área</strong> — ve al índice y busca tu especialidad (concursal, mercantil, contratos…).</div>
+      </div>
+      <div class="next-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Implementa el checklist de cumplimiento</strong> antes de usar IA con datos de clientes. Es el primer paso obligatorio.</div>
+      </div>
+      <div class="next-step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Suscríbete al canal @ksrofriends</strong> para recibir cada semana nuevos prompts, herramientas y casos reales de IA Legal.</div>
+      </div>
+    </div>
+
+    <!-- REDES -->
+    <div class="social-row">
+      <a href="https://youtube.com/@ksrofriends?sub_confirmation=1" target="_blank" rel="noopener" class="social-btn">▶ Suscríbete a @ksrofriends</a>
+      <a href="https://instagram.com/ksrofriends" target="_blank" rel="noopener" class="social-btn">◉ Instagram @ksrofriends</a>
+      <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20acabo%20de%20descargar%20el%20Kit%20IA%20y%20quiero%20contarte%20mi%20experiencia" target="_blank" rel="noopener" class="social-btn">✆ Cuéntanos tu experiencia</a>
+    </div>
+
+    <div style="font-size:.85rem;color:var(--ksro-gray)">
+      ¿Problemas con la descarga? Escríbenos a <a href="mailto:info@ksrolawacademy.com" style="color:var(--ksro-red)">info@ksrolawacademy.com</a> con tu número de pedido de Stripe y lo resolvemos en menos de 24h. · <a href="/terminos-kit.html" style="color:var(--ksro-gray)">Condiciones de venta</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 KSRO LAW ACADEMY · Óscar Casero Miguel · <a href="/privacidad.html" style="color:var(--ksro-gray)">Privacidad</a> · <a href="/terminos.html" style="color:var(--ksro-gray)">Términos</a></div>
+</footer>
+
+</body>
+</html>
