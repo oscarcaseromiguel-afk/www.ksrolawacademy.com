@@ -1239,7 +1239,7 @@ function updateCd(){
   document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
   document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
 }
-updateCd();setInterval(updateCd,1000);
+if(document.getElementById('cd-d')){updateCd();setInterval(updateCd,1000);}
 
 const chatBtn=document.getElementById('chatBtn');
 const chatWin=document.getElementById('chatWin');
