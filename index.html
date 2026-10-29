@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KSRO LAW ACADEMY — IA Legal para Abogados | España</title>
-<meta name="description" content="La academia líder en España sobre Inteligencia Artificial aplicada al Derecho. Formación práctica por Óscar Casero Miguel: 28 años en tribunales, 65K+ suscriptores. Cursos IA Legal, Prompt Engineering Jurídico, Automatización del Despacho.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23E63232'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-size='40' font-weight='900' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<meta name="description" content="La academia líder en España sobre Inteligencia Artificial aplicada al Derecho. Formación práctica por Óscar Casero Miguel: 28 años en tribunales, 76K+ suscriptores. Cursos IA Legal, Prompt Engineering Jurídico, Automatización del Despacho. Autor de «IA Legal para Doomys» y «El Reclamante».">
 <meta name="keywords" content="IA Legal, Inteligencia Artificial Derecho, curso abogados IA, KSRO, Óscar Casero, prompt engineering jurídico, automatización despacho">
 <meta name="author" content="Óscar Casero Miguel">
 
@@ -52,8 +53,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .logo-icon{width:32px;height:32px;background:var(--ksro-red);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.9rem;color:#fff}
 .logo-text span{color:var(--ksro-red)}
 .nav-links{display:flex;gap:30px;list-style:none}
-.nav-links a{font-size:.88rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a{font-size:.88rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:color .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--ksro-red)}
+@media(max-width:1280px){.nav-links{gap:18px}.nav-links a{font-size:.8rem;letter-spacing:.3px}}
 .nav-cta{background:var(--ksro-red);color:#fff;padding:12px 22px;font-family:var(--font-display);font-size:.8rem;letter-spacing:1px;border-radius:4px;transition:all .2s;text-transform:uppercase}
 .nav-cta:hover{background:var(--ksro-red-dark);transform:translateY(-2px);box-shadow:var(--shadow-red)}
 .burger{display:none;font-size:1.6rem;color:#fff}
@@ -84,6 +86,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .visual-icons{position:relative;z-index:2;display:flex;gap:30px;align-items:center}
 .glasses-svg,.phone-svg{filter:drop-shadow(0 10px 30px rgba(230,50,50,.4))}
 
+body{overflow-x:hidden}
 section{padding:100px 32px;position:relative}
 .section-inner{max-width:1280px;margin:0 auto}
 .section-head{text-align:center;max-width:760px;margin:0 auto 70px}
@@ -523,8 +526,9 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
   .nav-links.open{display:flex}
   .burger{display:block}
   .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-visual{order:-1;min-height:250px}
-  .visual-circle{max-width:280px}
+  .hero-visual{order:2;min-height:180px;margin-top:10px}
+  .visual-circle{max-width:200px}
+  .cal-float{display:none}
   .authority-grid,.lm-grid{grid-template-columns:1fr;gap:40px}
   .footer-inner{grid-template-columns:1fr 1fr;gap:30px}
   .wa-float{bottom:20px;left:20px;width:52px;height:52px}
@@ -553,7 +557,8 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
     <ul class="nav-links" id="navLinks">
       <li><a href="#autoridad">Óscar Casero</a></li>
       <li><a href="#cursos">Cursos</a></li>
-      <li><a href="#online">Online · Precios</a></li>
+      <li><a href="#online">Precios</a></li>
+      <li><a href="#libros">Libros</a></li>
       <li><a href="#testimonios">Alumnos</a></li>
       <li><a href="#youtube">YouTube</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
@@ -633,8 +638,8 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
         <h3>Óscar <span>Casero Miguel</span></h3>
         <div class="author-role">Abogado · Administrador Concursal · Divulgador IA Legal</div>
         <p class="author-bio"><strong>28 años de experiencia real en tribunales.</strong> Profesor de Derecho Empresarial (GADE) en la Universidad de La Rioja 2024–25 y ponente habitual en ICAB, Álava, Gipuzkoa, Vizcaya, Almería, Melilla, Bilbao y la Universidad de Deusto.</p>
-        <p class="author-bio">Creador de <strong>@ksrofriends</strong>, el mayor canal en español sobre IA y Derecho (65.000+ suscriptores, 500.000+ visualizaciones). Autor del podcast "El Teléfono Rojo" y de la newsletter <a href="https://ksrolaw.com/es/kserolawtech-registro/" target="_blank" rel="noopener" style="color:var(--ksro-red);text-decoration:underline">"KSRO LAW TECH"</a>. CEO de Bodegare Ltd (Londres) y Gotham Corporation SRO (Praga).</p>
-        <p class="author-bio">Director Académico del Tour Nacional IA Legal y autor del libro <em>"IA y Derecho Mercantil"</em> (2025).</p>
+        <p class="author-bio">Creador de <strong>@ksrofriends</strong>, el mayor canal en español sobre IA y Derecho (76.000+ suscriptores, 500.000+ visualizaciones). Autor del podcast "El Teléfono Rojo" y de la newsletter <a href="https://ksrolaw.com/es/kserolawtech-registro/" target="_blank" rel="noopener" style="color:var(--ksro-red);text-decoration:underline">"KSRO LAW TECH"</a>. CEO de Bodegare Ltd (Londres) y Gotham Corporation SRO (Praga).</p>
+        <p class="author-bio">Director Académico del Tour Nacional IA Legal. Autor de los manuales <em>«IA Legal para Doomys — Edición Global»</em> y <em>The Lawyer's AI Field Manual</em> (2026), y de la novela <em>«El Reclamante»</em> (2026).</p>
         <div class="badges">
           <span class="badge">INSOL Europe</span>
           <span class="badge">ICAR</span>
@@ -657,6 +662,62 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
         <div class="inst-logo">ICA BILBAO</div>
         <div class="inst-logo">UNIV. DEUSTO</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LIBROS ========== -->
+<section class="courses" id="libros" style="background:var(--ksro-dark)">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Publicaciones · 2026</span>
+      <h2 class="section-title">Los libros de <span style="color:var(--ksro-red)">Óscar Casero</span></h2>
+      <p class="section-subtitle">La IA Legal también sobre papel: del manual práctico al thriller jurídico. Disponibles en Amazon.</p>
+    </div>
+    <div class="course-grid">
+
+      <div class="course-card reveal">
+        <span class="course-badge">MANUAL · ESPAÑOL</span>
+        <div class="course-icon">📘</div>
+        <h3 class="course-title">«IA Legal para Doomys» — Edición Global</h3>
+        <p class="course-desc">El manual práctico de IA para abogados, organizado por tareas reales del día a día jurídico: contratos, escritos, análisis de documentos, concursal y mercantil.</p>
+        <ul class="course-features">
+          <li>20 capítulos + 5 anexos prácticos</li>
+          <li>Enfoque por tareas, no por teoría</li>
+          <li>Con adaptaciones para Latinoamérica</li>
+        </ul>
+        <div class="course-price"><span class="price">19,99&nbsp;€</span><span class="price-label">papel · 6,99 € ebook</span></div>
+        <a href="https://www.amazon.es/dp/B0HK5XM6GS" target="_blank" rel="noopener" class="course-cta">Ver en Amazon</a>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-badge">ENGLISH EDITION</span>
+        <div class="course-icon">📗</div>
+        <h3 class="course-title">The Lawyer's AI Field Manual</h3>
+        <p class="course-desc">The task-first AI handbook for practising lawyers, adapted to common-law practice. El mismo método, en edición internacional.</p>
+        <ul class="course-features">
+          <li>Task-by-task approach</li>
+          <li>Adaptado al common law</li>
+          <li>Paperback y ebook en todo el mundo</li>
+        </ul>
+        <div class="course-price"><span class="price">24,99&nbsp;$</span><span class="price-label">paperback · 9,99 $ ebook</span></div>
+        <a href="https://www.amazon.es/dp/B0HK9QRNMX" target="_blank" rel="noopener" class="course-cta">Ver en Amazon</a>
+      </div>
+
+      <div class="course-card reveal">
+        <span class="course-badge" style="background:#1e7b34">NOVELA · NOVEDAD</span>
+        <div class="course-icon">🕵️</div>
+        <h3 class="course-title">«El Reclamante»</h3>
+        <p class="course-desc">Thriller legal-tecnológico en el Londres de 2026: una reclamación imposible, un abogado riojano y una IA que firma demasiado bien. La historia ocurre del 3 al 11 de noviembre de 2026.</p>
+        <ul class="course-features">
+          <li>425 páginas · novela negra jurídica</li>
+          <li>Kindle incluido en Kindle Unlimited</li>
+          <li>También en tapa blanda</li>
+        </ul>
+        <div class="course-price"><span class="price">4,99&nbsp;€</span><span class="price-label">Kindle · 19,99 € papel</span></div>
+        <a href="https://www.amazon.es/dp/B0HLW685FS" target="_blank" rel="noopener" class="course-cta">Ver en Amazon</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1112,6 +1173,7 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
       <h5>Academia</h5>
       <ul>
         <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#libros">Libros</a></li>
         <li><a href="#autoridad">Sobre Óscar</a></li>
         <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#youtube">YouTube</a></li>
@@ -1310,7 +1372,7 @@ function localReply(q){
   if(/automat|despacho|n8n/.test(l))return '<b>Automatización del Despacho</b>: flujos con n8n, Claude y GPT para multiplicar x10 la productividad legal. Incluye consultoría + formación del equipo.';
   if(/mercantil|contrato|societar/.test(l))return '<b>IA y Derecho Mercantil</b>: due diligence, contratos, M&A y compliance con IA. Basado en el libro de Óscar (2025).';
   if(/hola|buen|hi/.test(l))return '¡Hola! Soy el asistente de KSRO LAW ACADEMY. Impartimos formación <b>presencial</b> sobre IA aplicada al Derecho para empresas, universidades, colegios profesionales y conferencias por toda España. ¿Qué tipo de organización representas?';
-  if(/oscar|quien|qui[eé]n/.test(l))return 'Óscar Casero Miguel es abogado y Administrador Concursal con <b>28 años en tribunales</b>. Creador de @ksrofriends (65K+ subs), profesor en la Universidad de La Rioja y autor del libro "IA y Derecho Mercantil" (2025). Ha formado a colegiados del ICAB, Álava, Gipuzkoa, Vizcaya, Almería, Melilla y Bilbao.';
+  if(/oscar|quien|qui[eé]n/.test(l))return 'Óscar Casero Miguel es abogado y Administrador Concursal con <b>28 años en tribunales</b>. Creador de @ksrofriends (76K+ subs), profesor en la Universidad de La Rioja y autor de «IA Legal para Doomys», «The Lawyer\'s AI Field Manual» y la novela «El Reclamante» (2026). Ha formado a colegiados del ICAB, Álava, Gipuzkoa, Vizcaya, Almería, Melilla y Bilbao.';
   if(/dónde|donde|ciudad|lugar|espa|toda/.test(l))return 'Impartimos formaciones y ponencias en <b>toda España</b>. Óscar se desplaza a tu ciudad o sede. ¿En qué ubicación lo necesitas?';
   if(/reserv|fecha|agenda|disponib/.test(l))return '¡Perfecto! Puedes <a href="#agenda" style="color:var(--ksro-red);text-decoration:underline;font-weight:700">agendar directamente una videollamada de 30 min con Óscar</a> (gratis, sin compromiso) en esta misma página. También puedes escribirnos al WhatsApp +34 623 767 511.';
   return 'Gracias por tu consulta. Para darte una propuesta personalizada, escríbenos:<br>📱 WhatsApp: +34 623 767 511<br>✉ info@ksrolawacademy.com<br><br>¿Para qué tipo de organización buscas formación?';
