@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso «Uso Seguro de la IA» para empresas e instituciones · KSRO LAW ACADEMY</title>
+<meta name="description" content="Formación en uso responsable y seguro de la IA para empresas, autónomos, consejos, funcionarios e instituciones. Cumple el art. 4 del Reglamento europeo de IA con certificado verificable. Impartida por abogado experto en IA legal.">
+<meta name="keywords" content="uso seguro IA, formación IA empresas, Reglamento IA, alfabetización IA, art 4 RIA, curso IA empleados, KSRO, Óscar Casero">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Curso «Uso Seguro de la IA» · KSRO LAW ACADEMY">
+<meta property="og:description" content="La IA puede ser tu mejor empleado... o tu mayor riesgo. Formación con certificado verificable que cumple el art. 4 del Reglamento europeo de IA.">
+<meta property="og:url" content="https://ksrolawacademy.com/uso-seguro-ia">
+<meta property="og:image" content="https://ksrolawacademy.com/oscar-charla.jpg">
+<meta property="og:locale" content="es_ES">
+
+<link rel="canonical" href="https://ksrolawacademy.com/uso-seguro-ia">
+
+<style>
+:root{
+  --ksro-red:#E63232;
+  --ksro-red-dark:#B82020;
+  --ksro-black:#000;
+  --ksro-dark:#111;
+  --ksro-dark-2:#1a1a1a;
+  --ksro-white:#FFF;
+  --ksro-gray:#888;
+  --ksro-light-gray:#ccc;
+  --ksro-green:#2ecc71;
+  --shadow-red:0 10px 40px rgba(230,50,50,.35);
+  --font-display:"Arial Black","Helvetica Neue",Arial,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--ksro-black);color:var(--ksro-white);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{max-width:100%}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(230,50,50,.2)}
+.nav-inner{max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:var(--font-display);font-size:1.05rem;display:flex;align-items:center;gap:10px}
+.logo-icon{width:32px;height:32px;background:var(--ksro-red);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.logo span{color:var(--ksro-red)}
+.nav-cta{background:var(--ksro-red);color:#fff;padding:10px 20px;font-family:var(--font-display);font-size:.75rem;letter-spacing:1px;border-radius:4px;text-transform:uppercase;transition:all .2s}
+.nav-cta:hover{background:var(--ksro-red-dark)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+.kicker{font-family:var(--font-display);font-size:.78rem;letter-spacing:3px;color:var(--ksro-red);text-transform:uppercase;margin-bottom:14px}
+h1{font-family:var(--font-display);font-size:clamp(1.9rem,4.5vw,3.2rem);line-height:1.12;text-transform:uppercase}
+h1 .rojo{color:var(--ksro-red)}
+h2{font-family:var(--font-display);font-size:clamp(1.3rem,2.8vw,1.9rem);line-height:1.2;margin-bottom:18px;text-transform:uppercase}
+.sub{color:var(--ksro-light-gray);font-size:1.1rem;max-width:760px;margin-top:18px}
+
+.hero{padding:150px 0 70px;background:radial-gradient(ellipse at 70% 10%,rgba(230,50,50,.16),transparent 55%)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:16px 28px;border-radius:4px;font-family:var(--font-display);font-size:.85rem;letter-spacing:1px;text-transform:uppercase;transition:all .2s}
+.btn-red{background:var(--ksro-red);color:#fff;box-shadow:var(--shadow-red)}
+.btn-red:hover{background:var(--ksro-red-dark);transform:translateY(-2px)}
+.btn-ghost{border:2px solid var(--ksro-red);color:#fff}
+.btn-ghost:hover{background:rgba(230,50,50,.12)}
+
+.alerta{background:var(--ksro-dark);border:1px solid rgba(230,50,50,.4);border-left:5px solid var(--ksro-red);border-radius:8px;padding:28px 32px;margin-top:48px}
+.alerta strong{color:var(--ksro-red)}
+.alerta .ley{font-size:.85rem;color:var(--ksro-gray);margin-top:10px}
+
+.grid{display:grid;gap:20px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--ksro-dark);border:1px solid #2a2a2a;border-radius:10px;padding:28px;transition:border-color .2s}
+.card:hover{border-color:rgba(230,50,50,.5)}
+.card h3{font-family:var(--font-display);font-size:1rem;margin-bottom:10px;text-transform:uppercase}
+.card .tag{display:inline-block;font-family:var(--font-display);font-size:.65rem;letter-spacing:2px;color:var(--ksro-red);border:1px solid var(--ksro-red);border-radius:3px;padding:3px 8px;margin-bottom:14px;text-transform:uppercase}
+.card p, .card li{color:var(--ksro-light-gray);font-size:.95rem}
+.card ul{list-style:none;margin-top:10px}
+.card li{padding-left:22px;position:relative;margin-bottom:8px}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--ksro-red);font-weight:700}
+
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.chip{border:1px solid var(--ksro-red);color:#fff;border-radius:40px;padding:9px 20px;font-size:.92rem}
+.chip b{color:var(--ksro-red)}
+
+.cert{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+.cert-box{flex:1;min-width:300px}
+.cert-visual{flex:1;min-width:280px;background:var(--ksro-dark);border:1px solid rgba(230,50,50,.4);border-radius:10px;padding:30px;text-align:center}
+.cert-visual .sello{font-family:var(--font-display);font-size:.8rem;letter-spacing:2px;color:var(--ksro-red);text-transform:uppercase}
+.cert-visual .cod{font-family:monospace;font-size:1.1rem;color:var(--ksro-green);margin-top:10px}
+
+.ponente{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap}
+.ponente img{width:260px;border-radius:10px;border:1px solid #2a2a2a}
+.ponente-txt{flex:1;min-width:300px}
+.ponente-txt p{color:var(--ksro-light-gray);margin-bottom:14px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.badge{font-family:var(--font-display);font-size:.62rem;letter-spacing:1.5px;color:var(--ksro-gray);border:1px solid #333;border-radius:3px;padding:4px 10px;text-transform:uppercase}
+
+.form-sec{background:var(--ksro-dark)}
+form{max-width:640px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.f-row{grid-template-columns:1fr}}
+input,select,textarea{width:100%;background:var(--ksro-dark-2);border:1px solid #333;border-radius:6px;color:#fff;padding:14px 16px;font-family:var(--font-body);font-size:.95rem;margin-bottom:14px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ksro-red)}
+label{font-size:.8rem;color:var(--ksro-gray);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+.form-note{font-size:.78rem;color:var(--ksro-gray);margin-top:12px}
+.form-note a{color:var(--ksro-light-gray);text-decoration:underline}
+
+.alt-contacto{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.alt-card{background:var(--ksro-dark-2);border:1px solid #2a2a2a;border-radius:8px;padding:16px 22px;font-size:.92rem}
+.alt-card b{display:block;color:var(--ksro-red);font-family:var(--font-display);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+
+footer{border-top:1px solid #222;padding:36px 0;color:var(--ksro-gray);font-size:.85rem}
+.foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ksro-light-gray)}
+footer a:hover{color:var(--ksro-red)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/"><span class="logo-icon">K</span>KSRO <span>LAW ACADEMY</span></a>
+    <a class="nav-cta" href="#solicitar">Solicitar propuesta</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Formación para empresas, instituciones y profesionales</div>
+    <h1>La IA puede ser tu mejor empleado...<br><span class="rojo">o tu mayor riesgo.</span></h1>
+    <p class="sub">Curso <strong>«Uso Seguro de la IA»</strong>: formación práctica y sin tecnicismos para que tu organización aproveche la inteligencia artificial sin poner en riesgo sus datos, sus clientes ni su reputación. Impartida por un abogado experto en IA legal, con <strong>certificado verificable</strong> para cada asistente.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-red" href="#solicitar">Solicitar propuesta</a>
+      <a class="btn btn-ghost" href="https://wa.me/34623767511?text=Hola%20%C3%93scar,%20quiero%20informaci%C3%B3n%20del%20curso%20Uso%20Seguro%20de%20la%20IA%20para%20mi%20organizaci%C3%B3n">WhatsApp directo</a>
+    </div>
+
+    <div class="alerta">
+      <p><strong>No es opcional: es el artículo 4 del Reglamento europeo de IA.</strong> Desde el 2 de febrero de 2025, toda empresa u organismo que utilice sistemas de IA —aunque sea un simple chatbot— debe garantizar que su personal tiene un nivel suficiente de <strong>alfabetización en materia de IA</strong>. Este curso convierte esa obligación en un trámite resuelto, con evidencia documental incluida.</p>
+      <p class="ley">Reglamento (UE) 2024/1689, art. 4 — aplicable desde el 2 de febrero de 2025.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">A quién va dirigido</div>
+    <h2>Si tu equipo ya usa IA (y la usa), esto es para ti</h2>
+    <div class="chips">
+      <span class="chip">Empresarios y directivos</span>
+      <span class="chip">Autónomos</span>
+      <span class="chip">Empleados y equipos</span>
+      <span class="chip">Consejeros y órganos de administración</span>
+      <span class="chip">Funcionarios y empleados públicos</span>
+      <span class="chip">Despachos y departamentos legales</span>
+      <span class="chip">Cualquier usuario profesional</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Qué aprenden los asistentes</h3>
+        <ul>
+          <li>Qué puede hacer hoy la IA por su trabajo: casos de uso reales por sector y por puesto.</li>
+          <li>Qué datos pueden introducirse en cada herramienta y cuáles no: confidencialidad y RGPD.</li>
+          <li>Qué exige el Reglamento europeo de IA y cómo afecta a su organización.</li>
+          <li>Criterio para verificar resultados: errores, sesgos y «alucinaciones».</li>
+          <li>Políticas internas de uso de IA: reglas sencillas aplicables desde el día siguiente.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Por qué KSRO LAW ACADEMY</h3>
+        <ul>
+          <li>Visión jurídica y práctica a la vez: diseña e imparte un abogado en ejercicio que usa la IA a diario.</li>
+          <li>Formación adaptada: contenidos y ejercicios con los casos propios de tu actividad.</li>
+          <li>Demostraciones en vivo con las herramientas que tu equipo ya tiene a su alcance.</li>
+          <li>Enfoque centrado en las personas: la IA como ayuda al profesional, nunca como sustituto de su criterio.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">Formatos</div>
+    <h2>De la conferencia de 1 hora al programa completo</h2>
+    <div class="grid grid-3">
+      <div class="card"><span class="tag">Conferencia</span><p>Sesión divulgativa de 1 a 2 horas para grandes audiencias, congresos, cámaras de comercio y jornadas.</p></div>
+      <div class="card"><span class="tag">Taller práctico</span><p>Media jornada con ejercicios guiados sobre casos reales de los asistentes.</p></div>
+      <div class="card"><span class="tag">Curso in-company</span><p>Programa completo por niveles para plantillas y equipos, con seguimiento posterior.</p></div>
+      <div class="card"><span class="tag">Sesión para consejos</span><p>Briefing ejecutivo para consejeros y dirección: riesgos, deberes de supervisión y oportunidades.</p></div>
+    </div>
+    <p class="sub" style="margin-top:22px">Presencial en toda España u online · en español o inglés · con materiales y modelo de política interna de uso de IA incluidos.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap cert">
+    <div class="cert-box">
+      <div class="kicker">Certificado verificable</div>
+      <h2>Tu evidencia de cumplimiento</h2>
+      <p class="sub" style="margin-top:0">Cada asistente recibe un <strong>certificado de aprovechamiento con código de verificación único</strong>, registrado por KSRO LAW ACADEMY. Para la organización, ese certificado es la evidencia documental de que ha formado a su personal, tal y como exige el art. 4 del Reglamento europeo de IA. Para el asistente, un mérito que puede hacer valer en su currículum.</p>
+    </div>
+    <div class="cert-visual">
+      <div class="sello">Certificado de aprovechamiento</div>
+      <p style="margin-top:12px;color:var(--ksro-light-gray)">Curso «Uso Seguro de la IA»</p>
+      <div class="cod">KSRO-2026-XXXXX</div>
+      <p style="margin-top:12px;font-size:.8rem;color:var(--ksro-gray)">Código único verificable · registro de emisión</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap ponente">
+    <img src="oscar-charla.jpg" alt="Óscar Casero Miguel impartiendo formación sobre IA">
+    <div class="ponente-txt">
+      <div class="kicker">Quién imparte</div>
+      <h2>Óscar Casero Miguel</h2>
+      <p><strong>Abogado especialista en Derecho Mercantil y Concursal y experto en inteligencia artificial legal</strong>, con casi 30 años de ejercicio y más de 500 procedimientos concursales. Máster en IA y Blockchain por The University of Law de Londres y profesor de Derecho Mercantil en la Universidad de La Rioja.</p>
+      <p>Autor de los manuales «IA Legal para Doomys» y «The Lawyer's AI Field Manual» y de la novela «El Reclamante». Ha formado a colegios de la abogacía de toda España y participa en las jornadas de innovación jurídica de Lefebvre. Creador de KSRO&amp;FRIENDS, el mayor canal en español sobre IA y Derecho.</p>
+      <div class="badges">
+        <span class="badge">ICAM</span><span class="badge">ICAR</span><span class="badge">SRA (UK)</span><span class="badge">INSOL Europe</span><span class="badge">ENATIC</span><span class="badge">Univ. La Rioja</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-sec" id="solicitar">
+  <div class="wrap">
+    <div class="kicker">Solicitar propuesta</div>
+    <h2>Cuéntanos quién eres y te respondemos en 24 h</h2>
+    <form action="https://formsubmit.co/info@ksrolawacademy.com" method="POST">
+      <input type="hidden" name="_subject" value="[KSRO] Solicitud curso Uso Seguro de la IA">
+      <input type="hidden" name="_next" value="https://ksrolawacademy.com/gracias.html">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_template" value="table">
+      <div class="f-row">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" name="nombre" required>
+        </div>
+        <div>
+          <label for="organizacion">Empresa / institución</label>
+          <input id="organizacion" type="text" name="organizacion" required>
+        </div>
+      </div>
+      <div class="f-row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+        <div>
+          <label for="telefono">Teléfono (opcional)</label>
+          <input id="telefono" type="tel" name="telefono">
+        </div>
+      </div>
+      <label for="tipo">Tipo de organización</label>
+      <select id="tipo" name="tipo_organizacion" required>
+        <option value="">— Selecciona —</option>
+        <option>Empresa</option>
+        <option>Autónomo / profesional</option>
+        <option>Cámara de comercio / asociación</option>
+        <option>Administración pública</option>
+        <option>Colegio profesional</option>
+        <option>Universidad / escuela de negocios</option>
+        <option>Otra</option>
+      </select>
+      <label for="mensaje">¿Qué necesitas? (formato, nº de asistentes, fechas…)</label>
+      <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+      <button class="btn btn-red" type="submit">Enviar solicitud</button>
+      <p class="form-note">Al enviar aceptas nuestra <a href="privacidad.html">política de privacidad</a>. Usamos tus datos solo para responder a tu solicitud.</p>
+    </form>
+    <div class="alt-contacto">
+      <a class="alt-card" href="https://wa.me/34623767511?text=Hola%20%C3%93scar,%20quiero%20informaci%C3%B3n%20del%20curso%20Uso%20Seguro%20de%20la%20IA%20para%20mi%20organizaci%C3%B3n"><b>WhatsApp</b>+34 623 767 511</a>
+      <a class="alt-card" href="mailto:info@ksrolawacademy.com?subject=Curso%20Uso%20Seguro%20de%20la%20IA"><b>Email</b>info@ksrolawacademy.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 KSRO LAW ACADEMY · <a href="/">ksrolawacademy.com</a></div>
+    <div>
+      <a href="aviso-legal.html">Aviso legal</a> ·
+      <a href="privacidad.html">Privacidad</a> ·
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
