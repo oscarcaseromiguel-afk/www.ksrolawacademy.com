@@ -582,9 +582,9 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
         <a href="https://wa.me/34623767511?text=Hola%20Óscar,%20quiero%20información%20sobre%20la%20formación%20KSRO" class="btn-secondary">Solicitar Propuesta</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num" data-count="65000" data-suffix="+">0</div><div class="stat-label">Suscriptores YouTube</div></div>
-        <div><div class="stat-num" data-count="500000" data-suffix="+">0</div><div class="stat-label">Visualizaciones</div></div>
-        <div><div class="stat-num" data-count="28" data-suffix=" años">0</div><div class="stat-label">En tribunales</div></div>
+        <div><div class="stat-num" data-count="76000" data-suffix="+">76.000+</div><div class="stat-label">Suscriptores YouTube</div></div>
+        <div><div class="stat-num" data-count="500000" data-suffix="+">500.000+</div><div class="stat-label">Visualizaciones</div></div>
+        <div><div class="stat-num" data-count="28" data-suffix=" años">28 años</div><div class="stat-label">En tribunales</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -912,10 +912,10 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
       <h2 class="section-title">La academia en la que confían los abogados</h2>
     </div>
     <div class="stats-bar reveal">
-      <div class="big-stat"><div class="stat-num" data-count="1500" data-suffix="+">0</div><div class="stat-label">Profesionales formados</div></div>
-      <div class="big-stat"><div class="stat-num" data-count="30" data-suffix="+">0</div><div class="stat-label">Ciudades impartidas</div></div>
-      <div class="big-stat"><div class="stat-num" data-count="4.9" data-decimals="1" data-suffix="/5">0</div><div class="stat-label">Valoración media</div></div>
-      <div class="big-stat"><div class="stat-num" data-count="50" data-suffix="+">0</div><div class="stat-label">Organizaciones cliente</div></div>
+      <div class="big-stat"><div class="stat-num" data-count="1500" data-suffix="+">1.500+</div><div class="stat-label">Profesionales formados</div></div>
+      <div class="big-stat"><div class="stat-num" data-count="30" data-suffix="+">30+</div><div class="stat-label">Ciudades impartidas</div></div>
+      <div class="big-stat"><div class="stat-num" data-count="4.9" data-decimals="1" data-suffix="/5">4.9/5</div><div class="stat-label">Valoración media</div></div>
+      <div class="big-stat"><div class="stat-num" data-count="50" data-suffix="+">50+</div><div class="stat-label">Organizaciones cliente</div></div>
     </div>
     <div class="testimonials">
       <div class="testimonial reveal">
@@ -996,15 +996,15 @@ input:disabled + .slider{opacity:.5;cursor:not-allowed}
     <div class="yt-grid">
       <div class="yt-card reveal">
         <div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/hPSqesHJQjg?rel=0" title="KSRO Friends · Capítulo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-        <div class="yt-info"><div class="yt-title">Capítulo destacado · KSRO Friends</div><div class="yt-meta">▶ Ver en @ksrofriends</div></div>
+        <div class="yt-info"><div class="yt-title">Capítulo destacado · KSRO Friends</div><div class="yt-meta"><a href="https://youtube.com/@ksrofriends" target="_blank" rel="noopener">▶ Ver en @ksrofriends</a></div></div>
       </div>
       <div class="yt-card reveal">
         <div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/hd2UDqhMMeg?rel=0" title="KSRO Friends · Capítulo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-        <div class="yt-info"><div class="yt-title">Capítulo destacado · KSRO Friends</div><div class="yt-meta">▶ Ver en @ksrofriends</div></div>
+        <div class="yt-info"><div class="yt-title">Capítulo destacado · KSRO Friends</div><div class="yt-meta"><a href="https://youtube.com/@ksrofriends" target="_blank" rel="noopener">▶ Ver en @ksrofriends</a></div></div>
       </div>
       <div class="yt-card reveal">
         <div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/yzYXiXXWpwk?rel=0" title="KSRO Friends · Capítulo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
-        <div class="yt-info"><div class="yt-title">Capítulo destacado · KSRO Friends</div><div class="yt-meta">▶ Ver en @ksrofriends</div></div>
+        <div class="yt-info"><div class="yt-title">Capítulo destacado · KSRO Friends</div><div class="yt-meta"><a href="https://youtube.com/@ksrofriends" target="_blank" rel="noopener">▶ Ver en @ksrofriends</a></div></div>
       </div>
     </div>
     <div style="text-align:center">
@@ -1329,6 +1329,7 @@ function animateCount(el){
   }
   requestAnimationFrame(tick);
 }
+document.querySelectorAll('[data-count]').forEach(el=>{el.textContent='0'});
 const countObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target)}})},{threshold:.4});
 document.querySelectorAll('[data-count]').forEach(el=>countObs.observe(el));
 
